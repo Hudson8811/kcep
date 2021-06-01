@@ -22,13 +22,11 @@ tpl:'<div class="fancybox-share"><h1>{{SHARE}}</h1><p><a class="fancybox-share__
 $(document).ready(function () {
 	
 });
-
 $(document).ready(function () {
-	$('.sh-burger').click(function () {
-		$(this).toggleClass('sh-burger--active');
-		$('.sh-menu-wrap').toggleClass('sh-menu-wrap--open');
+	$(".sh-burger").click(function () {
+		$(this).toggleClass("sh-burger--active");
+		$(".header__nav").toggleClass("nav--open");
 	});
-
 });
 $(document).ready(function () {
    // $("input[name='phone']").mask(" +7 (999) 999-99-99");

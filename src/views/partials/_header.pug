@@ -1,5 +1,27 @@
-header.site-header
-	.sh-burger
-		span
-
-	
+header.header
+	.container.header__container
+		.inner.header__inner
+			.inner-left.header__inner-left
+				a.logo(href="/")
+					img(src="img/logo.png", alt="KCEP") 
+			.inner-right.header__inner-right
+				nav.header__nav.active
+					ul.header__nav-list 
+						li 
+							a(href="#") Продукция 
+						li 
+							a(href="#") Сервисы
+						li 
+							a(href="#") Партнеры
+						li.active
+							a(href="#") События
+						li 
+							a(href="#") База знаний
+						li 
+							a(href="#") О компании
+						li 
+							a(href="#") Контакты
+				a(href="/").header__dropdown RUS
+					img(src="img/arrow.svg", alt="")
+				.sh-burger
+					span
