@@ -143,10 +143,5 @@ html {
 	&-right {
 		flex-basis: 78.7%;
 		display: flex;
-		justify-content: space-between;
-
-		@media screen and (max-width: 993px) {
-			justify-content: flex-end;
-		}
 	}
 }

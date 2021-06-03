@@ -38,6 +38,14 @@
 		@include media(550) {
 			padding: 23px 25px 23px 13px;
 		}
+
+		&-right {
+			justify-content: space-between;
+
+			@media screen and (max-width: 993px) {
+				justify-content: flex-end;
+			}
+		}
 	}
 
 	&__nav {
