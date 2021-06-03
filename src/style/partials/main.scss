@@ -70,8 +70,14 @@ body {
 	width: 1137px;
 	max-width: 95%;
 	max-width: calc(100% - 30px * 2);
-	margin-left: calc(100% * 0.0673611);
-	margin-right: calc(100% * 0.14305556);
+	margin-left: 6.73611vw;
+	margin-right: 14.305556vw;
+}
+
+@media screen and (min-width: 1500px) {
+	.container {
+		margin: 0 auto;
+	}
 }
 
 @media screen and (max-width: 1350px) {
