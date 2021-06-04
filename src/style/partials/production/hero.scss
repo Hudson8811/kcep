@@ -1,0 +1,96 @@
+.production-hero {
+	height: 900px;
+	background-color: $dark;
+	margin-top: -102px;
+
+	@include media(tablet-1200) {
+		height: 800px;
+	}
+
+	@include media(mobile) {
+		height: 550px;
+	}
+
+	&__container {
+		padding-top: 102px;
+		height: 100%;
+	}
+
+	&__title {
+		margin-top: 100px;
+		max-width: 500px;
+		font-weight: bold;
+		font-size: 75px;
+		line-height: 77px;
+
+		@include media(tablet-1200) {
+			font-size: 55px;
+			line-height: 56px;
+			max-width: 400px;
+		}
+
+		@include media(mobile) {
+			font-size: 40px;
+			line-height: 45px;
+			max-width: 300px;
+			margin-top: 35px;
+		}
+	}
+
+	&__inner {
+		height: 100%;
+
+		&-left {
+			@include media(mobile) {
+				flex-basis: 0;
+			}
+		}
+
+		&-right {
+			position: relative;
+
+			@include media(mobile) {
+				flex-basis: 100%;
+			}
+		}
+	}
+
+	&__slider {
+		z-index: 10;
+	}
+
+	&__slide {
+		position: absolute;
+		height: 100%;
+		z-index: 10;
+
+		img {
+			z-index: 1;
+			margin-top: 60px;
+			max-width: 712px;
+
+			@include media(tablet-1200) {
+				max-width: 500px;
+			}
+
+			@include media(mobile) {
+				max-width: 350px;
+			}
+		}
+	}
+
+	&__button {
+		position: relative;
+		z-index: 30;
+		margin-top: 550px;
+		display: inline-block;
+
+		@include media(tablet-1200) {
+			margin-top: 450px;
+		}
+
+		@include media(mobile) {
+			margin-top: 320px;
+		}
+	}
+}

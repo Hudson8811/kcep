@@ -200,9 +200,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
 		return false;
 	}
+	function isTabsPage() {
+		const tabsWrapper = document.querySelector(
+			".home-video__tabs-control-inner"
+		);
+		if (tabsWrapper) {
+			return true;
+		}
+
+		return false;
+	}
+	if (isTabsPage()) {
+		toggleTabs();
+	}
 
 	if (isSliderPage()) {
-		toggleTabs();
 		switchSlides();
 	}
 });
