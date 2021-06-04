@@ -154,6 +154,20 @@ html {
 	&--big {
 		font-size: 80px;
 		line-height: 77px;
+
+		@media screen and (max-width: 1200px) {
+			font-size: 64px;
+			line-height: 64px;
+		}
+
+		@media screen and (max-width: 993px) {
+			font-size: 52px;
+			line-height: 52px;
+		}
+		@media screen and (max-width: 767px) {
+			font-size: 45px;
+			line-height: 45px;
+		}
 	}
 
 	&--small {
