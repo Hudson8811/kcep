@@ -106,9 +106,9 @@ document.addEventListener("DOMContentLoaded", function () {
 	};
 
 	const switchSlides = () => {
-		const slides = document.querySelectorAll(".home-hero__slide");
-		const dotsList = document.querySelector(".home-hero__dots");
-		const dotsWrapper = document.querySelector(".home-hero__dots-wrapper");
+		const slides = document.querySelectorAll(".slide");
+		const dotsList = document.querySelector(".dots");
+		const dotsWrapper = document.querySelector(".dots-wrapper");
 
 		let currentSlide = 0;
 		let interval;
@@ -116,7 +116,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		const addDots = () => {
 			slides.forEach(() => {
 				const dot = document.createElement("li");
-				dot.classList.add("home-hero__dots-item");
+				dot.classList.add("dots-item");
 				dotsList.append(dot);
 			});
 			dotsList.querySelector("li").classList.add("dot--active");
@@ -132,7 +132,7 @@ document.addEventListener("DOMContentLoaded", function () {
 			elem[index].classList.add(strClass);
 		};
 
-		const dots = document.querySelectorAll(".home-hero__dots-item");
+		const dots = document.querySelectorAll(".dots-item");
 
 		const autoPlaySlide = () => {
 			prevSlide(slides, currentSlide, "active");
@@ -158,7 +158,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		dotsList.addEventListener("click", (e) => {
 			let target = e.target;
 
-			target = target.closest(".home-hero__dots-item");
+			target = target.closest(".dots-item");
 
 			if (target) {
 				dots.forEach((dot, idx) => {
@@ -175,20 +175,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
 		dotsWrapper.addEventListener("mouseover", (event) => {
 			const target = event.target;
-			if (
-				target.matches(".home-hero__dots") ||
-				target.matches(".home-hero__dots-item")
-			) {
+			if (target.matches(".dots") || target.matches(".dots-item")) {
 				stopSlide();
 			}
 		});
 
 		dotsWrapper.addEventListener("mouseout", (event) => {
 			const target = event.target;
-			if (
-				target.matches(".home-hero__dots") ||
-				target.matches(".home-hero__dots-item")
-			) {
+			if (target.matches(".dots") || target.matches(".dots-item")) {
 				startSlide();
 			}
 		});
@@ -199,7 +193,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	};
 
 	function isSliderPage() {
-		const slider = document.querySelector(".home-hero__slider");
+		const slider = document.querySelector(".slider");
 		if (slider) {
 			return true;
 		}
