@@ -5,6 +5,11 @@
 	color: $dark;
 	font-family: $secondaryFont;
 
+	@include media(mobile) {
+		flex-direction: column;
+		height: auto;
+	}
+
 	&__left,
 	&__right {
 		flex-basis: 50%;
@@ -12,21 +17,42 @@
 
 	&__left {
 		background-color: $dark;
+
+		img {
+			object-fit: cover;
+			width: 100%;
+			height: 100%;
+		}
 	}
 
 	&__right {
 		padding: 157px 0;
+		position: relative;
+
+		@include media(mobile) {
+			padding: 64px 0 90px;
+			overflow: hidden;
+		}
 
 		&-title {
 			font-weight: bold;
 			font-size: 66px;
 			line-height: 66px;
 			padding-left: 30px;
+
+			@include media(mobile) {
+				font-size: 45px;
+				line-height: 66px;
+			}
 		}
 
 		&-numbers {
 			padding-left: 35px;
 			margin-top: 154px;
+
+			@include media(mobile) {
+				margin-top: 53px;
+			}
 			&-item {
 				font-size: 22px;
 				line-height: 32px;
@@ -62,5 +88,9 @@
 	&__bg {
 		position: absolute;
 		bottom: 162px;
+
+		@include media(mobile) {
+			bottom: 90px;
+		}
 	}
 }

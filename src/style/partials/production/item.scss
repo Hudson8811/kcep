@@ -1,0 +1,88 @@
+.production-item {
+	height: 900px;
+
+	@include media(tablet-1200) {
+		height: 800px;
+	}
+
+	@include media(mobile) {
+		height: 400px;
+	}
+
+	&:nth-child(even) {
+		background-color: #fff;
+	}
+
+	&__title {
+		font-weight: bold;
+		font-size: 75px;
+		line-height: 77px;
+		color: $dark;
+		margin-top: 151px;
+
+		@include media(tablet-1200) {
+			font-size: 55px;
+			line-height: 55px;
+			max-width: 500px;
+		}
+
+		@include media(mobile) {
+			font-size: 40px;
+			line-height: 45px;
+			max-width: 300px;
+			margin-top: 43px;
+		}
+
+		@include media(400) {
+			font-size: 30px;
+			line-height: 31px;
+			max-width: 250px;
+		}
+	}
+
+	&__inner {
+		&-left {
+			@include media(mobile) {
+				flex-basis: 0;
+			}
+		}
+		&-right {
+			flex-direction: column;
+			align-items: flex-start;
+
+			@include media(mobile) {
+				flex-basis: 100%;
+			}
+
+			img {
+				max-width: 700px;
+				margin-top: 90px;
+
+				@include media(tablet-1200) {
+					max-width: 500px;
+				}
+
+				@include media(mobile) {
+					max-width: 400px;
+					margin-top: 70px;
+				}
+
+				@include media(400) {
+					max-width: 280px;
+				}
+			}
+		}
+	}
+
+	&__button {
+		margin-top: 140px;
+
+		@include media(tablet-1200) {
+			margin-top: 100px;
+		}
+
+		@include media(mobile) {
+			margin-top: 80px;
+		}
+	}
+}
