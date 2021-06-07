@@ -186,4 +186,82 @@ document.addEventListener("DOMContentLoaded", function () {
 	if (isSliderPage()) {
 		switchSlides();
 	}
+
+	const toggleInfoPopups = () => {
+		const popupsBtns = document.querySelectorAll(
+			".product-info__tabs-item-point-wrapper"
+		);
+		const tabs = document.querySelectorAll(".product-info__tabs-item");
+		const slides = document.querySelectorAll(".product-hero__slide");
+		const tabsControlItems = document.querySelectorAll(
+			".product-info__tabs-control-item"
+		);
+
+		tabsControlItems[0].classList.add("active");
+		popupsBtns[0].classList.add("active");
+		tabs[0].classList.add("active");
+		slides[0].classList.add("active");
+
+		const toggleActiveClass = (targetItem) => {
+			const items = document.querySelectorAll(`.${targetItem.className}`);
+			const activeTab = document.querySelector(
+				".product-info__tabs-item.active"
+			);
+			const activeSlide = document.querySelector(".product-hero__slide.active");
+
+			if (
+				targetItem.classList.contains("product-info__tabs-control-item") &&
+				!targetItem.classList.contains("active")
+			) {
+				activeTab.classList.remove("active");
+			}
+
+			if (
+				targetItem.classList.contains("product-hero__pagination-item") &&
+				!targetItem.classList.contains("active")
+			) {
+				activeSlide.classList.remove("active");
+			}
+
+			items.forEach((item, index) => {
+				if (item.classList.contains("active")) {
+					item.classList.remove("active");
+				}
+				if (item === targetItem && !item.classList.contains("active")) {
+					item.classList.add("active");
+
+					if (
+						targetItem.classList.contains("product-info__tabs-control-item")
+					) {
+						tabs[index].classList.add("active");
+					}
+
+					if (targetItem.classList.contains("product-hero__pagination-item")) {
+						slides[index].classList.add("active");
+					}
+				}
+			});
+		};
+
+		const clickHandler = (e) => {
+			let target = e.target;
+
+			if (target.closest(".product-info__tabs-item-point")) {
+				toggleActiveClass(
+					target.closest(".product-info__tabs-item-point-wrapper")
+				);
+			}
+			if (target.closest(".product-info__tabs-control-item")) {
+				toggleActiveClass(target.closest(".product-info__tabs-control-item"));
+			}
+
+			if (target.closest(".product-hero__pagination-item")) {
+				toggleActiveClass(target.closest(".product-hero__pagination-item"));
+			}
+		};
+
+		document.addEventListener("click", clickHandler);
+	};
+
+	toggleInfoPopups();
 });
