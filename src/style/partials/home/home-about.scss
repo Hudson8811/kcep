@@ -1,0 +1,66 @@
+.home-about {
+	position: relative;
+	display: flex;
+	height: 900px;
+	color: $dark;
+	font-family: $secondaryFont;
+
+	&__left,
+	&__right {
+		flex-basis: 50%;
+	}
+
+	&__left {
+		background-color: $dark;
+	}
+
+	&__right {
+		padding: 157px 0;
+
+		&-title {
+			font-weight: bold;
+			font-size: 66px;
+			line-height: 66px;
+			padding-left: 30px;
+		}
+
+		&-numbers {
+			padding-left: 35px;
+			margin-top: 154px;
+			&-item {
+				font-size: 22px;
+				line-height: 32px;
+				font-weight: bold;
+				display: flex;
+				align-items: center;
+				flex-wrap: wrap;
+
+				&:not(:first-child) {
+					margin-top: 70px;
+				}
+
+				span {
+					font-weight: 300;
+					font-size: 16px;
+					line-height: 32px;
+
+					&:first-child {
+						font-weight: 300;
+						font-size: 44px;
+						line-height: 32px;
+						margin-left: 5px;
+					}
+
+					&:last-child {
+						flex-basis: 100%;
+					}
+				}
+			}
+		}
+	}
+
+	&__bg {
+		position: absolute;
+		bottom: 162px;
+	}
+}

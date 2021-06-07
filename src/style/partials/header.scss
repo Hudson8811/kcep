@@ -1,5 +1,4 @@
 .header {
-	background-color: #262525;
 	padding: 16px 0;
 	color: #f0f0ed;
 	font-family: $secondaryFont;
@@ -32,15 +31,24 @@
 	}
 
 	&__inner {
-		padding: 23px 25px 23px 39px;
+		padding: 23px 0 23px 0;
 		align-items: center;
 
 		@include media(550) {
-			padding: 23px 25px 23px 13px;
+			padding: 23px 0 23px 0;
+		}
+
+		&-left {
+			padding-left: 39px;
+
+			@include media(550) {
+				padding-left: 13px;
+			}
 		}
 
 		&-right {
 			justify-content: space-between;
+			padding-right: 25px;
 
 			@media screen and (max-width: 993px) {
 				justify-content: flex-end;

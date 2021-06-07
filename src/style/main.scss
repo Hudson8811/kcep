@@ -5,7 +5,7 @@
 
 /* my style */
 
-@import "partials/_var"; 
+@import "partials/_var";
 
 @import "partials/mixin";
 @import "partials/components";
@@ -14,3 +14,6 @@
 @import "partials/footer";
 @import "partials/products";
 @import "partials/main-adaptive";
+@import "partials/home/home-hero.scss";
+@import "partials/home/home-about.scss";
+@import "partials/home/home-video.scss";

@@ -2,6 +2,8 @@
     background: $light;
     &__container{
         display: flex;
+        position: relative;
+        z-index: 1;
     }
     &__inner{
         display: flex;
@@ -63,9 +65,17 @@
     }
     &-all{
         padding-bottom: 175px;
+        position: relative;
         &::before{
             content: "";
-            background: url();
+            position: absolute;
+            background: url('../img/products/logo.png');
+            background-repeat: no-repeat;
+            width: 1162px;
+            height: 256px;
+            top: 32px;
+            left: 33%;
+            z-index: 0;
         }
         &__list{
             display: flex;
@@ -78,19 +88,24 @@
         
     }
     &-item{
-        max-width: 209px;
+        max-width: 208px;
         max-height: 288px;
         width: 100%;
         height: 100%;
         background: $white;
         padding: 16px;
-        margin-right: 12px;
         margin-bottom: 12px;
+        &:not(:nth-child(4n+4)){
+            margin-right: 12px;
+        }
         &__img{
-
+            margin-bottom: 17px;
         }
         &__link{
-            text-decoration: underline;
+            font-size: 15px;
+            line-height: 21px;
+            text-decoration-line: underline;
+            color: #1A1919;
         }
     }
 }
