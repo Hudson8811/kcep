@@ -1,0 +1,120 @@
+.product-services {
+	color: $textDark;
+	padding-top: 128px;
+	padding-bottom: 146px;
+
+	&__container {
+		@include media(tablet-993) {
+			width: 100%;
+			max-width: 100%;
+		}
+	}
+
+	.section-title {
+		@include media(tablet-993) {
+			position: absolute;
+		}
+	}
+
+	&__inner {
+		&-left {
+			@include media(tablet-993) {
+				flex-basis: 0;
+			}
+		}
+
+		&-right {
+			flex-direction: column;
+
+			@include media(tablet-993) {
+				flex-basis: 100%;
+				overflow: scroll;
+				padding-left: 30px;
+			}
+		}
+	}
+
+	&__cards {
+		display: flex;
+		list-style: none;
+		margin-top: 32px;
+
+		@include media(tablet-993) {
+			margin-top: 75px;
+		}
+	}
+
+	&__card {
+		width: 209px;
+		min-width: 209px;
+		height: 288px;
+		background-color: #fff;
+		border-radius: 0 0 0 10px;
+
+		&-title {
+			font-weight: bold;
+			font-size: 22px;
+			line-height: 21px;
+			margin-top: 41px;
+		}
+
+		&:nth-child(1) {
+			background-color: $gold;
+			color: #fff;
+		}
+
+		&:nth-child(2) {
+			background-color: #fff;
+			color: $textDark;
+		}
+
+		&:nth-child(3) {
+			color: $textDark;
+			background-color: #eaeaea;
+
+			a {
+				img {
+					width: 61px;
+					height: 46px;
+					object-fit: cover;
+				}
+			}
+		}
+
+		&:nth-child(4) {
+			background-color: $dark;
+			color: #fff;
+		}
+
+		a {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			width: 100%;
+			height: 100%;
+			padding: 32px 10px 14px 22px;
+
+			img {
+				width: 46px;
+				height: 46px;
+			}
+
+			&:hover {
+				span {
+					text-decoration: underline;
+				}
+			}
+		}
+
+		&:not(:last-child) {
+			margin-right: 12px;
+		}
+
+		&-text {
+			margin-top: 13px;
+			font-weight: normal;
+			font-size: 15px;
+			line-height: 21px;
+		}
+	}
+}
