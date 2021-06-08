@@ -8,55 +8,6 @@
 		min-height: 500px;
 	}
 
-	&__icon {
-		&-arrow-prev {
-			fill: #ffffff;
-			width: 22px;
-			height: 15px;
-			transition: 0.3s;
-		}
-	}
-
-	&__button {
-		&-prev {
-			position: relative;
-			display: flex;
-			align-items: center;
-			text-decoration: none;
-			color: #f0f0ed;
-			transition: 0.3s;
-
-			&:hover {
-				color: $gold;
-
-				svg {
-					fill: $gold;
-				}
-			}
-
-			&-img {
-				border: 1px solid rgba(255, 255, 255, 0.13);
-				width: 55px;
-				height: 55px;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				border-radius: 50%;
-			}
-
-			span {
-				margin-left: 8px;
-				font-size: 15px;
-				line-height: 18px;
-				color: inherit;
-			}
-
-			&:visited {
-				color: inherit;
-			}
-		}
-	}
-
 	&__inner {
 		align-items: flex-start;
 		padding-top: 20px;

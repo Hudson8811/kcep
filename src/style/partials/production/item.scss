@@ -1,12 +1,16 @@
 .production-item {
-	height: 900px;
+	min-height: 900px;
 
 	@include media(tablet-1200) {
-		height: 800px;
+		min-height: 630px;
 	}
 
 	@include media(mobile) {
-		height: 400px;
+		min-height: 425px;
+	}
+
+	@include media(400) {
+		min-height: 380px;
 	}
 
 	&:nth-child(even) {
@@ -24,6 +28,7 @@
 			font-size: 55px;
 			line-height: 55px;
 			max-width: 500px;
+			margin-top: 100px;
 		}
 
 		@include media(mobile) {
@@ -63,7 +68,7 @@
 				}
 
 				@include media(mobile) {
-					max-width: 400px;
+					max-width: 375px;
 					margin-top: 70px;
 				}
 

@@ -6,6 +6,11 @@
 	background-color: $gold;
 	transition: 0.4s;
 
+	@media screen and (max-width: 767px) {
+		font-size: 14px;
+		line-height: 25px;
+	}
+
 	&:hover {
 		background-color: #847348;
 	}

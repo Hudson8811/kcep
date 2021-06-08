@@ -7,11 +7,14 @@
 	font-size: 15px;
 	line-height: 18px;
 
-	&__container {
-		position: relative;
+	&__bg {
+		position: absolute;
 		overflow: hidden;
 		border-radius: 9px;
-		z-index: 10;
+		width: 100%;
+		height: 70px;
+		z-index: 101;
+		pointer-events: none;
 
 		&::before {
 			content: "";
@@ -24,10 +27,14 @@
 			top: -10px;
 			right: -10px;
 			bottom: -10px;
-			z-index: 1;
 			border-radius: 9px;
 			pointer-events: none;
 		}
+	}
+
+	&__container {
+		position: relative;
+		z-index: 101;
 	}
 
 	&__inner {
@@ -35,6 +42,7 @@
 		z-index: 15;
 		padding: 23px 0 23px 0;
 		align-items: center;
+		// z-index: 104;
 
 		@include media(550) {
 			padding: 23px 0 23px 0;
@@ -76,7 +84,7 @@
 			padding-top: 149px;
 			padding-left: 30px;
 			margin-right: 0;
-			z-index: -2;
+			z-index: 10;
 			transition: 0.3s;
 		}
 
@@ -142,6 +150,8 @@
 		align-items: center;
 		font-weight: bold;
 		font-size: 12px;
+		position: relative;
+		z-index: 100;
 
 		img {
 			margin-left: 6px;
@@ -156,6 +166,7 @@
 	height: 14px;
 	cursor: pointer;
 	transition: 0.2s;
+	z-index: 100;
 
 	@include media(tablet-993) {
 		display: flex;

@@ -184,6 +184,8 @@
 		);
 
 		img {
+			height: 100%;
+
 			@include media(tablet-993) {
 				height: 800px;
 			}
