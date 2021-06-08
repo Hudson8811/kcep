@@ -228,6 +228,10 @@ document.addEventListener("DOMContentLoaded", function () {
 			".product-info__tabs-control-item"
 		);
 
+		if (!tabs.length) {
+			return;
+		}
+
 		tabsControlItems[0].classList.add("active");
 		popupsBtns[0].classList.add("active");
 		tabs[0].classList.add("active");

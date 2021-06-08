@@ -26,3 +26,11 @@ mixin breadcrumbs(paddingLeft=false,item1="", item2="", item3="", item4="", item
 				li.breadcrumbs-item
 					a.breadcrumbs-item-a(href="")
 						=item5
+
+mixin button-prev(customClass)
+	a(href="#" class=customClass).button-prev
+		.button-prev-img 
+			<svg class="button-prev__icon-arrow-prev">
+				<use xlink:href="img/sprite.svg#arrow-prev"></use>
+			</svg>
+		span назад

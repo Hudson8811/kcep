@@ -2,12 +2,7 @@ section.product-hero
 	.container.product-hero__container
 		.inner.product-hero__inner 
 			.inner-left.product-hero__inner-left
-				a(href="#").product-hero__button-prev 
-					.product-hero__button-prev-img 
-						<svg class="product-hero__icon-arrow-prev">
-							<use xlink:href="img/sprite.svg#arrow-prev"></use>
-						</svg>
-					span назад
+				+button-prev("product-hero__button-prev")
 			.inner-right.product-hero__inner-right
 				h1.product-hero__title Кабель оптический гибкий с вынесенным </br> силовым элементом КС-FTTНSC
 				.product-hero__slider 
