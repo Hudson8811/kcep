@@ -11,7 +11,7 @@
 		max-width: 1206px;
 		margin-right: 9.5vw;
 		margin-left: 6.73vw;
-		padding: 67px 0 120px;
+		padding: 34px 0 118px;
 
 		@include media(tablet-993) {
 			margin: 0 auto;
@@ -31,7 +31,7 @@
 	}
 
 	&__bottom {
-		margin-top: 55px;
+		margin-top: 50px;
 
 		@include media(mobile) {
 			margin-top: 37px;
