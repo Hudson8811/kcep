@@ -14,12 +14,25 @@
 			@include media(mobile) {
 				flex-basis: 100%;
 			}
+
+			@include media(400) {
+				padding-left: 17px;
+				padding-top: 19px;
+			}
 		}
 	}
 
 	&__text {
 		margin-top: 43px;
 		max-width: 760px;
+
+		@include media(mobile) {
+			margin-top: 30px;
+		}
+
+		@include media(400) {
+			max-width: 300px;
+		}
 	}
 	p {
 		font-size: 15px;
@@ -30,6 +43,11 @@
 	ol {
 		margin-left: 20px;
 		margin-top: 23px;
+
+		@include media(mobile) {
+			margin-top: 34px;
+			margin-left: 22px;
+		}
 
 		li {
 			&:not(:first-child) {
@@ -50,6 +68,7 @@
 		@include media(mobile) {
 			flex-direction: column;
 			align-items: flex-start;
+			margin-top: 69px;
 		}
 
 		&-item {
@@ -58,6 +77,14 @@
 
 			&:not(:last-child) {
 				margin-right: 57px;
+
+				@include media(mobile) {
+					margin-right: 0;
+				}
+			}
+
+			&:not(:first-child) {
+				margin-top: 32px;
 			}
 
 			&-img {
