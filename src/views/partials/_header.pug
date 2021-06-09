@@ -8,19 +8,26 @@ header.header
 			.inner-right.header__inner-right
 				nav.header__nav.active
 					ul.header__nav-list 
-						li 
+						li.header__nav-list-item
 							a(href="#") Продукция 
-						li 
+							ul.header__nav-list-sub-menu 
+								li 
+									a(href="#") Оптический кабель	
+								li 
+									a(href="#") Медножильный кабель
+								li 
+									a(href="#") Патчкорды (Оптические шнуры)
+						li.header__nav-list-item
 							a(href="#") Сервисы
-						li 
+						li.header__nav-list-item
 							a(href="#") Партнеры
-						li.active
+						li.header__nav-list-item
 							a(href="#") События
-						li 
+						li.header__nav-list-item
 							a(href="#") База знаний
-						li 
+						li.header__nav-list-item
 							a(href="#") О компании
-						li 
+						li.header__nav-list-item
 							a(href="#") Контакты
 				a(href="/").header__dropdown RUS
 					img(src="img/arrow.svg", alt="")
