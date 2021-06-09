@@ -18,7 +18,8 @@
 	}
 
 	&__text {
-		margin-top: 32px;
+		margin-top: 43px;
+		max-width: 760px;
 	}
 	p {
 		font-size: 15px;
@@ -28,11 +29,11 @@
 
 	ol {
 		margin-left: 20px;
-		margin-top: 20px;
+		margin-top: 23px;
 
 		li {
 			&:not(:first-child) {
-				margin-top: 6px;
+				margin-top: 3px;
 			}
 		}
 	}
@@ -40,7 +41,11 @@
 	&__info {
 		display: flex;
 		align-items: center;
-		margin-top: 57px;
+		margin-top: 63px;
+		font-family: $secondaryFont;
+		font-weight: bold;
+		font-size: 15px;
+		line-height: 18px;
 
 		@include media(mobile) {
 			flex-direction: column;

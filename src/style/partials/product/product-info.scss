@@ -21,7 +21,7 @@
 
 	&__tabs {
 		&-control {
-			margin-top: 84px;
+			margin-top: 99px;
 			height: 50px;
 			display: flex;
 			align-items: center;
@@ -107,6 +107,7 @@
 			&--structure {
 				position: relative;
 				align-items: flex-end;
+				max-width: 862px;
 
 				@include media(1290) {
 					align-items: center;
@@ -180,7 +181,7 @@
 					width: 0;
 
 					&:nth-child(1) {
-						left: 7.5%;
+						left: 8.9%;
 					}
 
 					&:nth-child(2) {

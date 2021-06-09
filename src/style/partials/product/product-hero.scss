@@ -18,7 +18,7 @@
 
 	&__inner {
 		align-items: flex-start;
-		padding-top: 20px;
+		padding-top: 13px;
 
 		@include media(mobile) {
 			flex-direction: column;
@@ -37,6 +37,7 @@
 			flex-direction: column;
 			height: 100%;
 			padding-bottom: 18px;
+			padding-top: 3px;
 
 			@include media(mobile) {
 				flex-basis: 100%;
@@ -47,6 +48,7 @@
 	}
 
 	&__title {
+		font-family: $secondaryFont;
 		font-weight: bold;
 		font-size: 27px;
 		line-height: 43px;
@@ -60,7 +62,7 @@
 	&__pagination {
 		display: flex;
 		padding-left: 16px;
-		margin-top: 50px;
+		margin-top: 4px;
 
 		@include media(mobile) {
 			margin-top: 0;

@@ -1,5 +1,6 @@
 .product-others {
 	color: $textDark;
+	margin-top: -17px;
 
 	&__container {
 		@include media(tablet-993) {
@@ -26,7 +27,9 @@
 	}
 
 	.section-title {
-		position: absolute;
+		@include media(tablet-993) {
+			position: absolute;
+		}
 
 		@include media(550) {
 			max-width: 300px;
@@ -37,7 +40,7 @@
 
 	&__cards {
 		display: flex;
-		margin-top: 32px;
+		margin-top: 43px;
 		list-style: none;
 		font-size: 15px;
 		line-height: 21px;

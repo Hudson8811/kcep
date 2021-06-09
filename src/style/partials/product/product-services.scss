@@ -37,7 +37,7 @@
 	&__cards {
 		display: flex;
 		list-style: none;
-		margin-top: 32px;
+		margin-top: 44px;
 
 		@include media(tablet-993) {
 			margin-top: 75px;
@@ -111,7 +111,7 @@
 		}
 
 		&-text {
-			margin-top: 13px;
+			margin-top: 15px;
 			font-weight: normal;
 			font-size: 15px;
 			line-height: 21px;
