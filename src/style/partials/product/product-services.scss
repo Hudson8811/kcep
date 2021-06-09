@@ -3,6 +3,16 @@
 	padding-top: 128px;
 	padding-bottom: 146px;
 
+	@include media(tablet-993) {
+		padding-top: 50px;
+		padding-bottom: 50px;
+	}
+
+	@include media(mobile) {
+		padding-top: 50px;
+		padding-bottom: 83px;
+	}
+
 	&__container {
 		@include media(tablet-993) {
 			width: 100%;
@@ -29,7 +39,26 @@
 			@include media(tablet-993) {
 				flex-basis: 100%;
 				overflow: scroll;
-				padding-left: 30px;
+				padding-left: 68px;
+
+				&::-webkit-scrollbar {
+					width: 0;
+					height: 3px;
+					border-radius: 2px;
+				}
+
+				&::-webkit-scrollbar-track {
+					-webkit-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
+				}
+
+				&::-webkit-scrollbar-thumb {
+					background-color: $gold;
+					border-radius: 1px;
+				}
+			}
+
+			@include media(550) {
+				padding-left: 32px;
 			}
 		}
 	}
@@ -41,6 +70,7 @@
 
 		@include media(tablet-993) {
 			margin-top: 75px;
+			padding-bottom: 10px;
 		}
 	}
 

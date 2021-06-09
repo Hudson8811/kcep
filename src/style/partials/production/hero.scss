@@ -7,6 +7,11 @@
 		height: 800px;
 	}
 
+	@include media(tablet-993) {
+		padding-top: 135px;
+		margin-top: -135px;
+	}
+
 	@include media(mobile) {
 		height: 550px;
 	}
