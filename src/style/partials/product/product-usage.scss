@@ -4,15 +4,20 @@
 
 	&__inner {
 		&-left {
-			@include media(mobile) {
+			@include media(tablet-993) {
 				flex-basis: 0;
 			}
 		}
 		&-right {
 			flex-direction: column;
 
-			@include media(mobile) {
+			@include media(tablet-993) {
 				flex-basis: 100%;
+				padding-left: 38px;
+			}
+
+			@include media(550) {
+				padding-left: 15px;
 			}
 
 			@include media(400) {
@@ -78,13 +83,18 @@
 			&:not(:last-child) {
 				margin-right: 57px;
 
+				@include media(tablet-993) {
+					margin-right: 20px;
+				}
 				@include media(mobile) {
 					margin-right: 0;
 				}
 			}
 
 			&:not(:first-child) {
-				margin-top: 32px;
+				@include media(mobile) {
+					margin-top: 32px;
+				}
 			}
 
 			&-img {
@@ -104,7 +114,7 @@
 			}
 
 			span {
-				max-width: 150px;
+				max-width: 140px;
 			}
 		}
 	}

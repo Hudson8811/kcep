@@ -68,14 +68,21 @@
 		font-size: 27px;
 		line-height: 43px;
 
-		@include media(400) {
-			max-width: 300px;
-			padding-left: 30px;
-		}
-
 		@include media(mobile) {
+			padding-left: 68px;
+			padding-right: 30px;
 			font-size: 27px;
 			line-height: 36px;
+		}
+
+		@include media(550) {
+			padding-left: 32px;
+			max-width: 430px;
+		}
+
+		@include media(400) {
+			max-width: 300px;
+			padding-right: 0;
 		}
 	}
 
@@ -84,8 +91,16 @@
 		padding-left: 16px;
 		margin-top: 4px;
 
-		@include media(400) {
+		@include media(mobile) {
+			padding-left: 68px;
+		}
+
+		@include media(550) {
 			padding-left: 32px;
+		}
+
+		@include media(400) {
+			padding-left: 28px;
 		}
 
 		@include media(mobile) {

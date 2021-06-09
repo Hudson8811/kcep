@@ -6,6 +6,8 @@
 
 	@include media(tablet-993) {
 		height: 800px;
+		padding-top: 135px;
+		margin-top: -135px;
 	}
 
 	&__container {
