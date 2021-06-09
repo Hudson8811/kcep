@@ -8,6 +8,9 @@
     &__inner{
         display: flex;
         flex-direction: column;
+        @include media(mobile-620){
+            flex-basis: 100%;
+        }
     }
     &-select{
         padding-top: 102px;
@@ -15,11 +18,16 @@
         padding-bottom: 37px;
         background: #1A1919;
         display: flex;
+        &__left{
+            @include media(mobile-620){
+                flex-basis: 0;
+            }
+        }
         &__big{
             list-style: none;
             display: flex;
             align-items: flex-end;
-            justify-content: space-between;
+            flex-wrap: wrap;
             &-item{
                 font-style: normal;
                 font-weight: normal;
@@ -27,6 +35,9 @@
                 line-height: 77px;
                 color: $white;
                 cursor: pointer;
+                &:not(:last-child){
+                    margin-right: 107px;
+                }
                 &--select{
                     font-style: normal;
                     font-weight: bold;
@@ -86,6 +97,17 @@
         }
         &__inner{
             padding-top: 111px;
+            @include media(mobile-620){
+                flex-basis: 100%;
+            }
+            @include media(mobile-457){
+                padding-top: 97px;
+            }
+        }
+        &__left{
+            @include media(mobile-620){
+                flex-basis: 0;
+            }
         }
         
     }
@@ -101,9 +123,37 @@
         &:not(:nth-child(4n+4)){
             margin-right: 12px;
         }
+        @include media(tablet-1194){
+            &:not(:nth-child(4n+4)){
+                margin-right: 0px;
+            }
+            &:not(:nth-child(3n+3)){
+                margin-right: 12px;
+            }
+        }
+        @include media(tablet-906){
+            &:not(:nth-child(3n+3)){
+                margin-right: 0px;
+            }
+            &:not(:nth-child(2n+2)){
+                margin-right: 12px;
+            }
+        }
+        @include media(mobile-457){
+            &:not(:nth-child(2n+2)){
+                margin-right: 0px;
+            }
+            max-width: 100%;
+            margin-bottom: 16px;
+        }
         &__img{
             margin-bottom: 17px;
             border-radius: 0 0 0 10px;
+            @include media(mobile-457){
+                max-height: 185px;
+                width: 100%;
+                object-fit: cover;
+            }
         }
         &__text{
             font-size: 15px;
