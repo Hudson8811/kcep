@@ -1,0 +1,98 @@
+.about-production {
+	background-color: $dark;
+	padding: 60px 0 214px;
+
+	.section-title {
+		font-size: 66px;
+		line-height: 44px;
+		color: $white;
+		max-width: 400px;
+		font-family: $secondaryFont;
+	}
+
+	&__inner {
+		&-right {
+			flex-direction: column;
+		}
+	}
+
+	&-slider {
+		width: 730px;
+		margin-top: -53px;
+
+		&-pagination {
+			display: flex;
+			align-items: center;
+			list-style: none;
+
+			&-wrapper {
+				margin-right: 22px;
+				display: flex;
+				align-items: center;
+			}
+
+			li {
+				width: 5px;
+				height: 5px;
+				background: #9b8a60;
+				opacity: 0.16;
+				border-radius: 50%;
+				cursor: pointer;
+
+				&:not(:last-child) {
+					margin-right: 3px;
+				}
+
+				&.slick-active {
+					opacity: 1;
+				}
+
+				button {
+					display: none !important;
+				}
+			}
+		}
+
+		&-control {
+			display: flex;
+			justify-content: flex-end;
+
+			svg {
+				fill: #fff;
+			}
+		}
+
+		&-slides {
+			margin-top: 42px;
+		}
+
+		&-slide {
+			display: flex !important;
+
+			img {
+				object-fit: cover;
+				height: 100%;
+				width: 100%;
+			}
+
+			&-img {
+				&--big {
+					width: 518px;
+					height: 403px;
+					margin-right: 13px;
+				}
+
+				&--right {
+					img {
+						width: 199px;
+						height: 195px;
+
+						&:nth-child(2) {
+							margin-top: 13px;
+						}
+					}
+				}
+			}
+		}
+	}
+}

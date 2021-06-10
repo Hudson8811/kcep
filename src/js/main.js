@@ -8,4 +8,5 @@
 
 //= partials/components.js
 //= partials/header.js
+//= partials/slider.js
 //= partials/main.js
