@@ -1,11 +1,8 @@
 .partners 
     .partners-select 
         .container.partners__container
-            .inner-left
-                a.partners__back(href="#") 
-                    .partners__back-arrow
-                        img.partners__back-img(src="img/arrow_back.svg", alt="")
-                    |назад
+            .inner-left.partners-select__left
+                +button-prev("product-hero__button-prev")
             .inner-right.products__inner
                 ul.partners-select__big
                     li.partners-select__big-item Партнеры
@@ -15,7 +12,7 @@
                     li.partners-select__small-item Поставщики   
     .partners-all
         .container.products__container
-            .inner-left
+            .inner-left.partners-all__left
             .inner-right.partners-all__inner
                 ul.partners-all__list
                     li.partners-all__list-item.partners-item

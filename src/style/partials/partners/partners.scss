@@ -9,33 +9,17 @@
         display: flex;
         flex-direction: column;
     }
-    &__back{
-        display: flex;
-        align-items: center;
-        font-family: $secondaryFont;
-
-        font-size: 15px;
-        line-height: 18px;
-        color: #F0F0ED;
-        &-arrow{
-            width: 55px;
-            height: 55px;
-            border-radius: 50%;
-            border: 1px solid #F0F0F5;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 8px;
-        }
-        &-img{
-
-        }
-    }
     &-select{
-        padding-top: 12px;
+        padding-top: 102px;
+        margin-top: -102px;
         padding-bottom: 37px;
         background: #1A1919;
         display: flex;
+        &__left{
+            @include media(mobile-620){
+                display: none;
+            }
+        }
         &__big{
             list-style: none;
             display: flex;
@@ -70,6 +54,7 @@
     &-all{
         padding-bottom: 175px;
         position: relative;
+        overflow: hidden;
         &::before{
             content: "";
             position: absolute;
@@ -88,6 +73,17 @@
         }
         &__inner{
             padding-top: 111px;
+            @include media(mobile-620){
+                flex-basis: 100%;
+            }
+            @include media(mobile-457){
+                padding-top: 97px;
+            }
+        }
+        &__left{
+            @include media(mobile-620){
+                flex-basis: 0;
+            }
         }
         
     }
@@ -106,8 +102,35 @@
         &:not(:nth-child(4n+4)){
             margin-right: 12px;
         }
+        @include media(tablet-1194){
+            &:not(:nth-child(4n+4)){
+                margin-right: 0px;
+            }
+            &:not(:nth-child(3n+3)){
+                margin-right: 12px;
+            }
+        }
+        @include media(tablet-906){
+            &:not(:nth-child(3n+3)){
+                margin-right: 0px;
+            }
+            &:not(:nth-child(2n+2)){
+                margin-right: 12px;
+            }
+        }
+        @include media(mobile-457){
+            &:not(:nth-child(2n+2)){
+                margin-right: 0px;
+            }
+            max-width: 100%;
+            margin-bottom: 16px;
+        }
         &__img{
             margin-bottom: 17px;
+            @include media(mobile-457){
+                max-height: 259px;
+                object-fit: cover;
+            }
         }
     }
 }
