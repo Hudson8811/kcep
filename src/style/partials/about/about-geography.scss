@@ -1,0 +1,111 @@
+.about-geography {
+	background-color: $dark;
+	padding-top: 154px;
+	padding-bottom: 60px;
+
+	&__inner {
+		height: 660px;
+		&-right {
+			position: relative;
+			flex-direction: column;
+		}
+	}
+
+	.section-title {
+		font-family: $secondaryFont;
+		font-weight: bold;
+		font-size: 66px;
+		line-height: 66px;
+	}
+
+	&__map {
+		&-point {
+			position: absolute;
+			background-color: #fff;
+			z-index: 1;
+			width: 8px;
+			height: 8px;
+			border-radius: 50%;
+			opacity: 0.35;
+			cursor: pointer;
+			transition: 0.4s;
+
+			&.active,
+			&:hover {
+				background-color: $gold;
+				opacity: 1;
+			}
+
+			&:nth-child(2) {
+				left: 230px;
+				top: 50px;
+			}
+			&:nth-child(3) {
+				left: 130px;
+				top: 50px;
+			}
+			&:nth-child(4) {
+				left: 130px;
+				top: 150px;
+			}
+			&:nth-child(5) {
+				left: 130px;
+				top: 170px;
+			}
+		}
+
+		&-wrapper {
+			position: absolute;
+			top: 126px;
+			width: 100%;
+			height: 430px;
+
+			img {
+				position: absolute;
+				height: 100%;
+				object-fit: cover;
+				z-index: 0;
+			}
+		}
+	}
+
+	&__list {
+		list-style: none;
+
+		&-wrapper {
+			position: absolute;
+			width: 330px;
+			right: -190px;
+			z-index: 5;
+		}
+
+		li {
+			&:not(:first-child) {
+				margin-top: 12px;
+			}
+			a {
+				font-family: $secondaryFont;
+				font-weight: bold;
+				font-size: 18px;
+				line-height: 44px;
+				color: #ffffff;
+				opacity: 0.64;
+				white-space: nowrap;
+
+				&:visited {
+					color: inherit;
+				}
+			}
+
+			&.active,
+			&:hover {
+				a {
+					font-size: 27px;
+					line-height: 44px;
+					color: $gold;
+					opacity: 1;
+				}
+			}
+		}
+	}
+}
