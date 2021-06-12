@@ -268,4 +268,50 @@ document.addEventListener("DOMContentLoaded", function () {
 	};
 
 	toggleInfoPopups();
+
+	const toggleMapsPoints = () => {
+		const mapList = document.querySelector(".about-geography__list");
+		const mapListItems = mapList.querySelectorAll("li");
+		const points = document.querySelectorAll(".about-geography__map-point");
+
+		mapList.addEventListener("mouseover", (event) => {
+			const target = event.target;
+
+			if (target.closest("li")) {
+				target.closest("li").classList.add("active");
+
+				mapListItems.forEach((li, index) => {
+					if (target.closest("li") === li) {
+						points[index].classList.add("active");
+					}
+				});
+			}
+		});
+
+		mapList.addEventListener("mouseout", (event) => {
+			const target = event.target;
+
+			if (target.closest("li")) {
+				target.closest("li").classList.remove("active");
+
+				mapListItems.forEach((li, index) => {
+					if (target.closest("li") === li) {
+						points[index].classList.remove("active");
+					}
+				});
+			}
+		});
+	};
+
+	function isMapPage() {
+		const mapList = document.querySelector(".about-geography__list");
+		if (mapList) {
+			return true;
+		}
+		return false;
+	}
+
+	if (isMapPage()) {
+		toggleMapsPoints();
+	}
 });

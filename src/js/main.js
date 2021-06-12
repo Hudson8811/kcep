@@ -9,4 +9,5 @@
 //= partials/components.js
 //= partials/header.js
 //= partials/slider.js
+//= partials/videoPlayer.js
 //= partials/main.js

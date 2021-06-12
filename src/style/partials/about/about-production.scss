@@ -2,23 +2,55 @@
 	background-color: $dark;
 	padding: 60px 0 214px;
 
+	@include media(tablet-993) {
+		padding: 30px 0 60px;
+	}
+
 	.section-title {
 		font-size: 66px;
 		line-height: 44px;
 		color: $white;
 		max-width: 400px;
 		font-family: $secondaryFont;
+
+		@include media(tablet-993) {
+			font-size: 45px;
+			line-height: 45px;
+		}
 	}
 
 	&__inner {
+		&-left {
+			@include media(tablet-993) {
+				flex-basis: 0;
+			}
+		}
 		&-right {
 			flex-direction: column;
+			@include media(tablet-993) {
+				flex-basis: 100%;
+				width: 100%;
+				padding-left: 38px;
+			}
+
+			@include media(550) {
+				padding-left: 17px;
+			}
 		}
 	}
 
 	&-slider {
-		width: 730px;
+		width: 100%;
+		max-width: 730px;
 		margin-top: -53px;
+
+		@include media(tablet-993) {
+			max-width: 730px;
+		}
+
+		@include media(mobile) {
+			margin-top: 30px;
+		}
 
 		&-pagination {
 			display: flex;
@@ -57,6 +89,10 @@
 			display: flex;
 			justify-content: flex-end;
 
+			@include media(mobile) {
+				justify-content: flex-start;
+			}
+
 			svg {
 				fill: #fff;
 			}
@@ -64,10 +100,16 @@
 
 		&-slides {
 			margin-top: 42px;
+
+			@include media(mobile) {
+				margin-top: 30px;
+			}
 		}
 
 		&-slide {
-			display: flex !important;
+			display: flex;
+			width: 100%;
+			max-width: 730px;
 
 			img {
 				object-fit: cover;
@@ -80,12 +122,24 @@
 					width: 518px;
 					height: 403px;
 					margin-right: 13px;
+
+					@include media(tablet-993) {
+						width: 100%;
+						max-width: 518px;
+						height: auto;
+					}
 				}
 
 				&--right {
 					img {
 						width: 199px;
 						height: 195px;
+
+						@include media(tablet-993) {
+							width: 100%;
+							max-width: 199px;
+							height: auto;
+						}
 
 						&:nth-child(2) {
 							margin-top: 13px;
