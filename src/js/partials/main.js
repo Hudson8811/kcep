@@ -314,4 +314,21 @@ document.addEventListener("DOMContentLoaded", function () {
 	if (isMapPage()) {
 		toggleMapsPoints();
 	}
+
+	const displayTime = () => {
+		const time = document.querySelectorAll(".time");
+		const date = new Date();
+
+		const hours = date.getHours();
+		const fullHours = hours < 10 ? `0${hours}` : hours;
+
+		const minutes = date.getMinutes();
+		const fullMinutes = minutes < 10 ? `0${minutes}` : minutes;
+
+		time.forEach((text) => (text.textContent = `${fullHours}:${fullMinutes}`));
+	};
+
+	displayTime();
+
+	setInterval(displayTime, 1000);
 });

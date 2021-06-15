@@ -1,0 +1,39 @@
+.contacts-time {
+	background-color: $gold;
+
+	&__inner {
+		&-left {
+		}
+		&-right {
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			min-height: 230px;
+			font-family: $secondaryFont;
+		}
+	}
+
+	&__current-time {
+		font-size: 111px;
+		line-height: 70px;
+		margin-top: 15px;
+	}
+
+	&__text {
+		font-family: $mainFont;
+		font-size: 15px;
+		line-height: 21px;
+	}
+
+	&__backdrop-time {
+		position: absolute;
+		left: 0;
+		font-size: 300px;
+		line-height: 100px;
+		opacity: 0.04;
+		top: 50%;
+		transform: translateY(-35%);
+		pointer-events: none;
+	}
+}

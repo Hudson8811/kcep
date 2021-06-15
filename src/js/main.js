@@ -11,4 +11,5 @@
 //= partials/slider.js
 //= partials/videoPlayer.js
 //= partials/accordion.js
+//= partials/map.js
 //= partials/main.js
