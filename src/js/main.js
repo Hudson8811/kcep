@@ -8,6 +8,7 @@
 
 //= partials/components.js
 //= partials/header.js
+//= partials/footer.js
 //= partials/slider.js
 //= partials/videoPlayer.js
 //= partials/accordion.js

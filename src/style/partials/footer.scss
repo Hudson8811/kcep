@@ -238,4 +238,182 @@
 			}
 		}
 	}
+
+	&-policy {
+		position: fixed;
+		left: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		width: 100%;
+		height: 100vh;
+		z-index: 1000;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		opacity: 0;
+		visibility: hidden;
+
+		@include media(600) {
+		}
+
+		&.active {
+			opacity: 1;
+			visibility: visible;
+			background-color: #000000;
+		}
+
+		&__dialog {
+			position: relative;
+
+			@include media(tablet-1200) {
+				width: 100%;
+				max-width: 830px;
+			}
+
+			@include media(tablet-993) {
+				width: 80%;
+			}
+
+			@include media(mobile) {
+				width: 75%;
+			}
+
+			@include media(600) {
+				width: 90%;
+			}
+		}
+
+		&__content {
+			width: 100%;
+			max-width: 872px;
+			background-color: #fff;
+			padding: 64px 44px 87px;
+			color: $textDark;
+			height: 97vh;
+			max-height: 922px;
+			overflow-y: auto;
+			overflow-x: hidden;
+			scrollbar-color: $gold $gold;
+			scrollbar-width: thin;
+
+			@include media(mobile) {
+				padding: 40px 30px 50px;
+			}
+
+			&::-webkit-scrollbar {
+				width: 3px;
+				border-radius: 2px;
+			}
+
+			&::-webkit-scrollbar-track {
+				-webkit-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
+				box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
+			}
+
+			&::-webkit-scrollbar-thumb {
+				background-color: $gold;
+				border-radius: 1px;
+			}
+
+			ol {
+				list-style: inside;
+				list-style-type: decimal;
+				margin-top: 55px;
+
+				@include media(mobile) {
+					margin-top: 30px;
+				}
+
+				li {
+					font-weight: bold;
+					font-size: 27px;
+					line-height: 32px;
+
+					@include media(mobile) {
+						font-size: 22px;
+					}
+
+					&:not(:first-child) {
+						margin-top: 32px;
+
+						@include media(mobile) {
+							margin-top: 25px;
+						}
+					}
+					p {
+						margin-top: 35px;
+						font-family: $mainFont;
+						font-weight: normal;
+						font-size: 15px;
+						line-height: 21px;
+
+						@include media(mobile) {
+							margin-top: 10px;
+						}
+					}
+				}
+			}
+		}
+
+		&__title {
+			font-family: $secondaryFont;
+			font-weight: bold;
+			font-size: 66px;
+			line-height: 66px;
+
+			@include media(tablet-993) {
+				font-size: 54px;
+			}
+
+			@include media(mobile) {
+				font-size: 40px;
+				line-height: 120%;
+			}
+
+			@include media(600) {
+				font-size: 24px;
+			}
+		}
+
+		&__close {
+			position: absolute;
+			right: -75px;
+			top: 0;
+			cursor: pointer;
+			width: 55px;
+			height: 55px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border-radius: 50%;
+			border: 1px solid rgba(255, 255, 255, 0.13);
+
+			@include media(600) {
+				right: 10px;
+				top: 10px;
+				width: 35px;
+				height: 35px;
+				border: 1px solid rgba(0, 0, 0, 0.16);
+			}
+
+			svg {
+				transition: 0.3s;
+
+				@include media(600) {
+					width: 18px;
+					height: 18px;
+					fill: #000000;
+				}
+			}
+
+			&:hover {
+				@media screen and (min-width: 768px) {
+					svg {
+						fill: $gold;
+					}
+				}
+			}
+		}
+	}
 }

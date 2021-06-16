@@ -30,6 +30,46 @@ $(document).ready(function () {
 		$(document.body).toggleClass("scroll-stoped");
 	});
 });
+document.addEventListener("DOMContentLoaded", function () {
+	const togglePopup = () => {
+		const policyPopup = document.getElementById("policyPopup");
+		const policyPopupBtn = document.getElementById("policyPopupBtn");
+
+		const showPopup = () => {
+			policyPopup.classList.add("active");
+			document.body.classList.add("scroll-stoped");
+		};
+
+		const hidePopup = () => {
+			policyPopup.classList.remove("active");
+			document.body.classList.remove("scroll-stoped");
+		};
+
+		policyPopupBtn.addEventListener("click", (event) => {
+			event.preventDefault();
+			showPopup();
+		});
+
+		policyPopup.addEventListener("click", (event) => {
+			const target = event.target;
+
+			if (
+				target.closest("button.footer-policy__close") ||
+				target.matches(".footer-policy")
+			) {
+				hidePopup();
+			}
+		});
+
+		document.addEventListener("keydown", (event) => {
+			if (event.key === "Escape") {
+				hidePopup();
+			}
+		});
+	};
+
+	togglePopup();
+});
 $(document).ready(function () {
 	const historySlider = $("#historySlider").slick({
 		dots: true,
