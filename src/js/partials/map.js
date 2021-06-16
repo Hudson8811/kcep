@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		const mapInit = () => {
 			const myMap = new ymaps.Map("map", {
 				center: [49.792456, 72.823896],
-				zoom: 17,
+				zoom: 16,
 				controls: [],
 			});
 
@@ -19,6 +19,16 @@ document.addEventListener("DOMContentLoaded", function () {
 			);
 
 			myMap.geoObjects.add(myPlacemark);
+
+			myMap.behaviors.disable("scrollZoom");
+
+			if (
+				/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+					navigator.userAgent
+				)
+			) {
+				myMap.behaviors.disable("drag");
+			}
 		};
 
 		const loadScript = (url, callback) => {

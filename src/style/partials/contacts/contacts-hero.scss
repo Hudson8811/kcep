@@ -6,6 +6,31 @@
 
 	@include media(tablet-993) {
 		margin-top: -135px;
+		min-height: 600px;
+	}
+
+	@include media(mobile) {
+		min-height: 0;
+		height: auto;
+	}
+
+	&__inner {
+		&-left {
+			@include media(tablet-993) {
+				flex-basis: 0;
+			}
+		}
+
+		&-right {
+			@include media(tablet-993) {
+				flex-basis: 100%;
+				padding-left: 38px;
+			}
+
+			@include media(550) {
+				padding-left: 17px;
+			}
+		}
 	}
 
 	&__info {
@@ -19,16 +44,34 @@
 		@include media(tablet-993) {
 			padding-top: 148px;
 		}
+
+		@include media(mobile) {
+			padding-top: 450px;
+			padding-bottom: 80px;
+		}
+
+		@include media(450) {
+			padding-top: 375px;
+			padding-bottom: 70px;
+		}
 	}
 
 	&__title {
 		font-weight: bold;
 		font-size: 27px;
 		line-height: 44px;
+
+		@include media(350) {
+			font-size: 24px;
+		}
 	}
 
 	&__address {
 		margin-top: 31px;
+
+		@include media(350) {
+			margin-top: 20px;
+		}
 	}
 
 	&__mail {
@@ -99,6 +142,35 @@
 		top: 0;
 		width: 49.35vw;
 		height: 687px;
+
+		@media screen and (min-width: 1500px) {
+			width: 45vw;
+		}
+
+		@include media(1350) {
+			width: 43vw;
+		}
+
+		@include media(tablet-993) {
+			width: 49.35vw;
+			height: 600px;
+		}
+
+		@include media(mobile) {
+			top: 0;
+			left: 0;
+			right: 0;
+			width: 100%;
+			height: 400px;
+		}
+
+		@include media(450) {
+			height: 350px;
+		}
+
+		// @include media(350) {
+		// 	height: 300px;
+		// }
 
 		.ymaps-2-1-78-ground-pane {
 			-webkit-filter: grayscale(100%);

@@ -2,12 +2,41 @@
 	padding-top: 129px;
 	padding-bottom: 222px;
 	color: $dark;
+
+	@include media(tablet-1200) {
+		padding-top: 80px;
+		padding-bottom: 120px;
+	}
+
+	@include media(mobile) {
+		padding-top: 50px;
+		padding-bottom: 60px;
+	}
 	&__inner {
+		&-left {
+			@include media(tablet-993) {
+				flex-basis: 0;
+			}
+		}
 		&-right {
 			flex-direction: column;
 
 			.section-title {
 				font-family: $secondaryFont;
+			}
+
+			@include media(tablet-993) {
+				padding-left: 38px;
+				flex-basis: 100%;
+			}
+
+			@include media(mobile) {
+				padding-right: 38px;
+			}
+
+			@include media(550) {
+				padding-left: 17px;
+				padding-right: 17px;
 			}
 		}
 	}
@@ -16,6 +45,11 @@
 		&-cards {
 			margin-top: 45px;
 			display: flex;
+
+			@include media(mobile) {
+				flex-wrap: wrap;
+				margin-top: 30px;
+			}
 
 			.card {
 				color: #fff;
@@ -40,11 +74,19 @@
 	&__bottom {
 		.section-title {
 			margin-top: 64px;
+
+			@include media(mobile) {
+				margin-top: 45px;
+			}
 		}
 		&-cards {
 			margin-top: 45px;
 			display: flex;
 			flex-wrap: wrap;
+
+			@include media(mobile) {
+				margin-top: 30px;
+			}
 
 			.card {
 				background-color: #fff;
@@ -65,11 +107,34 @@
 	line-height: 24px;
 	flex-shrink: 0;
 
+	@include media(tablet-993) {
+		width: 100%;
+		max-width: 430px;
+		flex-basis: 47.8%;
+	}
+
+	@include media(mobile) {
+		flex-basis: 100%;
+		max-width: 100%;
+	}
+
 	&:nth-child(odd) {
 		margin-right: 21px;
+
+		@include media(mobile) {
+			margin-right: 0;
+		}
 	}
 
 	&:nth-child(n + 3) {
+		margin-top: 12px;
+
+		@include media(mobile) {
+			margin-top: 0;
+		}
+	}
+
+	&:not(:first-child) {
 		margin-top: 12px;
 	}
 	&__header {
