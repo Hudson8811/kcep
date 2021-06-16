@@ -515,6 +515,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		const points = document.querySelectorAll(".about-geography__map-point");
 
 		mapList.addEventListener("mouseover", (event) => {
+			event.preventDefault();
 			const target = event.target;
 
 			if (target.closest("li")) {
@@ -529,6 +530,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		});
 
 		mapList.addEventListener("mouseout", (event) => {
+			event.preventDefault();
 			const target = event.target;
 
 			if (target.closest("li")) {
@@ -539,6 +541,14 @@ document.addEventListener("DOMContentLoaded", function () {
 						points[index].classList.remove("active");
 					}
 				});
+			}
+		});
+
+		mapList.addEventListener("click", (event) => {
+			const target = event.target;
+
+			if (target.matches("a")) {
+				event.preventDefault();
 			}
 		});
 	};
