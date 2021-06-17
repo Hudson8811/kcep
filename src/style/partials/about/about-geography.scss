@@ -63,10 +63,15 @@
 			cursor: pointer;
 			transition: 0.4s;
 
-			&.active,
-			&:hover {
+			&.active {
 				background-color: $gold;
 				opacity: 1;
+			}
+			&:hover {
+				@media screen and (min-width: 1025px) {
+					background-color: $gold;
+					opacity: 1;
+				}
 			}
 
 			&:nth-child(2) {
@@ -208,8 +213,7 @@
 				}
 			}
 
-			&.active,
-			&:hover {
+			&.active {
 				a {
 					font-size: 27px;
 					line-height: 44px;
@@ -218,6 +222,21 @@
 
 					@include media(400) {
 						font-size: 20px;
+					}
+				}
+			}
+
+			&:hover {
+				@media screen and (min-width: 1025px) {
+					a {
+						font-size: 27px;
+						line-height: 44px;
+						color: $gold;
+						opacity: 1;
+
+						@include media(400) {
+							font-size: 20px;
+						}
 					}
 				}
 			}

@@ -26,6 +26,7 @@
 			top: 50%;
 			transform: translateY(-62%);
 			pointer-events: none;
+			width: 100%;
 
 			@include media(450) {
 				top: 25%;

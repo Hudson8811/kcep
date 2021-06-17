@@ -97,10 +97,12 @@
 
 		@include media(550) {
 			padding-left: 32px;
+			padding-right: 32px;
 		}
 
 		@include media(400) {
 			padding-left: 28px;
+			padding-right: 28px;
 		}
 
 		@include media(mobile) {

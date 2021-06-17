@@ -107,6 +107,7 @@
 				font-weight: 300;
 				font-size: 44px;
 				line-height: 32px;
+				display: block;
 
 				@include media(tablet-993) {
 					font-size: 32px;

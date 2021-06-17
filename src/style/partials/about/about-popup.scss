@@ -22,8 +22,18 @@
 	&__dialog {
 		position: relative;
 		width: 80vw;
-		height: 80vh;
+		height: 45vw;
 		background-color: $dark;
+
+		@include media(mobile) {
+			width: 70vw;
+			height: 40vw;
+		}
+
+		@include media(550) {
+			width: 85vw;
+			height: 45vw;
+		}
 	}
 
 	&__player {
@@ -50,9 +60,16 @@
 		align-items: center;
 		justify-content: center;
 
+		@include media(550) {
+			top: -70px;
+			right: 0;
+		}
+
 		&:hover {
-			svg {
-				fill: $gold;
+			@media screen and (min-width: 1025px) {
+				svg {
+					fill: $gold;
+				}
 			}
 		}
 

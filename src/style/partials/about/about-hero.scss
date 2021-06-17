@@ -79,9 +79,11 @@
 		margin-top: 58px;
 
 		&:hover {
-			svg {
-				fill: $gold;
-				opacity: 1;
+			@media screen and (min-width: 1025px) {
+				svg {
+					fill: $gold;
+					opacity: 1;
+				}
 			}
 		}
 

@@ -177,6 +177,11 @@ html {
 			font-size: 40px;
 			line-height: 100%;
 		}
+
+		@media screen and (max-width: 370px) {
+			font-size: 35px;
+			line-height: 100%;
+		}
 	}
 
 	&--small {

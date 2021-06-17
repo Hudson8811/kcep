@@ -236,7 +236,9 @@ document.addEventListener("DOMContentLoaded", function () {
 		});
 	};
 
-	mapInitial();
+	if (document.getElementById("map")) {
+		mapInitial();
+	}
 });
 document.addEventListener("DOMContentLoaded", function () {
 	const titleTrim = (e) => {

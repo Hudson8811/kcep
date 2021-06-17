@@ -94,8 +94,10 @@
 		}
 
 		&:hover {
-			&::after {
-				width: 0;
+			@media screen and (min-width: 1025px) {
+				&::after {
+					width: 0;
+				}
 			}
 		}
 	}
@@ -124,8 +126,10 @@
 				}
 
 				&:hover {
-					&::after {
-						width: 100%;
+					@media screen and (min-width: 1025px) {
+						&::after {
+							width: 100%;
+						}
 					}
 				}
 			}

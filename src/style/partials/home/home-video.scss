@@ -7,6 +7,10 @@
 		height: 752px;
 	}
 
+	@include media(370) {
+		height: 550px;
+	}
+
 	&__inner {
 		padding-top: 121px;
 
@@ -77,6 +81,8 @@
 
 				img {
 					display: block;
+					position: absolute;
+					z-index: -1;
 				}
 			}
 

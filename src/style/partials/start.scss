@@ -15,7 +15,7 @@
 	&-body {
 		color: #1a1919;
 		display: flex;
-		height: 100%;
+		height: 100vh;
 
 		@include media(1025) {
 			flex-direction: column;
@@ -73,6 +73,10 @@
 		&__left {
 			background-color: #f8f8f8;
 
+			@include media(tablet-993) {
+				height: 50vh;
+			}
+
 			@include media(550) {
 				padding-top: 100px;
 			}
@@ -96,6 +100,10 @@
 
 		&__right {
 			background-color: #ffffff;
+
+			@include media(tablet-993) {
+				height: 50vh;
+			}
 
 			@include media(1025) {
 				padding-top: 100px;

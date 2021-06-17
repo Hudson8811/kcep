@@ -87,7 +87,8 @@
 			height: 100vh;
 			width: 375px;
 			background-color: $dark;
-			padding-top: 149px;
+			padding-top: 120px;
+			padding-bottom: 30px;
 			padding-left: 30px;
 			margin-right: 0;
 			z-index: 10;
@@ -130,7 +131,7 @@
 					color: $gold;
 				}
 
-				@media screen and (min-width: 992px) {
+				@media screen and (min-width: 1025px) {
 					&:hover {
 						color: $gold;
 					}
@@ -198,7 +199,9 @@
 					padding: 0 18px;
 
 					&:hover {
-						color: $gold;
+						@media screen and (min-width: 1025px) {
+							color: $gold;
+						}
 					}
 
 					&:first-child {

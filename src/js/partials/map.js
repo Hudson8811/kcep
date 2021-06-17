@@ -50,5 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		});
 	};
 
-	mapInitial();
+	if (document.getElementById("map")) {
+		mapInitial();
+	}
 });
