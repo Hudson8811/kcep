@@ -583,4 +583,48 @@ document.addEventListener("DOMContentLoaded", function () {
 	displayTime();
 
 	setInterval(displayTime, 1000);
+
+	const toggleCertificatesPopup = () => {
+		const certificatesPopup = document.querySelector(".certificates-popup");
+		const certificates = document.querySelector(".certificates-all__list");
+		const certificatesPopupImg = certificatesPopup.querySelector("img");
+		const certificatesPopupText = certificatesPopup.querySelector("p");
+
+		if (certificatesPopup) {
+			certificates.addEventListener("click", (event) => {
+				event.preventDefault();
+
+				let target = event.target;
+
+				target = target.closest("li");
+
+				if (target) {
+					const imgSrc = target.querySelector("img").src;
+					const text = target.querySelector(
+						".certificates-item__text"
+					).textContent;
+					certificatesPopupImg.src = imgSrc;
+
+					certificatesPopupText.textContent = text;
+
+					certificatesPopup.classList.add("active");
+					document.body.classList.add("scroll-stoped");
+				}
+			});
+
+			certificatesPopup.addEventListener("click", (event) => {
+				const target = event.target;
+
+				if (
+					target.matches(".certificates-popup") ||
+					target.closest(".certificates-popup__close")
+				) {
+					certificatesPopup.classList.remove("active");
+					document.body.classList.remove("scroll-stoped");
+				}
+			});
+		}
+	};
+
+	toggleCertificatesPopup();
 });

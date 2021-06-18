@@ -4,8 +4,7 @@
             .inner-left.certificates-select__left
                 +button-prev("product-hero__button-prev")
             .inner-right.products__inner
-                ul.certificates-select__big
-                    li.certificates-select__big-item Сертификаты
+                h1.title.certificates-select__title Сертификаты
                 ul.certificates-select__small
                     li.certificates-select__small-item.certificates-select__small-item--select Сертификаты ISO
                     li.certificates-select__small-item Сертификаты происхождения
@@ -50,3 +49,12 @@
                         a.certificates-item__link(href="#") 
                             img.certificates-item__img(src="img/certificates/1.png", alt="")
                             .certificates-item__text KCEP на международной
+    .certificates-popup
+        .certificates-popup__dialog
+            img(src="img/certificates/1.png", alt="")
+            
+            p тест
+            button.certificates-popup__close
+                <svg class="about-popup__close-icon">
+                    <use xlink:href="img/sprite.svg#close"></use>
+                </svg>
