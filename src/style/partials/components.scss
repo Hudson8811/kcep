@@ -5,6 +5,20 @@
 	padding: 10px 22px;
 	background-color: $gold;
 	transition: 0.4s;
+	color: #ffffff !important;
+	text-decoration: none !important;
+	font-style: normal !important;
+	white-space: nowrap;
+
+	&--big {
+		text-transform: uppercase;
+		margin-left: 50%;
+		transform: translateX(-50%);
+	}
+
+	&::after {
+		display: none;
+	}
 
 	@media screen and (max-width: 767px) {
 		font-size: 14px;
