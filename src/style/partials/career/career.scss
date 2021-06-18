@@ -6,56 +6,134 @@
 		padding-top: 102px;
 		margin-top: -102px;
 		min-height: 601px;
+
+		@include media(mobile) {
+			padding-top: 135px;
+			margin-top: -135px;
+			min-height: 550px;
+			padding-bottom: 50px;
+		}
+
+		&__inner {
+			padding-top: 12px;
+		}
+
+		&__left {
+			align-items: flex-start;
+			padding-left: 39px;
+
+			@include media(mobile) {
+				flex-basis: 0;
+				display: none;
+			}
+		}
 		&__right {
 			display: flex;
 			flex-direction: column;
+			justify-content: flex-start;
+			padding-top: 5px;
+
+			@include media(mobile) {
+				flex-basis: 100%;
+				padding-left: 39px;
+			}
+
+			@include media(550) {
+				padding-left: 17px;
+			}
 		}
 		&__title {
+			font-family: $secondaryFont;
 			font-weight: bold;
 			font-size: 27px;
 			line-height: 44px;
 		}
 		&__text {
-			margin-top: 32px;
+			margin-top: 21px;
 			font-size: 15px;
 			line-height: 21px;
+			max-width: 720px;
+
+			&:nth-child(2) {
+				margin-top: 30px;
+			}
 		}
 	}
 	&-info {
 		padding-top: 37px;
+		&__left {
+			@include media(mobile) {
+				display: none;
+				flex-basis: 0;
+			}
+		}
 		&__right {
 			display: flex;
 			flex-direction: column;
+
+			@include media(mobile) {
+				flex-basis: 100%;
+				padding-left: 39px;
+			}
+
+			@include media(550) {
+				padding-left: 17px;
+			}
 		}
 		&__title {
+			font-family: $secondaryFont;
 			font-weight: bold;
 			font-size: 27px;
 			line-height: 32px;
 			color: $dark;
+
+			&:not(:first-child) {
+				margin-top: 32px;
+			}
 		}
 		&__text {
 			font-size: 15px;
 			line-height: 21px;
 			color: $dark;
-			margin-top: 35px;
-			margin-bottom: 47px;
+			margin-top: 32px;
+			max-width: 720px;
 		}
 	}
 	&-more {
 		display: flex;
 		flex-wrap: wrap;
 		padding-bottom: 107px;
+		margin-top: 44px;
+
+		@include media(mobile) {
+			margin-top: 10px;
+			padding-bottom: 50px;
+		}
 
 		&__item {
 			display: flex;
 			align-items: center;
-			flex-basis: 49%;
+			flex-basis: 41%;
 			margin-top: 32px;
+
+			@include media(tablet-1200) {
+				&:nth-child(odd) {
+					margin-right: 20px;
+				}
+			}
+
+			@include media(550) {
+				flex-basis: 100%;
+				&:nth-child(odd) {
+					margin-right: 0;
+				}
+			}
 		}
 		&__img {
 			margin-right: 32px;
 		}
 		&__text {
+			font-family: $secondaryFont;
 			font-weight: bold;
 			font-size: 15px;
 			line-height: 18px;
@@ -66,10 +144,17 @@
 		background: $dark;
 		padding-top: 64px;
 		padding-bottom: 96px;
+
+		&__left {
+			@include media(mobile) {
+				flex-basis: 0;
+			}
+		}
 		&__right {
 			display: flex;
 			flex-direction: column;
 			position: relative;
+			max-width: 720px;
 			&::after {
 				content: "";
 				background: url(../img/career/hh-bg.png);
@@ -80,12 +165,22 @@
 				width: 381px;
 				height: 273px;
 			}
+
+			@include media(mobile) {
+				flex-basis: 100%;
+				padding-left: 39px;
+			}
+
+			@include media(550) {
+				padding-left: 17px;
+			}
 		}
 		&__img {
 			width: 64px;
 			height: 64px;
 		}
 		&__title {
+			font-family: $secondaryFont;
 			margin-top: 32px;
 			font-weight: bold;
 			font-size: 27px;
