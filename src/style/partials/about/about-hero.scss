@@ -3,6 +3,17 @@
 	min-height: 690px;
 	position: relative;
 
+	@include media(tablet-993) {
+		margin-top: -135px;
+		min-height: 600px;
+	}
+
+	h1 {
+		@include media(tablet-993) {
+			max-width: 550px;
+		}
+	}
+
 	&__bg {
 		position: absolute;
 		left: 0;
@@ -39,12 +50,24 @@
 
 	&__inner {
 		&-left {
+			@include media(tablet-993) {
+				flex-basis: 0;
+			}
 		}
 
 		&-right {
 			margin-top: 199px;
 			display: flex;
 			flex-direction: column;
+
+			@include media(tablet-993) {
+				flex-basis: 100%;
+				padding-left: 38px;
+			}
+
+			@include media(550) {
+				padding-left: 17px;
+			}
 		}
 	}
 
@@ -56,9 +79,11 @@
 		margin-top: 58px;
 
 		&:hover {
-			svg {
-				fill: $gold;
-				opacity: 1;
+			@media screen and (min-width: 1025px) {
+				svg {
+					fill: $gold;
+					opacity: 1;
+				}
 			}
 		}
 

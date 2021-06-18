@@ -1,0 +1,33 @@
+.knowledge-hero {
+	padding-top: 105px;
+	padding-bottom: 24px;
+	margin-top: -105px;
+	background-color: $dark;
+	font-family: $secondaryFont;
+	font-weight: bold;
+	font-size: 27px;
+	line-height: 77px;
+
+	@include media(tablet-993) {
+		padding-top: 135px;
+		margin-top: -135px;
+	}
+	&__inner {
+		&-left {
+			@include media(tablet-993) {
+				flex-basis: 0;
+			}
+		}
+
+		&-right {
+			@include media(tablet-993) {
+				flex-basis: 100%;
+				padding-left: 38px;
+			}
+
+			@include media(550) {
+				padding-left: 17px;
+			}
+		}
+	}
+}

@@ -12,7 +12,9 @@
 	}
 
 	&:hover {
-		background-color: #847348;
+		@media screen and (min-width: 1025px) {
+			background-color: #847348;
+		}
 	}
 
 	&-prev {
@@ -25,10 +27,12 @@
 		font-family: $secondaryFont;
 
 		&:hover {
-			color: $gold;
+			@media screen and (min-width: 1025px) {
+				color: $gold;
 
-			svg {
-				fill: $gold;
+				svg {
+					fill: $gold;
+				}
 			}
 		}
 

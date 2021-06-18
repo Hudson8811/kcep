@@ -118,8 +118,10 @@
 		}
 
 		&:hover {
-			svg {
-				fill: $gold;
+			@media screen and (min-width: 1025px) {
+				svg {
+					fill: $gold;
+				}
 			}
 		}
 

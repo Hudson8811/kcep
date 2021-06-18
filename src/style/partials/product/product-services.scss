@@ -130,8 +130,10 @@
 			}
 
 			&:hover {
-				span {
-					text-decoration: underline;
+				@media screen and (min-width: 1025px) {
+					span {
+						text-decoration: underline;
+					}
 				}
 			}
 		}

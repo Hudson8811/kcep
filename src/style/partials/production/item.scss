@@ -1,5 +1,5 @@
 .production-item {
-	min-height: 900px;
+	min-height: 895px;
 
 	@include media(tablet-1200) {
 		min-height: 630px;
@@ -18,11 +18,13 @@
 	}
 
 	&__title {
+		font-family: $secondaryFont;
 		font-weight: bold;
 		font-size: 75px;
 		line-height: 77px;
 		color: $dark;
 		margin-top: 151px;
+		max-width: 600px;
 
 		@include media(tablet-1200) {
 			font-size: 55px;
@@ -57,18 +59,23 @@
 
 			@include media(mobile) {
 				flex-basis: 100%;
+				padding-left: 35px;
+			}
+
+			@include media(550) {
+				padding-left: 15px;
 			}
 
 			img {
-				max-width: 700px;
-				margin-top: 90px;
+				max-width: 679px;
+				margin-top: 82px;
 
 				@include media(tablet-1200) {
 					max-width: 500px;
 				}
 
 				@include media(mobile) {
-					max-width: 375px;
+					max-width: 360px;
 					margin-top: 70px;
 				}
 
@@ -80,7 +87,7 @@
 	}
 
 	&__button {
-		margin-top: 140px;
+		margin-top: 151px;
 
 		@include media(tablet-1200) {
 			margin-top: 100px;

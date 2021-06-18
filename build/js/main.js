@@ -30,6 +30,46 @@ $(document).ready(function () {
 		$(document.body).toggleClass("scroll-stoped");
 	});
 });
+document.addEventListener("DOMContentLoaded", function () {
+	const togglePopup = () => {
+		const policyPopup = document.getElementById("policyPopup");
+		const policyPopupBtn = document.getElementById("policyPopupBtn");
+
+		const showPopup = () => {
+			policyPopup.classList.add("active");
+			document.body.classList.add("scroll-stoped");
+		};
+
+		const hidePopup = () => {
+			policyPopup.classList.remove("active");
+			document.body.classList.remove("scroll-stoped");
+		};
+
+		policyPopupBtn.addEventListener("click", (event) => {
+			event.preventDefault();
+			showPopup();
+		});
+
+		policyPopup.addEventListener("click", (event) => {
+			const target = event.target;
+
+			if (
+				target.closest("button.footer-policy__close") ||
+				target.matches(".footer-policy")
+			) {
+				hidePopup();
+			}
+		});
+
+		document.addEventListener("keydown", (event) => {
+			if (event.key === "Escape") {
+				hidePopup();
+			}
+		});
+	};
+
+	togglePopup();
+});
 $(document).ready(function () {
 	const historySlider = $("#historySlider").slick({
 		dots: true,
@@ -52,6 +92,153 @@ $(document).ready(function () {
 		appendDots: ".about-production-slider-pagination-wrapper",
 		dotsClass: "slider-pagination",
 	});
+});
+document.addEventListener("DOMContentLoaded", function () {
+	const toggleVideoPopup = () => {
+		const videoPlayer = document.querySelector(".about-popup__player");
+		const playBtn = document.querySelector(".about-hero__button");
+		const popup = document.querySelector(".about-popup");
+
+		const appendVideo = () => {
+			if (popup.classList.contains("video-appended")) {
+				return;
+			}
+
+			const URL = videoPlayer.dataset.link;
+			const video = `<iframe src="${URL}?enablejsapi=1&version=3&playerapiid=ytplayer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+
+			videoPlayer.innerHTML = video;
+			popup.classList.add("video-appended");
+		};
+
+		playBtn.addEventListener("click", (e) => {
+			e.preventDefault();
+			popup.classList.add("active");
+			appendVideo();
+		});
+
+		popup.addEventListener("click", (event) => {
+			const target = event.target;
+
+			if (
+				target.closest(".about-popup__close") ||
+				target.matches(".about-popup")
+			) {
+				popup.classList.remove("active");
+				videoPlayer
+					.querySelector("iframe")
+					.contentWindow.postMessage(
+						'{"event":"command","func":"' + "pauseVideo" + '","args":""}',
+						"*"
+					);
+			}
+		});
+
+		document.addEventListener("keydown", (event) => {
+			if (event.key === "Escape" && popup.classList.contains("active")) {
+				popup.classList.remove("active");
+			}
+		});
+	};
+
+	function isVideoPlayerPage() {
+		const videoPlayer = document.querySelector(".about-popup__player");
+
+		if (videoPlayer) {
+			return true;
+		}
+
+		return false;
+	}
+
+	if (isVideoPlayerPage()) {
+		toggleVideoPopup();
+	}
+});
+document.addEventListener("DOMContentLoaded", function () {
+	const toggleCurrentItem = (item) => {
+		const accordionText = item.querySelector("ul");
+
+		item.classList.toggle("accordion-item--active");
+
+		item.style.maxHeight = item.classList.contains("accordion-item--active")
+			? accordionText.scrollHeight + 140 + "px"
+			: null;
+	};
+
+	const toggleAccordion = () => {
+		const accordion = document.querySelectorAll(".accordion");
+
+		accordion.forEach((item) => {
+			item.addEventListener("click", (event) => {
+				let target = event.target;
+
+				target = target.closest(".accordion-item");
+
+				if (target) {
+					toggleCurrentItem(target);
+				}
+			});
+		});
+	};
+
+	toggleAccordion();
+});
+document.addEventListener("DOMContentLoaded", function () {
+	const mapInitial = () => {
+		const mapInit = () => {
+			const myMap = new ymaps.Map("map", {
+				center: [49.792456, 72.823896],
+				zoom: 16,
+				controls: [],
+			});
+
+			const myPlacemark = new ymaps.Placemark(
+				myMap.getCenter(),
+				{},
+				{
+					iconLayout: "default#image",
+					iconImageHref: "./img/placemark.svg",
+					iconImageSize: [39, 54],
+					iconImageOffset: [-19, -56],
+				}
+			);
+
+			myMap.geoObjects.add(myPlacemark);
+
+			myMap.behaviors.disable("scrollZoom");
+
+			if (
+				/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+					navigator.userAgent
+				)
+			) {
+				myMap.behaviors.disable("drag");
+			}
+		};
+
+		const loadScript = (url, callback) => {
+			const script = document.createElement("script");
+
+			script.src = url;
+			document.head.append(script);
+
+			script.onload = () => {
+				callback();
+			};
+		};
+
+		const API_KEY = "5c3915e7-87f9-4735-baab-356540a1a337";
+		const URL = `https://api-maps.yandex.ru/2.1/?apikey=${API_KEY}&lang=ru_RU`;
+
+		loadScript(URL, () => {
+			ymaps.load(mapInit);
+		});
+	};
+
+	if (document.getElementById("map")) {
+		mapInitial();
+	}
 });
 document.addEventListener("DOMContentLoaded", function () {
 	const titleTrim = (e) => {
@@ -323,4 +510,77 @@ document.addEventListener("DOMContentLoaded", function () {
 	};
 
 	toggleInfoPopups();
+
+	const toggleMapsPoints = () => {
+		const mapList = document.querySelector(".about-geography__list");
+		const mapListItems = mapList.querySelectorAll("li");
+		const points = document.querySelectorAll(".about-geography__map-point");
+
+		mapList.addEventListener("mouseover", (event) => {
+			event.preventDefault();
+			const target = event.target;
+
+			if (target.closest("li")) {
+				target.closest("li").classList.add("active");
+
+				mapListItems.forEach((li, index) => {
+					if (target.closest("li") === li) {
+						points[index].classList.add("active");
+					}
+				});
+			}
+		});
+
+		mapList.addEventListener("mouseout", (event) => {
+			event.preventDefault();
+			const target = event.target;
+
+			if (target.closest("li")) {
+				target.closest("li").classList.remove("active");
+
+				mapListItems.forEach((li, index) => {
+					if (target.closest("li") === li) {
+						points[index].classList.remove("active");
+					}
+				});
+			}
+		});
+
+		mapList.addEventListener("click", (event) => {
+			const target = event.target;
+
+			if (target.matches("a")) {
+				event.preventDefault();
+			}
+		});
+	};
+
+	function isMapPage() {
+		const mapList = document.querySelector(".about-geography__list");
+		if (mapList) {
+			return true;
+		}
+		return false;
+	}
+
+	if (isMapPage()) {
+		toggleMapsPoints();
+	}
+
+	const displayTime = () => {
+		const time = document.querySelectorAll(".time");
+		const date = new Date();
+
+		const hours = date.getHours();
+		const fullHours = hours < 10 ? `0${hours}` : hours;
+
+		const minutes = date.getMinutes();
+		const fullMinutes = minutes < 10 ? `0${minutes}` : minutes;
+
+		time.forEach((text) => (text.textContent = `${fullHours}:${fullMinutes}`));
+	};
+
+	displayTime();
+
+	setInterval(displayTime, 1000);
 });

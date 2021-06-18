@@ -10,6 +10,10 @@
 		margin-top: -135px;
 	}
 
+	@include media(370) {
+		height: 735px;
+	}
+
 	&__container {
 		height: 100%;
 	}
@@ -19,7 +23,11 @@
 		height: 100%;
 
 		@include media(tablet-993) {
-			padding-top: 150px;
+			padding-top: 80px;
+		}
+
+		@include media(370) {
+			padding-top: 35px;
 		}
 
 		&-right {
@@ -94,10 +102,19 @@
 				line-height: 32px;
 				max-width: 225px;
 
+				@include media(370) {
+					font-size: 14px;
+					line-height: 28px;
+				}
+
 				&:first-child {
 					font-weight: 300;
 					font-size: 44px;
 					line-height: 32px;
+
+					@include media(370) {
+						font-size: 40px;
+					}
 				}
 			}
 		}
@@ -112,6 +129,10 @@
 
 		@include media(mobile) {
 			align-items: center;
+		}
+
+		@include media(550) {
+			padding-right: 17px;
 		}
 
 		&-left {
@@ -147,7 +168,9 @@
 			transition: 0.4s;
 
 			&:hover {
-				box-shadow: 0 0px 10px 10px $gold;
+				@media screen and (min-width: 1025px) {
+					box-shadow: 0 0px 10px 10px $gold;
+				}
 			}
 
 			&::after {
@@ -184,6 +207,14 @@
 			rgba(26, 25, 25, 0.46),
 			rgba(26, 25, 25, 0.46)
 		);
+
+		@include media(tablet-993) {
+			height: 800px;
+		}
+
+		@include media(370) {
+			height: 735px;
+		}
 
 		img {
 			height: 100%;
