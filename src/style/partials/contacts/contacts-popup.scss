@@ -1,0 +1,41 @@
+.contacts-popup {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.8);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	opacity: 0;
+	visibility: hidden;
+
+	&.active {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	&__map {
+		width: 100%;
+		height: 100%;
+
+		.ymaps-2-1-78-ground-pane {
+			-webkit-filter: grayscale(100%);
+
+			filter: grayscale(100%) invert(90%);
+		}
+		.ymaps-2-1-78-copyrights-pane {
+			-webkit-filter: grayscale(100%);
+			filter: grayscale(100%);
+		}
+
+		&-wrapper {
+			width: 50vw;
+			height: 50vw;
+			background-color: $dark;
+		}
+	}
+}
