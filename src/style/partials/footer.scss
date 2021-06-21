@@ -15,7 +15,6 @@
 
 		@include media(tablet-993) {
 			margin: 0 auto;
-			padding: 62px 30px 43px;
 		}
 
 		@media screen and (min-width: 1500px) {
@@ -24,6 +23,7 @@
 
 		@media screen and (max-width: 1350px) {
 			margin: 0 auto;
+			padding: 62px 30px 43px;
 		}
 
 		@media screen and (max-width: 550px) {

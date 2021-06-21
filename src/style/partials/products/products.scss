@@ -43,6 +43,15 @@
 				line-height: 77px;
 				color: $white;
 				cursor: pointer;
+
+				@include media(tablet-993) {
+					line-height: 60px;
+				}
+
+				@include media(mobile) {
+					line-height: 46px;
+				}
+
 				&:not(:last-child) {
 					margin-right: 107px;
 				}
@@ -52,6 +61,16 @@
 					font-size: 27px;
 					line-height: 77px;
 					position: relative;
+
+					@include media(tablet-993) {
+						font-size: 24px;
+						line-height: 60px;
+					}
+
+					@include media(mobile) {
+						font-size: 20px;
+						line-height: 34px;
+					}
 					&::after {
 						position: absolute;
 						bottom: 0;
@@ -69,18 +88,6 @@
 			display: flex;
 			flex-wrap: wrap;
 			margin-top: 16px;
-			&-item {
-				padding: 10px 20px;
-				background: $dark;
-				border-radius: 1000px;
-				color: $white;
-				margin-right: 8px;
-				margin-bottom: 11px;
-				cursor: pointer;
-				&--select {
-					background: $gold;
-				}
-			}
 		}
 	}
 	&-all {

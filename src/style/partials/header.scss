@@ -47,7 +47,6 @@
 		z-index: 15;
 		padding: 23px 0 23px 0;
 		align-items: center;
-		// z-index: 104;
 
 		@include media(550) {
 			padding: 23px 0 23px 0;
@@ -126,6 +125,7 @@
 			&-item {
 				color: inherit;
 				position: relative;
+				transition: 0.4s;
 
 				&.active {
 					color: $gold;
@@ -197,6 +197,7 @@
 
 				li {
 					padding: 0 18px;
+					transition: 0.4s;
 
 					&:hover {
 						@media screen and (min-width: 1025px) {

@@ -17,6 +17,11 @@
 		padding-bottom: 26px;
 		background: #1a1919;
 		display: flex;
+
+		@include media(tablet-993) {
+			padding-top: 135px;
+			margin-top: -135px;
+		}
 		&__title {
 			font-weight: bold;
 			font-size: 27px;
@@ -41,28 +46,20 @@
 			display: flex;
 			flex-wrap: wrap;
 			margin-top: 19px;
-
-			&-item {
-				padding: 10px 19px;
-				background: $dark;
-				border-radius: 1000px;
-				color: $white;
-				margin-right: 8px;
-				margin-bottom: 11px;
-				font-weight: 500;
-				font-size: 12px;
-				line-height: 14px;
-				cursor: pointer;
-				&--select {
-					background: $gold;
-				}
-			}
 		}
 	}
 	&-all {
 		padding-bottom: 175px;
 		position: relative;
 		overflow: hidden;
+
+		@include media(tablet-1200) {
+			padding-bottom: 100px;
+		}
+
+		@include media(tablet-993) {
+			padding-bottom: 90px;
+		}
 
 		&::before {
 			content: "";
@@ -125,6 +122,8 @@
 
 		@include media(470) {
 			max-width: 100%;
+			max-height: none;
+			height: auto;
 			margin-right: 0;
 		}
 

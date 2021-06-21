@@ -569,12 +569,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
 	const displayTime = () => {
 		const time = document.querySelectorAll(".time");
-		const date = new Date();
+		const timeZone = 6;
+		const date = new Date(
+			new Date().getTime() + timeZone * 3600 * 1000
+		).toUTCString();
 
-		const hours = date.getHours();
+		const regExp = /\d\d:\d\d/g;
+		const timeRaw = date.match(regExp);
+		const timeArr = timeRaw[0].split(":");
+
+		const hours = timeArr[0];
 		const fullHours = hours < 10 ? `0${hours}` : hours;
 
-		const minutes = date.getMinutes();
+		const minutes = timeArr[1];
 		const fullMinutes = minutes < 10 ? `0${minutes}` : minutes;
 
 		time.forEach((text) => (text.textContent = `${fullHours}:${fullMinutes}`));
@@ -626,5 +633,16 @@ document.addEventListener("DOMContentLoaded", function () {
 		}
 	};
 
-	toggleCertificatesPopup();
+	const isCertificatesPage = () => {
+		const certificatesPopup = document.querySelector(".certificates-popup");
+
+		if (certificatesPopup) {
+			return true;
+		}
+		return false;
+	};
+
+	if (isCertificatesPage()) {
+		toggleCertificatesPopup();
+	}
 });

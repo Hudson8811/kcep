@@ -81,3 +81,27 @@
 		}
 	}
 }
+
+.tag {
+	padding: 10px 19px;
+	background: #262525;
+	border-radius: 1000px;
+	color: $white;
+	margin-right: 8px;
+	margin-bottom: 11px;
+	font-weight: 500;
+	font-size: 12px;
+	line-height: 14px;
+	cursor: pointer;
+	transition: 0.4s;
+
+	&--selected {
+		background: $gold;
+	}
+
+	&:hover {
+		@media screen and (min-width: 1025px) {
+			background-color: $gold;
+		}
+	}
+}
