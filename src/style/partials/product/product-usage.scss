@@ -40,9 +40,14 @@
 		}
 	}
 	p {
-		font-size: 15px;
-		line-height: 21px;
+		font-size: 18px;
+		line-height: 24px;
 		color: inherit;
+
+		@include media(mobile) {
+			font-size: 16px;
+			line-height: 21px;
+		}
 	}
 
 	ol {
@@ -55,6 +60,13 @@
 		}
 
 		li {
+			font-size: 18px;
+			line-height: 24px;
+
+			@include media(mobile) {
+				font-size: 16px;
+				line-height: 21px;
+			}
 			&:not(:first-child) {
 				margin-top: 3px;
 			}

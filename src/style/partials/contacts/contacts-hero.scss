@@ -58,8 +58,16 @@
 
 	&__title {
 		font-weight: bold;
-		font-size: 27px;
+		font-size: 35px;
 		line-height: 44px;
+
+		@include media(tablet-1200) {
+			max-width: 300px;
+		}
+
+		@include media(mobile) {
+			max-width: 100%;
+		}
 
 		@include media(350) {
 			font-size: 24px;
@@ -144,11 +152,11 @@
 		position: absolute;
 		right: 0;
 		top: 0;
-		width: 49.35vw;
+		width: 45vw;
 		height: 687px;
 
 		@media screen and (min-width: 1500px) {
-			width: 45vw;
+			width: 40vw;
 		}
 
 		@include media(1350) {

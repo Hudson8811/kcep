@@ -1,5 +1,6 @@
 .production-item {
 	min-height: 895px;
+	background-color: $dark;
 
 	@include media(tablet-1200) {
 		min-height: 630px;
@@ -13,16 +14,12 @@
 		min-height: 380px;
 	}
 
-	&:nth-child(even) {
-		background-color: #fff;
-	}
-
 	&__title {
 		font-family: $secondaryFont;
 		font-weight: bold;
 		font-size: 75px;
 		line-height: 77px;
-		color: $dark;
+		color: #ffffff;
 		margin-top: 151px;
 		max-width: 600px;
 
