@@ -308,6 +308,21 @@
 				font-size: 18px;
 				line-height: 43px;
 				tr {
+					cursor: pointer;
+
+					td {
+						transition: 0.3s;
+					}
+
+					&:hover {
+						@media screen and (min-width: 1025px) {
+							td {
+
+								background-color: #f5f5f5;
+							}
+						}
+					}
+
 					&:first-child {
 						margin-top: -6px;
 					}

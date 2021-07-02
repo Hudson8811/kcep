@@ -43,17 +43,6 @@
 		padding-bottom: 175px;
 		position: relative;
 		overflow: hidden;
-		&::before {
-			content: "";
-			position: absolute;
-			background: url("../img/products/logo.png");
-			background-repeat: no-repeat;
-			width: 1162px;
-			height: 256px;
-			top: 32px;
-			left: 33%;
-			z-index: 0;
-		}
 		&__list {
 			display: flex;
 			flex-wrap: wrap;
@@ -113,7 +102,10 @@
 			margin-bottom: 16px;
 		}
 		&__img {
-			margin-bottom: 17px;
+
+			height: 100%;
+			object-fit: contain;
+
 			@include media(mobile-457) {
 				max-height: 259px;
 				object-fit: cover;

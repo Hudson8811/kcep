@@ -263,9 +263,7 @@
 		align-items: center;
 		opacity: 0;
 		visibility: hidden;
-
-		@include media(600) {
-		}
+		transition: 0.3s;
 
 		&.active {
 			opacity: 1;

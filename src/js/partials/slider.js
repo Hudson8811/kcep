@@ -20,4 +20,21 @@ $(document).ready(function () {
 		appendDots: ".about-production-slider-pagination-wrapper",
 		dotsClass: "slider-pagination",
 	});
+
+	const productSliderInit = () => {
+		const productSlider = $("#productSlider").slick({
+			slidesToShow: 1,
+			arrows: false,
+			autoplay: true,
+			autoplaySpeed: 3000,
+			dots: true,
+			dotsClass: 'product-hero__pagination',
+			customPaging: function(slick,index) {
+				var targetImage = slick.$slides.eq(index).find('img').attr('src');
+				return '<img src=" ' + targetImage + ' "/><div class="timeline"></div>';
+			}
+		})
+	}
+
+	productSliderInit();
 });

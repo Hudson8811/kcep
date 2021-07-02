@@ -1,5 +1,5 @@
 .certificates 
-    .certificates-select 
+    .certificates-select.sticky-offset 
         .container.certificates__container
             .inner-left.certificates-select__left
                 +button-prev("product-hero__button-prev")
@@ -13,48 +13,40 @@
                     li.tag.certificates-select__small-item демо-фильтр         
                     li.tag.certificates-select__small-item демо-фильтр         
     .certificates-all
+        .sticky-bg
         .container.products__container
             .inner-left.certificates-all__left
             .inner-right.certificates-all__inner
-                ul.certificates-all__list
+                ul.certificates-all__list.images-for-zoom
                     li.certificates-all__list-item.certificates-item
                         a.certificates-item__link(href="#") 
-                            img.certificates-item__img(src="img/certificates/1.jpeg", alt="")
-                            .certificates-item__text KCEP на международной
+                            img.certificates-item__img(src="img/certificates/1.jpg", alt="")
+                            p.certificates-item__text KCEP на международной
                     li.certificates-all__list-item.certificates-item
                         a.certificates-item__link(href="#") 
-                            img.certificates-item__img(src="img/certificates/1.jpeg", alt="")
-                            .certificates-item__text KCEP на международной
+                            img.certificates-item__img(src="img/certificates/1.jpg", alt="")
+                            p.certificates-item__text KCEP на международной
                     li.certificates-all__list-item.certificates-item
                         a.certificates-item__link(href="#") 
-                            img.certificates-item__img(src="img/certificates/1.jpeg", alt="")
-                            .certificates-item__text KCEP на международной
+                            img.certificates-item__img(src="img/certificates/1.jpg", alt="")
+                            p.certificates-item__text KCEP на международной
                     li.certificates-all__list-item.certificates-item
                         a.certificates-item__link(href="#") 
-                            img.certificates-item__img(src="img/certificates/1.jpeg", alt="")
-                            .certificates-item__text KCEP на международной
+                            img.certificates-item__img(src="img/certificates/1.jpg", alt="")
+                            p.certificates-item__text KCEP на международной
                     li.certificates-all__list-item.certificates-item
                         a.certificates-item__link(href="#") 
-                            img.certificates-item__img(src="img/certificates/1.jpeg", alt="")
-                            .certificates-item__text KCEP на международной
+                            img.certificates-item__img(src="img/certificates/1.jpg", alt="")
+                            p.certificates-item__text KCEP на международной
                     li.certificates-all__list-item.certificates-item
                         a.certificates-item__link(href="#") 
-                            img.certificates-item__img(src="img/certificates/1.jpeg", alt="")
-                            .certificates-item__text KCEP на международной
+                            img.certificates-item__img(src="img/certificates/1.jpg", alt="")
+                            p.certificates-item__text KCEP на международной
                     li.certificates-all__list-item.certificates-item
                         a.certificates-item__link(href="#") 
-                            img.certificates-item__img(src="img/certificates/1.jpeg", alt="")
-                            .certificates-item__text KCEP на международной
+                            img.certificates-item__img(src="img/certificates/1.jpg", alt="")
+                            p.certificates-item__text KCEP на международной
                     li.certificates-all__list-item.certificates-item
                         a.certificates-item__link(href="#") 
-                            img.certificates-item__img(src="img/certificates/1.jpeg", alt="")
-                            .certificates-item__text KCEP на международной
-    .certificates-popup
-        .certificates-popup__dialog
-            img(src="img/certificates/1.jpeg", alt="")
-            +button-prev("certificates-popup__button-prev")
-            p тест
-            button.certificates-popup__close
-                <svg class="about-popup__close-icon">
-                    <use xlink:href="img/sprite.svg#close"></use>
-                </svg>
+                            img.certificates-item__img(src="img/certificates/1.jpg", alt="")
+                            p.certificates-item__text KCEP на международной

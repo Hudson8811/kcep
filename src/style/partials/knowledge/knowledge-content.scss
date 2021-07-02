@@ -81,13 +81,11 @@
 			&-item {
 				color: $textDark;
 				width: 100%;
-				padding: 23px 32px;
 				border-bottom-left-radius: 12px;
 				max-height: 100px;
 				background-color: #fff;
 				overflow: hidden;
 				transition: 0.3s;
-				cursor: pointer;
 
 				@include media(mobile) {
 					padding: 10px 13px;
@@ -113,6 +111,8 @@
 					display: flex;
 					justify-content: space-between;
 					align-items: center;
+					padding: 24px 32px 26px;
+					cursor: pointer;
 
 					@include media(mobile) {
 						padding-bottom: 13px;
@@ -215,8 +215,7 @@
 				ul {
 					list-style: none;
 					width: 100%;
-					padding-top: 32px;
-					padding-bottom: 10px;
+					padding: 32px;
 					color: #fff;
 
 					li {
@@ -224,9 +223,35 @@
 						line-height: 32px;
 						text-decoration: none;
 						display: flex;
+
 						&::before {
 							content: "-";
 							margin-right: 5px;
+						}
+
+						a {
+							display: inline-block;
+							position: relative;
+							color: #ffffff;
+
+							&::after {
+								content: '';
+								position: absolute;
+								bottom: 5px;
+								left: 0;
+								right: 0;
+								width: 0;
+								height: 1px;
+								background-color: #fff;
+								opacity: 0;
+								transition: 0.5s;
+							}
+							&:hover {
+								&::after {
+									width: 100%;
+									opacity: 1;
+								}
+							}
 						}
 					}
 				}

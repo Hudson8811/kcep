@@ -9,7 +9,6 @@
 	}
 
 	&__inner {
-		height: 660px;
 
 		@include media(tablet-993) {
 			height: auto;
@@ -21,11 +20,27 @@
 		}
 		&-right {
 			position: relative;
-			flex-direction: column;
+			align-items: flex-start;
+
+			&::before {
+				content: '';
+				position: absolute;
+				left: 0;
+				top: -154px;
+				width: 1px;
+				height: calc(100% + 214px);
+				background-color: rgba(160, 171, 123, 0.12);
+
+				@include media(tablet-993) {
+					display: none;
+				}
+			}
 
 			@include media(tablet-993) {
 				flex-basis: 100%;
 				padding-left: 38px;
+				display: flex;
+				flex-direction: column;
 			}
 
 			@include media(550) {
@@ -52,6 +67,19 @@
 	}
 
 	&__map {
+		&-block {
+			position: sticky;
+			position: -webkit-sticky;
+			top: 40px;
+			padding-bottom: 29.79vw;
+			left: 0;
+			width: 90%;
+
+			@include media(tablet-993) {
+				position: static;
+				padding-bottom: 0;
+			}
+		}
 		&-point {
 			position: absolute;
 			background-color: #fff;
@@ -129,6 +157,8 @@
 			top: 126px;
 			width: 60.3748vw;
 			height: 29.79vw;
+			max-width: 870px;
+			max-height: 430px;
 
 			@include media(tablet-993) {
 				width: 85vw;
@@ -138,7 +168,9 @@
 			img {
 				position: absolute;
 				width: 60.3748vw;
+				max-width: 870px;
 				height: 29.79vw;
+				max-height: 430px;
 				object-fit: cover;
 				z-index: 0;
 
@@ -152,26 +184,25 @@
 
 	&__list {
 		list-style: none;
-		max-height: 660px;
-		overflow-x: hidden;
-		overflow-y: auto;
+		// max-height: 660px;
+		// overflow-x: hidden;
+		// overflow-y: auto;
 
-		&::-webkit-scrollbar {
-			width: 3px;
-			border-radius: 2px;
-		}
+		// &::-webkit-scrollbar {
+		// 	width: 3px;
+		// 	border-radius: 2px;
+		// }
 
-		&::-webkit-scrollbar-track {
-			-webkit-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
-		}
+		// &::-webkit-scrollbar-track {
+		// 	-webkit-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
+		// }
 
-		&::-webkit-scrollbar-thumb {
-			background-color: $gold;
-			border-radius: 1px;
-		}
+		// &::-webkit-scrollbar-thumb {
+		// 	background-color: $gold;
+		// 	border-radius: 1px;
+		// }
 
 		&-wrapper {
-			position: absolute;
 			width: 330px;
 			right: -13vw;
 			z-index: 5;
@@ -203,6 +234,7 @@
 				color: #ffffff;
 				opacity: 0.64;
 				white-space: nowrap;
+				transition: 0.4s;
 
 				@include media(400) {
 					font-size: 16px;

@@ -2,16 +2,10 @@
 	margin-top: -102px;
 	background-color: $dark;
 	position: relative;
-	min-height: 687px;
+	min-height: calc(100vh - 230px);
 
 	@include media(tablet-993) {
 		margin-top: -135px;
-		min-height: 600px;
-	}
-
-	@include media(mobile) {
-		min-height: 0;
-		height: auto;
 	}
 
 	&__inner {
@@ -35,7 +29,7 @@
 
 	&__info {
 		padding-top: 118px;
-		font-size: 15px;
+		font-size: 18px;
 		line-height: 21px;
 		display: flex;
 		flex-direction: column;
@@ -76,6 +70,14 @@
 
 	&__address {
 		margin-top: 31px;
+
+		@include media(tablet-1200) {
+			max-width: 300px;
+		}
+
+		@include media(mobile) {
+			max-width: 100%;
+		}
 
 		@include media(350) {
 			margin-top: 20px;

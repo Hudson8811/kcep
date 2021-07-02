@@ -183,14 +183,15 @@ document.addEventListener("DOMContentLoaded", function () {
 		toggleTabs();
 	}
 
-	if (isSliderPage()) {
-		switchSlides();
-	}
+	// if (isSliderPage()) {
+	// 	switchSlides();
+	// }
 
 	const toggleInfoPopups = () => {
 		const popupsBtns = document.querySelectorAll(
 			".product-info__tabs-item-point-wrapper"
 		);
+		const itemPopupWrap = document.querySelector('.product-info__tabs-item-popup');
 		const tabs = document.querySelectorAll(".product-info__tabs-item");
 		const slides = document.querySelectorAll(".product-hero__slide");
 		const tabsControlItems = document.querySelectorAll(
@@ -264,7 +265,19 @@ document.addEventListener("DOMContentLoaded", function () {
 			}
 		};
 
+		const mouseHandler = (e) => {
+			let target = e.target;
+
+			if (target.closest(".product-info__tabs-item-point")) {
+				toggleActiveClass(
+					target.closest(".product-info__tabs-item-point-wrapper")
+				);
+			}
+		}
+
 		document.addEventListener("click", clickHandler);
+		itemPopupWrap.addEventListener("mouseover", mouseHandler);
+		itemPopupWrap.addEventListener("mouseout", mouseHandler);
 	};
 
 	toggleInfoPopups();
@@ -337,10 +350,10 @@ document.addEventListener("DOMContentLoaded", function () {
 		const timeArr = timeRaw[0].split(":");
 
 		const hours = timeArr[0];
-		const fullHours = hours < 10 ? `0${hours}` : hours;
+		const fullHours = hours.length < 2 ? `0${hours}` : hours;
 
 		const minutes = timeArr[1];
-		const fullMinutes = minutes < 10 ? `0${minutes}` : minutes;
+		const fullMinutes = minutes.length < 2 ? `0${minutes}` : minutes;
 
 		time.forEach((text) => (text.textContent = `${fullHours}:${fullMinutes}`));
 	};
@@ -349,58 +362,109 @@ document.addEventListener("DOMContentLoaded", function () {
 
 	setInterval(displayTime, 1000);
 
-	const toggleCertificatesPopup = () => {
-		const certificatesPopup = document.querySelector(".certificates-popup");
-		const certificates = document.querySelector(".certificates-all__list");
-		const certificatesPopupImg = certificatesPopup.querySelector("img");
-		const certificatesPopupText = certificatesPopup.querySelector("p");
+	const toggleZoomPopup = () => {
+		const imgPopup = document.querySelector(".img-popup");
+		const imgsList = document.querySelectorAll(".images-for-zoom");
 
-		if (certificatesPopup) {
-			certificates.addEventListener("click", (event) => {
-				event.preventDefault();
 
-				let target = event.target;
 
-				target = target.closest("li");
+		if (imgsList.length && imgPopup) {
+			const popupInnerImg = imgPopup.querySelector("img");
+			const PopupText = imgPopup.querySelector("p");
 
-				if (target) {
-					const imgSrc = target.querySelector("img").src;
-					const text = target.querySelector(
-						".certificates-item__text"
-					).textContent;
-					certificatesPopupImg.src = imgSrc;
+			imgsList.forEach(list => {
+				list.addEventListener("click", (event) => {
+					event.preventDefault();
+	
+					let target = event.target;
 
-					certificatesPopupText.textContent = text;
+					const targetText = target.querySelector('p');
 
-					certificatesPopup.classList.add("active");
-					document.body.classList.add("scroll-stoped");
-				}
-			});
+					if (targetText) {
+						PopupText.textContent = targetText.textContent;
+					}
+	
+					target = target.closest("img");
+	
+					if (target) {
+						const imgSrc = target.src;
+	
+						popupInnerImg.src = imgSrc;
+	
+						imgPopup.classList.add("active");
+						document.body.classList.add("scroll-stoped");
+					}
+				});
+			})
 
-			certificatesPopup.addEventListener("click", (event) => {
+			
+
+			imgPopup.addEventListener("click", (event) => {
 				const target = event.target;
 
 				if (
-					target.matches(".certificates-popup") ||
-					target.closest(".certificates-popup__close")
+					target.matches(".img-popup") ||
+					target.closest(".img-popup__close")
 				) {
-					certificatesPopup.classList.remove("active");
+					imgPopup.classList.remove("active");
 					document.body.classList.remove("scroll-stoped");
 				}
 			});
 		}
 	};
 
-	const isCertificatesPage = () => {
-		const certificatesPopup = document.querySelector(".certificates-popup");
+	const isZoomImgsPage = () => {
+		const imgsList = document.querySelector(".images-for-zoom");
 
-		if (certificatesPopup) {
+		if (imgsList) {
 			return true;
 		}
 		return false;
 	};
 
-	if (isCertificatesPage()) {
-		toggleCertificatesPopup();
+	if (isZoomImgsPage()) {
+		toggleZoomPopup();
+	}
+
+	const replaceStickBg = () => {
+		const bg = document.querySelector('.sticky-bg');
+
+		if (bg) {
+			const stickyOffset = document.querySelector('.sticky-offset').clientHeight;
+	
+			bg.style.top = stickyOffset + 'px';
+		}
+	}
+	replaceStickBg();
+	
+	function resizeHandler() {
+		replaceStickBg();
+	}
+
+	window.addEventListener('resize', resizeHandler);
+
+	const delegateClick = () => {
+		document.addEventListener('click', e => {
+			const target = e.target;
+
+			if (target.matches('.production-item__title') || target.matches('img')) {
+				const link = target.parentNode.querySelector('a');
+				link.click();
+			}
+		})
+	}
+
+	function isProductionPage() {
+		const productionSection = document.querySelector('.production-item');
+
+		if (productionSection) {
+			return true;
+		}
+
+		return false;
+	}
+
+	if (isProductionPage()) {
+		delegateClick();
 	}
 });

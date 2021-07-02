@@ -59,6 +59,22 @@
 			margin-top: 199px;
 			display: flex;
 			flex-direction: column;
+			position: relative;
+			margin-left: 1px;
+
+			&::before {
+				content: '';
+				position: absolute;
+				left: 0;
+				top: -110px;
+				width: 1px;
+				height: 601px;
+				background-color: rgba(160, 171, 123, 0.12);
+
+				@include media(tablet-993) {
+					display: none;
+				}
+			}
 
 			@include media(tablet-993) {
 				flex-basis: 100%;

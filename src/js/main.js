@@ -3,6 +3,7 @@
 //= libs/jquery-3.3.1.min.js
 //= libs/jquery.fancybox.min.js
 //= libs/slick.min.js
+//= libs/fullpage.min.js
 
 /* my scripts */
 
@@ -13,4 +14,5 @@
 //= partials/videoPlayer.js
 //= partials/accordion.js
 //= partials/map.js
+//= partials/fullpageSettings.js
 //= partials/main.js

@@ -27,6 +27,12 @@
 		padding-bottom: 37px;
 		background: #1a1919;
 		display: flex;
+
+		@include media(tablet-993) {
+			padding-top: 135px;
+			margin-top: -135px;
+		}
+
 		&__left {
 			@include media(mobile-620) {
 				flex-basis: 0;
@@ -95,17 +101,12 @@
 		padding-bottom: 175px;
 		position: relative;
 		overflow: hidden;
-		&::before {
-			content: "";
-			position: absolute;
-			background: url("../img/products/logo.png");
-			background-repeat: no-repeat;
-			width: 1162px;
-			height: 256px;
-			top: 32px;
-			left: 33%;
-			z-index: 0;
+
+
+		@include media(tablet-993) {
+			padding-bottom: 60px;
 		}
+		
 		&__list {
 			display: flex;
 			flex-wrap: wrap;
@@ -113,11 +114,13 @@
 		}
 		&__inner {
 			padding-top: 111px;
+
+
 			@include media(mobile-620) {
 				flex-basis: 100%;
 			}
 			@include media(mobile-457) {
-				padding-top: 97px;
+				padding-top: 60px;
 			}
 		}
 		&__left {
@@ -128,15 +131,24 @@
 	}
 	&-item {
 		max-width: 208px;
-		max-height: 288px;
 		width: 100%;
-		height: 100%;
-		background: $white;
-		padding: 16px;
-		margin-bottom: 12px;
+		min-height: 288px;
+		background-color: $white;
 		border-radius: 0 0 0 10px;
+		transition: background-color 0.3s;
+
+		&:not(:last-child) {
+			margin-bottom: 12px;
+		}
+
 		&:not(:nth-child(4n + 4)) {
 			margin-right: 12px;
+		}
+
+		@media screen and (min-width: 1025px) {
+			&:hover {
+				background-color: #e9e9e9;
+			}
 		}
 		@include media(tablet-1194) {
 			&:not(:nth-child(4n + 4)) {
@@ -159,7 +171,6 @@
 				margin-right: 0px;
 			}
 			max-width: 100%;
-			margin-bottom: 16px;
 		}
 		&__img {
 			margin-bottom: 17px;
@@ -179,6 +190,7 @@
 			display: block;
 			width: 100%;
 			height: 100%;
+			padding: 16px;
 		}
 	}
 }

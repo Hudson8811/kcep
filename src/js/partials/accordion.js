@@ -1,12 +1,17 @@
 document.addEventListener("DOMContentLoaded", function () {
 	const toggleCurrentItem = (item) => {
-		const accordionText = item.querySelector("ul");
+		const parrent = item.closest('.accordion-item');
+		const accordionText = parrent.querySelector("ul");
 
-		item.classList.toggle("accordion-item--active");
+		parrent.classList.toggle("accordion-item--active");
 
-		item.style.maxHeight = item.classList.contains("accordion-item--active")
-			? accordionText.scrollHeight + 140 + "px"
-			: null;
+		if (accordionText) {
+			parrent.style.maxHeight = parrent.classList.contains("accordion-item--active")
+				? accordionText.scrollHeight + 140 + "px"
+				: null;
+
+		}
+
 	};
 
 	const toggleAccordion = () => {
@@ -16,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
 			item.addEventListener("click", (event) => {
 				let target = event.target;
 
-				target = target.closest(".accordion-item");
+				target = target.closest(".accordion-item-controller");
 
 				if (target) {
 					toggleCurrentItem(target);

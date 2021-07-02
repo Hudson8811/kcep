@@ -24,8 +24,24 @@
 			}
 		}
 		&-right {
+			position: relative;
 			flex-direction: column;
 			flex-shrink: 0;
+			border-left: 1px solid rgba(160, 171, 123, 0.12);
+
+			&::before {
+				content: '';
+				position: absolute;
+				left: -1px;
+				top: -53px;
+				width: 1px;
+				height: 2.9%;
+				background-color: rgba(160, 171, 123, 0.12);
+
+				@include media(tablet-993) {
+					display: none;
+				}
+			}
 
 			@include media(tablet-993) {
 				flex-basis: 100%;
@@ -143,6 +159,7 @@
 			flex-direction: column;
 			margin-left: 32px;
 			position: sticky;
+			position: -webkit-sticky;
 			top: 5%;
 
 			@include media(tablet-993) {
@@ -176,7 +193,43 @@
 				}
 
 				&-img {
+					&-wrapper {
+						width: 100%;
+						height: 100%;
+						position: relative;
+						overflow: hidden;
+						cursor: pointer;
+
+						&:hover {
+							img {
+								@media screen and (min-width: 993px) {
+									transform: scale(1.1);
+								}
+							}
+						}
+
+						img {
+							height: 100%;
+							object-fit: cover;
+
+							@media screen and (min-width: 993px) {
+								position: absolute;
+								left: 0;
+								top: 0;
+								right: 0;
+								bottom: 0;
+								width: 100%;
+								height: 100%;
+								transition: 0.3s;
+							}
+						}
+					}
+
+
 					&--big {
+						height: 282px;
+						display: flex;
+
 						@include media(mobile) {
 							height: auto;
 						}
@@ -184,15 +237,14 @@
 					&--left {
 						margin-top: 3px;
 						margin-right: 3px;
+						width: 100%;
 						max-width: 199px;
+						height: 195px;
+						display: flex;
 
 						@include media(mobile) {
 							height: 100%;
 							max-width: 40%;
-
-							img {
-								height: 100%;
-							}
 						}
 					}
 
@@ -200,7 +252,9 @@
 						margin-top: 3px;
 						display: flex;
 						flex-wrap: wrap;
+						width: 100%;
 						max-width: 271px;
+						height: 195px;
 
 						@include media(mobile) {
 							height: auto;
@@ -209,24 +263,23 @@
 
 						&-top {
 							display: flex;
-						}
+							width: 100%;
+							height: calc(100% / 2);
 
+							:first-child {
+								margin-right: 3px;
+							}
+							
+						}
+						
 						&-bottom {
 							display: flex;
 							margin-top: 3px;
-						}
+							width: 100%;
+							height: calc(100% / 2);
 
-						img {
-							object-fit: cover;
-							@include media(mobile) {
-								width: 49.3%;
-							}
-							&:nth-child(odd) {
+							:first-child {
 								margin-right: 3px;
-							}
-
-							&:nth-child(n + 3) {
-								margin-top: 3px;
 							}
 						}
 					}

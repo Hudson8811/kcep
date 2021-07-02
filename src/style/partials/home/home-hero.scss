@@ -201,7 +201,6 @@
 		}
 	}
 	&__slide {
-		height: 900px;
 		background: linear-gradient(
 			0deg,
 			rgba(26, 25, 25, 0.46),
@@ -216,12 +215,9 @@
 			height: 735px;
 		}
 
-		img {
+		iframe {
 			height: 100%;
-
-			@include media(tablet-993) {
-				height: 800px;
-			}
+			width: 100%;
 		}
 	}
 }
