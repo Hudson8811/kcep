@@ -50,6 +50,22 @@
 		}
 		&__inner {
 			padding-top: 111px;
+			position: relative;
+
+			&::before {
+				content: '';
+				position: absolute;
+				left: 0;
+				top: -64px;
+				width: 1px;
+				height: 500px;
+				background-color: rgba(160, 171, 123, 0.12);
+
+				@include media(tablet-993) {
+					display: none;
+				}
+			}
+
 			@include media(mobile-620) {
 				flex-basis: 100%;
 			}

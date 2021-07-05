@@ -14,12 +14,28 @@
 	}
 	&__inner {
 		&-left {
+			flex-shrink: 0;
 			@include media(tablet-993) {
 				flex-basis: 0;
 			}
 		}
 		&-right {
 			flex-direction: column;
+			position: relative;
+
+			&::before {
+				content: '';
+				position: absolute;
+				left: 0;
+				top: -129px;
+				width: 1px;
+				height: 120.2%;
+				background-color: rgba(160, 171, 123, 0.12);
+
+				@include media(tablet-993) {
+					display: none;
+				}
+			}
 
 			.section-title {
 				font-family: $secondaryFont;

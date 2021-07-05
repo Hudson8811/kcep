@@ -32,6 +32,21 @@
 			flex-direction: column;
 			justify-content: flex-start;
 			padding-top: 5px;
+			position: relative;
+
+			&::before {
+				content: '';
+				position: absolute;
+				left: 0;
+				top: -30px;
+				width: 1px;
+				height: 550px;
+				background-color: rgba(160, 171, 123, 0.12);
+
+				@include media(tablet-993) {
+					display: none;
+				}
+			}
 
 			@include media(mobile) {
 				flex-basis: 100%;
@@ -75,6 +90,21 @@
 		&__right {
 			display: flex;
 			flex-direction: column;
+			position: relative;
+
+			&::before {
+				content: '';
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 1px;
+				height: 100%;
+				background-color: rgba(160, 171, 123, 0.12);
+
+				@include media(tablet-993) {
+					display: none;
+				}
+			}
 
 			@include media(mobile) {
 				flex-basis: 100%;
@@ -167,6 +197,21 @@
 			flex-direction: column;
 			position: relative;
 			max-width: 720px;
+
+			&::before {
+				content: '';
+				position: absolute;
+				left: 0;
+				top: -64px;
+				width: 1px;
+				height: 450px;
+				background-color: rgba(160, 171, 123, 0.12);
+
+				@include media(tablet-993) {
+					display: none;
+				}
+			}
+
 			&::after {
 				content: "";
 				background: url(../img/career/hh-bg.png);

@@ -16,6 +16,22 @@
 		}
 
 		&-right {
+			position: relative;
+
+			&::before {
+				content: '';
+				position: absolute;
+				left: 0;
+				top: 80px;
+				width: 1px;
+				height: calc(100vh - 310px);
+				background-color: rgba(160, 171, 123, 0.12);
+
+				@include media(tablet-993) {
+					display: none;
+				}
+			}
+
 			@include media(tablet-993) {
 				flex-basis: 100%;
 				padding-left: 38px;
@@ -196,4 +212,15 @@
 			filter: grayscale(100%);
 		}
 	}
+}
+.ymaps-2-1-78-gototech {
+	opacity: 0.1;
+}
+
+.ymaps-2-1-78-copyright {
+	opacity: 0.15;
+}
+
+.ymaps-2-1-78-gotoymaps {
+	opacity: 0.1;
 }

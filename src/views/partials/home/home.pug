@@ -2,7 +2,10 @@
 	section.home-hero.section
 		.slider.home-hero__slider
 			.slide.home-hero__slide
-				//- iframe(src="https://www.youtube.com/embed/AdBWKkw0o_M?autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
+				video(autoplay muted loop)
+					source(src="video/kcep.mp4" type="video/mp4")
+					source(src="video/kcep.ogv" type="video/ogv")
+					source(src="video/kcep.webm" type="video/webm")
 		.container.home-hero__container
 			.inner.home-hero__inner
 				.inner-left.home-hero__inner-left
@@ -23,7 +26,10 @@
 							img(src="images/home/phone.svg", alt="")
 	section.home-about.section
 		.home-about__left
-			img(src="images/home/home-gif2.gif", alt="")
+			video(muted loop)
+				source(src="video/about.mp4" type="video/mp4")
+				source(src="video/about.ogv" type="video/ogv")
+				source(src="video/about.webm" type="video/webm")
 		.home-about__right
 			img.home-about__bg(src="images/home/logo.svg", alt="")
 			h2.home-about__right-title Компания
@@ -39,18 +45,39 @@
 					span экспорт оптического кабеля  в Европу
 	section.home-video.section
 		.home-video__tabs
-			.home-video__tabs-item.active
-				img(src="images/home/home-gif1.gif", alt="")
+			.home-video__tabs-item
+				video(muted).home-video__item
+					source(src="video/cbl.mp4" type="video/mp4")
+					source(src="video/cbl.ogv" type="video/ogv")
+					source(src="video/cbl.webm" type="video/webm")
 				.container
 					.inner.home-video__tabs-inner
 						.inner-left.home-video__tabs-inner-left
 						.inner-right.home-video__tabs-inner-right
 							.home-video__tabs-item-text 45 000
 								span км/г
+			.home-video__tabs-item
+				video(muted).home-video__item
+					source(src="video/cbl2.mp4" type="video/mp4")
+					source(src="video/cbl2.ogv" type="video/ogv")
+					source(src="video/cbl2.webm" type="video/webm")
+				.container
+					.inner.home-video__tabs-inner
+						.inner-left.home-video__tabs-inner-left
+						.inner-right.home-video__tabs-inner-right
+							.home-video__tabs-item-text 22 000
+								span км/г
 			.home-video__tabs-item 
-				img(src="images/home/hero-bg2.jpg", alt="")
-			.home-video__tabs-item 
-				img(src="images/home/home-gif1.gif", alt="")
+				video(muted).home-video__item
+					source(src="video/cbl3.mp4" type="video/mp4")
+					source(src="video/cbl3.ogv" type="video/ogv")
+					source(src="video/cbl3.webm" type="video/webm")
+				.container
+					.inner.home-video__tabs-inner
+						.inner-left.home-video__tabs-inner-left
+						.inner-right.home-video__tabs-inner-right
+							.home-video__tabs-item-text 14 000
+								span км/г
 		.container
 			.inner.home-video__inner
 				.inner-left.home-video__inner-left

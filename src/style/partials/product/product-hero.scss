@@ -46,6 +46,21 @@
 			width: 76.5172%;
 			padding-bottom: 18px;
 			padding-top: 3px;
+			position: relative;
+
+			&::before {
+				content: '';
+				position: absolute;
+				left: 0;
+				top: -64px;
+				width: 1px;
+				height: 550px;
+				background-color: rgba(160, 171, 123, 0.12);
+
+				@include media(tablet-993) {
+					display: none;
+				}
+			}
 
 			@include media(tablet-993) {
 				padding-top: 48px;

@@ -3,7 +3,9 @@
 //= libs/jquery-3.3.1.min.js
 //= libs/jquery.fancybox.min.js
 //= libs/slick.min.js
+//= libs/scrolloverflow.min.js
 //= libs/fullpage.min.js
+//= libs/inview.min.js
 
 /* my scripts */
 

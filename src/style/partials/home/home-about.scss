@@ -17,11 +17,26 @@
 
 	&__left {
 		background-color: $dark;
+		flex-basis: 45%;
 
-		img {
+		@include media(mobile) {
+			height: 45vh;
+		}
+
+		video {
+			opacity: 0;
 			object-fit: cover;
 			width: 100%;
 			height: 100%;
+			transition: opacity 2s;
+
+			@include media(mobile) {
+				height: 45vh;
+			}
+
+			&.video--active {
+				opacity: 1;
+			}
 		}
 	}
 
@@ -31,7 +46,8 @@
 
 		@include media(mobile) {
 			padding: 64px 0 90px;
-			overflow: hidden;
+			overflow: auto;
+			flex-basis: 55%;
 		}
 
 		&-title {

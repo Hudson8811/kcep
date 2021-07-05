@@ -13,9 +13,10 @@
 	}
 
 	&-body {
-		color: #1a1919;
+		color: #ffffff;
 		display: flex;
 		height: 100vh;
+		background-color: $dark;
 
 		@include media(1025) {
 			flex-direction: column;
@@ -71,7 +72,6 @@
 		}
 
 		&__left {
-			background-color: #f8f8f8;
 
 			@include media(tablet-993) {
 				height: 50vh;
@@ -86,8 +86,8 @@
 			}
 
 			&-bg {
-				width: 23.04vw;
-				height: 40.39vw;
+				width: 26.5vw;
+				height: 50.39vw;
 				bottom: 0;
 				right: 6vw;
 				z-index: 0;
@@ -97,14 +97,13 @@
 				}
 
 				@media screen and (min-width: 1500px) {
-					width: 332px;
-					height: 582px;
+					width: 494px;
+					height: 724px;
 				}
 			}
 		}
 
 		&__right {
-			background-color: #ffffff;
 
 			@include media(tablet-993) {
 				height: 50vh;

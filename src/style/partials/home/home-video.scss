@@ -15,7 +15,7 @@
 		padding-top: 121px;
 
 		@include media(mobile) {
-			padding-top: 41px;
+			padding-top: 145px;
 		}
 
 		&-left {
@@ -34,6 +34,14 @@
 		}
 	}
 
+	&__item {
+		opacity: 0;
+		transition: 2s;
+
+		&.video--active {
+			opacity: 1;
+		}
+	}
 	&__tabs {
 		position: absolute;
 		left: 0;
@@ -63,6 +71,10 @@
 					align-items: center;
 					justify-content: center;
 				}
+
+				@media screen and (max-height: 630px) {
+					margin-top: 365px;
+				}
 			}
 		}
 
@@ -79,15 +91,15 @@
 			&.active {
 				display: flex;
 
-				img {
-					display: block;
+				video {
+					visibility: visible;
 					position: absolute;
 					z-index: -1;
 				}
 			}
 
-			img {
-				display: none;
+			video {
+				visibility: hidden;
 				object-fit: cover;
 				width: 100%;
 				height: 100%;

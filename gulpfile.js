@@ -23,6 +23,7 @@ var path = {
 		img: "build/img/",
 		fonts: "build/fonts/",
 		sprite: "build/img/",
+		video: 'build/video/'
 	},
 	src: {
 		html: "src/views/*.pug",
@@ -32,6 +33,7 @@ var path = {
 		img: ["src/img/**/*.*", "!src/img/sprite.svg"],
 		fonts: "src/fonts/**/*.*",
 		sprite: "src/img/sprite.svg",
+		video: "src/video/*.*"
 	},
 	watch: {
 		html: "src/**/*.pug",
@@ -41,6 +43,7 @@ var path = {
 		img: "src/img/**/*.*",
 		fonts: "src/fonts/**/*.*",
 		sprite: "src/img/sprite.svg",
+		video: "src/video/*.*"
 	},
 	clean: "./build",
 };
@@ -146,6 +149,9 @@ gulp.task("fonts:build", function () {
 gulp.task("sprite:build", function () {
 	return gulp.src(path.src.sprite).pipe(gulp.dest(path.build.img));
 });
+gulp.task("video:build", function () {
+	return gulp.src(path.src.video).pipe(gulp.dest(path.build.video));
+});
 
 gulp.task(
 	"build",
@@ -158,7 +164,8 @@ gulp.task(
 			"images:build",
 			"img:build"
 		),
-		"sprite:build"
+		"sprite:build",
+		"video:build"
 	)
 );
 
@@ -170,6 +177,7 @@ gulp.task("watch", function () {
 	gulp.watch([path.watch.images], gulp.series("images:build"));
 	gulp.watch([path.watch.fonts], gulp.series("fonts:build"));
 	gulp.watch([path.watch.sprite], gulp.series("sprite:build"));
+	gulp.watch([path.watch.video], gulp.series("video:build"));
 });
 
 gulp.task("webserver", function () {

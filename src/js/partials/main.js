@@ -30,31 +30,46 @@ document.addEventListener("DOMContentLoaded", function () {
 		);
 		const tabs = tabsWrapper.querySelectorAll("span");
 		const tabsItems = document.querySelectorAll(".home-video__tabs-item");
+		const tabsVideo = document.querySelector('.home-video').querySelectorAll('video');
+
+			tabsVideo.forEach((item) => {
+				item.addEventListener('ended', e => {
+					autoplay();
+				})
+				item.addEventListener('timeupdate', e => {
+					
+					if (item.currentTime >= item.duration - 2 && item.classList.contains('video--active')) {
+						item.classList.remove('video--active');
+					}
+
+					if (item.currentTime <= 1 && !item.classList.contains('video--active')) {
+						item.classList.add('video--active');
+					}
+				})
+			})
 
 		let count = 0;
 
 		const autoplay = () => {
 			tabs.forEach((tab) => tab.classList.remove("tab--active"));
 			tabsItems.forEach((tabsItem) => tabsItem.classList.remove("active"));
+			
+			const currentVideo = tabsItems[count].querySelector('video');
+			currentVideo.play();
 
-			if (count === 0) {
+			if (count < tabsItems.length) {
 				tabs[count].classList.add("tab--active");
 				tabsItems[count].classList.add("active");
-				count++;
-			} else {
-				count++;
-
-				tabsItems[count - 1].classList.add("active");
-				tabs[count - 1].classList.add("tab--active");
 			}
+
+			count++;
 
 			if (count === tabsItems.length) {
 				count = 0;
 			}
 		};
-		autoplay();
 
-		setInterval(autoplay, 9000);
+		autoplay();
 
 		tabsWrapper.addEventListener("click", (event) => {
 			let target = event.target;
@@ -65,10 +80,15 @@ document.addEventListener("DOMContentLoaded", function () {
 				tabs.forEach((tab, idx) => {
 					tab.classList.remove("tab--active");
 					tabsItems[idx].classList.remove("active");
+					const video = tabsItems[idx].querySelector('video');
+					video.pause();
+
 					if (tab === target) {
 						tabsItems[idx].classList.add("active");
+						video.play();
 					}
 				});
+
 				target.classList.add("tab--active");
 			}
 		});
@@ -169,6 +189,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 		return false;
 	}
+
 	function isTabsPage() {
 		const tabsWrapper = document.querySelector(
 			".home-video__tabs-control-inner"
@@ -179,6 +200,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 		return false;
 	}
+
 	if (isTabsPage()) {
 		toggleTabs();
 	}
@@ -435,6 +457,7 @@ document.addEventListener("DOMContentLoaded", function () {
 			bg.style.top = stickyOffset + 'px';
 		}
 	}
+
 	replaceStickBg();
 	
 	function resizeHandler() {
@@ -467,4 +490,52 @@ document.addEventListener("DOMContentLoaded", function () {
 	if (isProductionPage()) {
 		delegateClick();
 	}
+
+	function toggleVideo() {
+		const aboutVideoSection = document.querySelector('.home-about__left');
+		const aboutVideo = aboutVideoSection.querySelector('video');
+		const homeSection = document.querySelector('.home-video')
+		const activeHomeVideo = homeSection.querySelector('.video--active');
+		
+		$('.home-about__left').on('inview', function(event, isInView) {
+			if (isInView) {
+				aboutVideo.play();
+			} else {
+				aboutVideo.pause();
+				aboutVideo.classList.remove('video--active');
+			}
+		})
+
+		$('.home-video').on('inview', function(event, isInView) {
+			const activeTab = document.querySelector('.home-video__tabs').querySelector('.active');
+			const activeVideo = activeTab.querySelector('video');
+			if (isInView) {
+				if (!activeVideo.classList.contains('video--active')) {
+					activeVideo.classList.add('video--active');
+				}
+
+				activeVideo.play();
+			} else {
+				activeVideo.pause();
+			}
+		})
+
+		aboutVideo.addEventListener('play', function() {
+			aboutVideo.classList.add('video--active');
+		})
+
+		aboutVideo.addEventListener('timeupdate', function() {
+			if (aboutVideo.currentTime >= aboutVideo.duration - 2 && aboutVideo.classList.contains('video--active')) {
+				aboutVideo.classList.remove('video--active');
+			}
+
+			if (aboutVideo.currentTime <= 1 && !aboutVideo.classList.contains('video--active')) {
+				aboutVideo.classList.add('video--active');
+			}
+		})
+
+
+	}
+
+	toggleVideo();
 });

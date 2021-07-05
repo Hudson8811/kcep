@@ -49,13 +49,58 @@
 
 	&__inner {
 		&-left {
+			position: relative;
+
 			@include media(mobile) {
 				flex-basis: 0;
+			}
+
+			&::after {
+				content: '';
+				position: absolute;
+				right: 0;
+				top: 30px;
+				width: 1px;
+				height: calc(100vh - 30px);
+				background-color: rgba(160, 171, 123, 0.12);
+
+				@include media(tablet-993) {
+					display: none;
+				}
 			}
 		}
 		&-right {
 			flex-direction: column;
 			align-items: flex-start;
+			position: relative;
+
+			&::before {
+				content: '';
+				position: absolute;
+				right: 100px;
+				top: 30px;
+				width: 1px;
+				height: calc(100vh - 30px);
+				background-color: rgba(160, 171, 123, 0.12);
+
+				@include media(tablet-993) {
+					display: none;
+				}
+			}
+			&::after {
+				content: '';
+				position: absolute;
+				right: 55%;
+				top: 30px;
+				width: 1px;
+				height: calc(100vh - 30px);
+				background-color: rgba(160, 171, 123, 0.12);
+
+				@include media(tablet-993) {
+					display: none;
+				}
+				z-index: 0;
+			}
 
 			@include media(mobile) {
 				flex-basis: 100%;
@@ -71,6 +116,8 @@
 				margin-top: 47px;
 				transition: 0.3s;
 				cursor: pointer;
+				position: relative;
+				z-index: 1;
 
 				@include media(tablet-1200) {
 					max-width: 500px;
