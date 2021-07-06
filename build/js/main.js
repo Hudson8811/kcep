@@ -342,33 +342,62 @@ document.addEventListener("DOMContentLoaded", function () {
 		const tabsWrapper = document.querySelector(
 			".home-video__tabs-control-inner"
 		);
-		const tabs = tabsWrapper.querySelectorAll("span");
+		const tabs = tabsWrapper.querySelectorAll(".home-video__tab");
 		const tabsItems = document.querySelectorAll(".home-video__tabs-item");
 		const tabsVideo = document.querySelector('.home-video').querySelectorAll('video');
 
-			tabsVideo.forEach((item) => {
-				item.addEventListener('ended', e => {
-					autoplay();
-				})
-				item.addEventListener('timeupdate', e => {
-					
-					if (item.currentTime >= item.duration - 2 && item.classList.contains('video--active')) {
-						item.classList.remove('video--active');
-					}
-
-					if (item.currentTime <= 1 && !item.classList.contains('video--active')) {
-						item.classList.add('video--active');
-					}
-				})
+		tabsVideo.forEach((item) => {
+			item.addEventListener('ended', () => {
+				autoplay();
 			})
+			item.addEventListener('timeupdate', () => {
+				
+				if (item.currentTime >= item.duration - 1 && item.classList.contains('video--active')) {
+					item.classList.remove('video--active');
+				}
+
+				if (item.currentTime <= 1 && !item.classList.contains('video--active')) {
+					item.classList.add('video--active');
+				}
+			})
+		})
 
 		let count = 0;
 
-		const autoplay = () => {
+		function animate({timing, draw, duration}) {
+			let start = performance.now();
+
+			requestAnimationFrame(function animate(time) {
+			  let timeFraction = (time - start) / duration;
+			  if (timeFraction > 1) timeFraction = 1;
+		  
+			  let progress = timing(timeFraction);
+			  draw(progress);
+		  
+			  if (timeFraction < 1) {
+				requestAnimationFrame(animate);
+			  }
+			});
+		  }
+
+		function autoplay() {
 			tabs.forEach((tab) => tab.classList.remove("tab--active"));
 			tabsItems.forEach((tabsItem) => tabsItem.classList.remove("active"));
-			
+
 			const currentVideo = tabsItems[count].querySelector('video');
+			const timeline = tabs[count].querySelector('.home-video__tab-timeline');
+			const videoDuration = Math.floor(currentVideo.duration) ? Math.floor(currentVideo.duration) : 9;
+
+			animate({
+				duration: videoDuration * 1000,
+				timing(timeFraction) {
+				  return timeFraction;
+				},
+				draw(progress) {
+				  timeline.style.width = progress * 100 + '%';
+				}
+			});
+
 			currentVideo.play();
 
 			if (count < tabsItems.length) {
@@ -388,7 +417,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		tabsWrapper.addEventListener("click", (event) => {
 			let target = event.target;
 
-			target = target.closest("span");
+			target = target.closest(".home-video__tab");
 
 			if (target) {
 				tabs.forEach((tab, idx) => {
@@ -408,102 +437,6 @@ document.addEventListener("DOMContentLoaded", function () {
 		});
 	};
 
-	const switchSlides = () => {
-		const slides = document.querySelectorAll(".slide");
-		const dotsList = document.querySelector(".dots");
-		const dotsWrapper = document.querySelector(".dots-wrapper");
-
-		let currentSlide = 0;
-		let interval;
-
-		const addDots = () => {
-			slides.forEach(() => {
-				const dot = document.createElement("li");
-				dot.classList.add("dots-item");
-				dotsList.append(dot);
-			});
-			dotsList.querySelector("li").classList.add("dot--active");
-		};
-
-		addDots();
-
-		const prevSlide = (elem, index, strClass) => {
-			elem[index].classList.remove(strClass);
-		};
-
-		const nextSlide = (elem, index, strClass) => {
-			elem[index].classList.add(strClass);
-		};
-
-		const dots = document.querySelectorAll(".dots-item");
-
-		const autoPlaySlide = () => {
-			prevSlide(slides, currentSlide, "active");
-			prevSlide(dots, currentSlide, "dot--active");
-			currentSlide++;
-
-			if (currentSlide === slides.length) {
-				currentSlide = 0;
-			}
-
-			nextSlide(slides, currentSlide, "active");
-			nextSlide(dots, currentSlide, "dot--active");
-		};
-
-		const startSlide = (time = 3000) => {
-			interval = setInterval(autoPlaySlide, time);
-		};
-
-		const stopSlide = () => {
-			clearInterval(interval);
-		};
-
-		dotsList.addEventListener("click", (e) => {
-			let target = e.target;
-
-			target = target.closest(".dots-item");
-
-			if (target) {
-				dots.forEach((dot, idx) => {
-					dot.classList.remove("dot--active");
-					slides[idx].classList.remove("active");
-
-					if (dot === target) {
-						slides[idx].classList.add("active");
-						dot.classList.add("dot--active");
-					}
-				});
-			}
-		});
-
-		dotsWrapper.addEventListener("mouseover", (event) => {
-			const target = event.target;
-			if (target.matches(".dots") || target.matches(".dots-item")) {
-				stopSlide();
-			}
-		});
-
-		dotsWrapper.addEventListener("mouseout", (event) => {
-			const target = event.target;
-			if (target.matches(".dots") || target.matches(".dots-item")) {
-				startSlide();
-			}
-		});
-
-		slides[0].classList.add("active");
-
-		startSlide(3000);
-	};
-
-	function isSliderPage() {
-		const slider = document.querySelector(".slider");
-		if (slider) {
-			return true;
-		}
-
-		return false;
-	}
-
 	function isTabsPage() {
 		const tabsWrapper = document.querySelector(
 			".home-video__tabs-control-inner"
@@ -518,10 +451,6 @@ document.addEventListener("DOMContentLoaded", function () {
 	if (isTabsPage()) {
 		toggleTabs();
 	}
-
-	// if (isSliderPage()) {
-	// 	switchSlides();
-	// }
 
 	const toggleInfoPopups = () => {
 		const popupsBtns = document.querySelectorAll(
@@ -806,10 +735,18 @@ document.addEventListener("DOMContentLoaded", function () {
 	}
 
 	function toggleVideo() {
-		const aboutVideoSection = document.querySelector('.home-about__left');
-		const aboutVideo = aboutVideoSection.querySelector('video');
-		const homeSection = document.querySelector('.home-video')
-		const activeHomeVideo = homeSection.querySelector('.video--active');
+
+		const heroVideo = document.querySelector('.home-hero__slide>video');
+
+		$('.home-hero__slide').on('inview', function(event, isInView) {
+			if (isInView) {
+				heroVideo.play();
+			} else {
+				heroVideo.pause();
+			}
+		});
+
+		
 		
 		$('.home-about__left').on('inview', function(event, isInView) {
 			if (isInView) {
@@ -820,26 +757,33 @@ document.addEventListener("DOMContentLoaded", function () {
 			}
 		})
 
-		$('.home-video').on('inview', function(event, isInView) {
+		$('.home-video__title').on('inview', function(event, isInView) {
 			const activeTab = document.querySelector('.home-video__tabs').querySelector('.active');
 			const activeVideo = activeTab.querySelector('video');
+
 			if (isInView) {
 				if (!activeVideo.classList.contains('video--active')) {
 					activeVideo.classList.add('video--active');
 				}
-
 				activeVideo.play();
 			} else {
 				activeVideo.pause();
 			}
 		})
 
+		const aboutVideoSection = document.querySelector('.home-about__left');
+
+		if (!aboutVideoSection) {
+			return;
+		}
+		const aboutVideo = aboutVideoSection.querySelector('video');
+
 		aboutVideo.addEventListener('play', function() {
 			aboutVideo.classList.add('video--active');
 		})
 
 		aboutVideo.addEventListener('timeupdate', function() {
-			if (aboutVideo.currentTime >= aboutVideo.duration - 2 && aboutVideo.classList.contains('video--active')) {
+			if (aboutVideo.currentTime >= aboutVideo.duration - 1 && aboutVideo.classList.contains('video--active')) {
 				aboutVideo.classList.remove('video--active');
 			}
 

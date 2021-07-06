@@ -127,6 +127,10 @@
 			width: 100%;
 			max-width: 730px;
 
+			@include media(mobile) {
+				height: 300px;
+			}
+
 			img {
 				object-fit: cover;
 				height: 100%;
@@ -176,7 +180,10 @@
 					@include media(tablet-993) {
 						width: 100%;
 						max-width: 518px;
-						height: auto;
+					}
+
+					@include media(mobile) {
+						height: 100%;
 					}
 				}
 
@@ -190,6 +197,10 @@
 						&:not(:first-child) {
 							margin-top: 13px;
 						}
+
+						@include media(mobile) {
+							height: 50%;
+						}
 					}
 					
 					img {
@@ -198,7 +209,7 @@
 						@include media(tablet-993) {
 							width: 100%;
 							max-width: 199px;
-							height: auto;
+							height: 100%;
 						}
 
 						&:nth-child(2) {

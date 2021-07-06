@@ -1,25 +1,30 @@
 .home-about {
 	position: relative;
-	display: flex;
-	height: 900px;
 	color: $dark;
 	font-family: $secondaryFont;
 
-	@include media(mobile) {
-		flex-direction: column;
-		height: auto;
+	&__container {
+		display: flex;
+		flex-direction: row;
+
+		@include media(mobile) {
+			flex-direction: column;
+			height: auto;
+		}
 	}
+
 
 	&__left,
 	&__right {
-		flex-basis: 50%;
+		width: 50%;
 	}
 
 	&__left {
 		background-color: $dark;
-		flex-basis: 45%;
+		width: 50%;
 
 		@include media(mobile) {
+			width: 100%;
 			height: 45vh;
 		}
 
@@ -28,10 +33,11 @@
 			object-fit: cover;
 			width: 100%;
 			height: 100%;
-			transition: opacity 2s;
+			transition: opacity 1s;
 
 			@include media(mobile) {
 				height: 45vh;
+				width: 100%;
 			}
 
 			&.video--active {
@@ -47,7 +53,7 @@
 		@include media(mobile) {
 			padding: 64px 0 90px;
 			overflow: auto;
-			flex-basis: 55%;
+			width: 100%;
 		}
 
 		&-title {

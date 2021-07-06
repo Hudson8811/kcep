@@ -2,7 +2,7 @@
 	section.home-hero.section
 		.slider.home-hero__slider
 			.slide.home-hero__slide
-				video(autoplay muted loop)
+				video(muted loop)
 					source(src="video/kcep.mp4" type="video/mp4")
 					source(src="video/kcep.ogv" type="video/ogv")
 					source(src="video/kcep.webm" type="video/webm")
@@ -25,24 +25,25 @@
 						a(href="#").home-hero__bottom-button
 							img(src="images/home/phone.svg", alt="")
 	section.home-about.section
-		.home-about__left
-			video(muted loop)
-				source(src="video/about.mp4" type="video/mp4")
-				source(src="video/about.ogv" type="video/ogv")
-				source(src="video/about.webm" type="video/webm")
-		.home-about__right
-			img.home-about__bg(src="images/home/logo.svg", alt="")
-			h2.home-about__right-title Компания
-			.home-about__right-numbers
-				.home-about__right-numbers-item > 
-					span 300 чел.
-					span количество сотрудников
-				.home-about__right-numbers-item > 
-					span 2 000 000 км
-					span переработано  оптического волокна 
-				.home-about__right-numbers-item > 
-					span 30 000 км
-					span экспорт оптического кабеля  в Европу
+		.home-about__container 
+			.home-about__left
+				video(muted loop)
+					source(src="video/about.mp4" type="video/mp4")
+					source(src="video/about.ogv" type="video/ogv")
+					source(src="video/about.webm" type="video/webm")
+			.home-about__right
+				img.home-about__bg(src="images/home/logo.svg", alt="")
+				h2.home-about__right-title Компания
+				.home-about__right-numbers
+					.home-about__right-numbers-item > 
+						span 300 чел.
+						span количество сотрудников
+					.home-about__right-numbers-item > 
+						span 2 000 000 км
+						span переработано  оптического волокна 
+					.home-about__right-numbers-item > 
+						span 30 000 км
+						span экспорт оптического кабеля  в Европу
 	section.home-video.section
 		.home-video__tabs
 			.home-video__tabs-item
@@ -85,7 +86,48 @@
 					h3.home-video__title Производственные мощности:
 					.home-video__tabs-control 
 						.home-video__tabs-control-inner 
-							span Оптический кабель
-							span LAN кабель
-							span Оптический шнур
+							.home-video__tab Оптический кабель
+								.home-video__tab-timeline
+							.home-video__tab LAN кабель
+								.home-video__tab-timeline
+							.home-video__tab Оптический шнур
+								.home-video__tab-timeline
 							.home-video__tabs-control-inner-progress-bar
+	footer.footer.section.fp-auto-height
+		.footer__wrapper 
+			.footer__top
+				address.footer__address Казахстан, г. Сарань, ул. Шахтерская, д. 30«А»
+				a(href="mailto:info@kcep@kz").footer__mail info@kcep@kz
+				a(href="tel:+77212912500").footer__phone +7(7212)912 500
+				.footer__logo-wrapper
+					a(href="/").logo
+						img(src="img/logo.png", alt="KCEP")
+			.footer__bottom
+				a(href="/").footer__policy#policyPopupBtn политикa конфиденциальности
+				.footer__copyrights © 2021 KCEP; Developed by
+					a(href="/").footer__copyrights-author bofer.ru
+				.footer__social 
+					a(href="https://instagram.com/") 
+						img(src="./img/instagram.svg", alt="")
+					a(href="https://linkedin.com/") 
+						img(src="img/linkedin.svg", alt="")
+					a(href="https://facebook.com/") 
+						img(src="img/facebook.svg", alt="")
+					a(href="https://youtube.com/") 
+						img(src="img/youtube.svg", alt="")
+		.footer-policy#policyPopup
+			.footer-policy__dialog 
+				button.footer-policy__close
+					<svg class="about-popup__close-icon">
+						<use xlink:href="img/sprite.svg#close"></use>
+					</svg>
+				.footer-policy__content
+					h4.footer-policy__title Политикa конфиденциальности
+					ol
+						li Обучение внутри компании
+							p Мы хотим, чтобы Вы всегда были в курсе последних изменений правил, законов, новых разработок продукции. Поэтому на заводе КСЕР организовано взаимное обучение между подразделениями. Кроме того, у нас есть готовые инструкции по работе со сложными программами, пользуясь которыми Вы легко научитесь тому, что на первый взгляд казалось сложным. В рамках завода мы можем помочь Вам освоить новую профессию и подняться на ступень выше.
+						li Обучение вне компании
+							p КСЕР понимает, что обучаться только внутри компании невозможно, поэтому мы нередко отправляем своих специалистов на обучение в другие компании или учреждения, а также приглашаем сотрудников обучающих учреждений проводить курсы на территории компании, чтобы обучить максимальное количество сотрудников. Мы прилагаем все усилия для того, чтобы обучение для наших сотрудников было бесплатным.
+						li Премирование и индивидуальный социальный пакет
+							p Компания ориентируется на европейский подход к работе. На предприятии действует система премирования на основе KPI. Кроме того, разработано несколько вариантов социальных пакетов для разных категорий должностей. Мы всячески приветствуем стремление сотрудников к совершенствованию, поэтому компания окажет Вам в том числе и финансовую поддержку, если Вы заходите пройти какое-либо обучение, самостоятельно определив обучающую организацию.
+		
