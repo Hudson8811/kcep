@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
 	const togglePopup = () => {
-		const policyPopup = document.getElementById("policyPopup");
-		const policyPopupBtn = document.getElementById("policyPopupBtn");
+		const policyPopup = document.querySelector(".footer-policy");
+		const policyPopupBtn = document.querySelectorAll(".footer__policy");
 
 		const showPopup = () => {
 			policyPopup.classList.add("active");
@@ -12,11 +12,13 @@ document.addEventListener("DOMContentLoaded", function () {
 			policyPopup.classList.remove("active");
 			document.body.classList.remove("scroll-stoped");
 		};
+		policyPopupBtn.forEach(btn => {
+			btn.addEventListener("click", (event) => {
+				event.preventDefault();
+				showPopup();
+			});
+		})
 
-		policyPopupBtn.addEventListener("click", (event) => {
-			event.preventDefault();
-			showPopup();
-		});
 
 		policyPopup.addEventListener("click", (event) => {
 			const target = event.target;
