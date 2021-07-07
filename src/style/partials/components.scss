@@ -121,6 +121,7 @@
 	visibility: hidden;
 	background-color: #000000;
 	z-index: 9999;
+	transition: 0.4s;
 
 	&.active {
 		opacity: 1;
@@ -259,7 +260,7 @@
 	height: 256px;
 	margin-top: 32px;
 	top: 38%;
-	left: 50%;
+	left: 49.7%;
 	transform: translateX(-43.4%);
 	z-index: 0;
 }

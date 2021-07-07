@@ -111,10 +111,41 @@
 			display: flex;
 			flex-wrap: wrap;
 			list-style: none;
+			position: relative;
+			z-index: 1;
 		}
 		&__inner {
+			position: relative;
 			padding-top: 111px;
 
+			&::after {
+				content: '';
+				position: absolute;
+				left: 42%;
+				top: 0;
+				width: 1px;
+				height: 593px;
+				background-color: rgba(160, 171, 123, 0.12);
+	
+				@include media(tablet-993) {
+					display: none;
+				}
+			}
+
+			&::before {
+				content: '';
+				position: absolute;
+				right: 141px;
+				top: 0;
+				width: 1px;
+				height: 593px;
+				background-color: rgba(160, 171, 123, 0.12);
+				z-index: 0;
+	
+				@include media(tablet-993) {
+					display: none;
+				}
+			}
 
 			@include media(mobile-620) {
 				flex-basis: 100%;
@@ -124,6 +155,23 @@
 			}
 		}
 		&__left {
+			position: relative;
+
+			&::before {
+				content: '';
+				position: absolute;
+				right: 0;
+				top: 0;
+				width: 1px;
+				height: 593px;
+				background-color: rgba(160, 171, 123, 0.12);
+				z-index: 0;
+	
+				@include media(tablet-993) {
+					display: none;
+				}
+			}
+
 			@include media(mobile-620) {
 				flex-basis: 0;
 			}

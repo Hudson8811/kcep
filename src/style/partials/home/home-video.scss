@@ -25,7 +25,22 @@
 		}
 
 		&-right {
+			position: relative;
 			flex-direction: column;
+
+			&::after {
+				content: '';
+				position: absolute;
+				left: 0;
+				top: -135px;
+				width: 1px;
+				height: 100vh;
+				background-color: rgba(160, 171, 123, 0.12);
+	
+				@include media(tablet-993) {
+					display: none;
+				}
+			}
 
 			@include media(mobile) {
 				flex-basis: 100%;

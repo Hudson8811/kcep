@@ -341,12 +341,20 @@ document.addEventListener("DOMContentLoaded", function () {
 	checkWidth();
 
 	const toggleTabs = () => {
-		const tabsWrapper = document.querySelector(
+		const videoSection = document.querySelector('.home-video');
+
+		if (!videoSection) {
+			return;
+		}
+
+		const tabsWrapper = videoSection.querySelector(
 			".home-video__tabs-control-inner"
 		);
 		const tabs = tabsWrapper.querySelectorAll(".home-video__tab");
-		const tabsItems = document.querySelectorAll(".home-video__tabs-item");
-		const tabsVideo = document.querySelector('.home-video').querySelectorAll('video');
+		const tabsItems = videoSection.querySelectorAll(".home-video__tabs-item");
+		const tabsVideo = videoSection.querySelectorAll('video');
+
+		let count = 0;
 
 		tabsVideo.forEach((item) => {
 			item.addEventListener('ended', () => {
@@ -364,23 +372,21 @@ document.addEventListener("DOMContentLoaded", function () {
 			})
 		})
 
-		let count = 0;
-
 		function animate({timing, draw, duration}) {
 			let start = performance.now();
 
 			requestAnimationFrame(function animate(time) {
-			  let timeFraction = (time - start) / duration;
-			  if (timeFraction > 1) timeFraction = 1;
-		  
-			  let progress = timing(timeFraction);
-			  draw(progress);
-		  
-			  if (timeFraction < 1) {
-				requestAnimationFrame(animate);
-			  }
+				let timeFraction = (time - start) / duration;
+				if (timeFraction > 1) timeFraction = 1;
+
+				let progress = timing(timeFraction);
+				draw(progress);
+
+				if (timeFraction < 1) {
+					requestAnimationFrame(animate);
+				}
 			});
-		  }
+		}
 
 		function autoplay() {
 			tabs.forEach((tab) => tab.classList.remove("tab--active"));
@@ -414,7 +420,11 @@ document.addEventListener("DOMContentLoaded", function () {
 			}
 		};
 
-		autoplay();
+		$('.home-video__title').one('inview', function(event, isInView) {
+			if (isInView) {
+				autoplay();
+			}
+		})
 
 		tabsWrapper.addEventListener("click", (event) => {
 			let target = event.target;
@@ -439,20 +449,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		});
 	};
 
-	function isTabsPage() {
-		const tabsWrapper = document.querySelector(
-			".home-video__tabs-control-inner"
-		);
-		if (tabsWrapper) {
-			return true;
-		}
-
-		return false;
-	}
-
-	if (isTabsPage()) {
-		toggleTabs();
-	}
+	toggleTabs();
 
 	const toggleInfoPopups = () => {
 		const popupsBtns = document.querySelectorAll(
@@ -633,8 +630,6 @@ document.addEventListener("DOMContentLoaded", function () {
 		const imgPopup = document.querySelector(".img-popup");
 		const imgsList = document.querySelectorAll(".images-for-zoom");
 
-
-
 		if (imgsList.length && imgPopup) {
 			const popupInnerImg = imgPopup.querySelector("img");
 			const PopupText = imgPopup.querySelector("p");
@@ -645,26 +640,41 @@ document.addEventListener("DOMContentLoaded", function () {
 	
 					let target = event.target;
 
-					const targetText = target.querySelector('p');
+					if (!target.closest('.certificates-item__link')) {
+						const targetText = target.querySelector('p');
 
-					if (targetText) {
-						PopupText.textContent = targetText.textContent;
-					}
-	
-					target = target.closest("img");
-	
+						if (targetText) {
+							PopupText.textContent = targetText.textContent;
+						}
+		
+						target = target.closest("img");
+		
+						if (target) {
+							const imgSrc = target.src;
+		
+							popupInnerImg.src = imgSrc;
+		
+							imgPopup.classList.add("active");
+							document.body.classList.add("scroll-stoped");
+						}
+					} 
+					
+					target = target.closest('.certificates-item__link');
+
 					if (target) {
-						const imgSrc = target.src;
-	
-						popupInnerImg.src = imgSrc;
-	
+						const img = target.querySelector('img');
+						const text = target.querySelector('p').textContent;
+
+						popupInnerImg.src = img.src;
+						PopupText.textContent = text;
+
 						imgPopup.classList.add("active");
 						document.body.classList.add("scroll-stoped");
 					}
+
+					
 				});
 			})
-
-			
 
 			imgPopup.addEventListener("click", (event) => {
 				const target = event.target;
@@ -793,8 +803,6 @@ document.addEventListener("DOMContentLoaded", function () {
 				aboutVideo.classList.add('video--active');
 			}
 		})
-
-
 	}
 
 	toggleVideo();

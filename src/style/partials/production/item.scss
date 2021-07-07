@@ -196,6 +196,7 @@
 	width: 10px;
 	height: 10px;
 	margin: -5px 0 0 -5px;
+	background-color: rgba(255, 255, 255, 0.32);
 }
 
 #fp-nav ul li a.active span,
@@ -205,7 +206,7 @@
 	width: 24px;
 	height: 24px;
 	margin: -12px 0 0 -12px;
-	background: url('../../images/home/dot-active.png') no-repeat center / cover;
+	background: url('../images/home/dot-active.png') no-repeat center / cover;
 }
 
 #fp-nav ul li, .fp-slidesNav ul li {

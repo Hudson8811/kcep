@@ -51,6 +51,20 @@
 		padding: 157px 0;
 		position: relative;
 
+		&::after {
+			content: '';
+			position: absolute;
+			right: 48.5%;
+			top: 0;
+			width: 1px;
+			height: 100%;
+			background-color: rgba(160, 171, 123, 0.12);
+
+			@include media(tablet-993) {
+				display: none;
+			}
+		}
+
 		@include media(mobile) {
 			padding: 64px 0 90px;
 			overflow: auto;

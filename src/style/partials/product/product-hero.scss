@@ -154,7 +154,7 @@
 			&.slick-active {
 				.timeline {
 					width: 100%;
-					transition: 3.7s;
+					transition: width 3.2s linear;
 				}
 			}
 		}

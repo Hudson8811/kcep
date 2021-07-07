@@ -25,6 +25,20 @@
 					display: none;
 				}
 			}
+			
+			&::after {
+				content: '';
+				position: absolute;
+				right: 13%;
+				top: 0;
+				width: 1px;
+				height: 662px;
+				background-color: rgba(160, 171, 123, 0.12);
+
+				@include media(tablet-993) {
+					display: none;
+				}
+			}
 
 			@include media(tablet-993) {
 				flex-basis: 100%;

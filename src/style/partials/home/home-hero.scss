@@ -19,19 +19,50 @@
 	}
 
 	&__inner {
-		padding-top: 196px;
 		height: 100%;
-
-		@include media(tablet-993) {
-			padding-top: 155px;
-		}
-
-		@include media(370) {
-			padding-top: 155px;
-		}
+		padding-top: 50px;
 
 		&-right {
+			position: relative;
 			flex-direction: column;
+			border-left: 1px solid rgba(160, 171, 123, 0.12);
+			padding-top: 146px;
+
+			&::after {
+				content: '';
+				position: absolute;
+				right: 19.2%;
+				top: 0;
+				width: 1px;
+				height: 100%;
+				background-color: rgba(160, 171, 123, 0.12);
+
+				@include media(tablet-993) {
+					display: none;
+				}
+			}
+
+			&::before {
+				content: '';
+				position: absolute;
+				left: 42.5%;
+				top: 0;
+				width: 1px;
+				height: 100%;
+				background-color: rgba(160, 171, 123, 0.12);
+
+				@include media(tablet-993) {
+					display: none;
+				}
+			}
+
+			@include media(tablet-993) {
+				padding-top: 105px;
+			}
+
+			@include media(tablet-993) {
+				border-left: none;
+			}
 
 			@include media(mobile) {
 				flex-basis: 100%;
@@ -102,7 +133,9 @@
 			}
 
 			&:not(:first-child) {
-				margin-top: 25px;
+				@include media(550) {
+					margin-top: 25px;
+				}
 			}
 
 			span {

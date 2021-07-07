@@ -44,9 +44,11 @@
 		position: relative;
 		overflow: hidden;
 		&__list {
+			position: relative;
 			display: flex;
 			flex-wrap: wrap;
 			list-style: none;
+			z-index: 1;
 		}
 		&__inner {
 			padding-top: 111px;
@@ -59,6 +61,20 @@
 				top: -64px;
 				width: 1px;
 				height: 500px;
+				background-color: rgba(160, 171, 123, 0.12);
+
+				@include media(tablet-993) {
+					display: none;
+				}
+			}
+
+			&::after {
+				content: '';
+				position: absolute;
+				left: 40.5%;
+				top: 0;
+				width: 1px;
+				height: 662px;
 				background-color: rgba(160, 171, 123, 0.12);
 
 				@include media(tablet-993) {
