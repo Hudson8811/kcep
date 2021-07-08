@@ -258,9 +258,21 @@
 	background-repeat: no-repeat;
 	width: 1162px;
 	height: 256px;
-	margin-top: 32px;
-	top: 38%;
-	left: 49.7%;
-	transform: translateX(-43.4%);
+	left: 50%;
+	transform: translateX(-39%);
 	z-index: 0;
+
+	@include media(1500) {
+		left: 50%;
+		transform: translateX(-45.6%);
+	}
+
+	@include media(1441) {
+		left: 49.7%;
+		transform: translateX(-43.4%);
+	}
+
+	&--margin {
+		margin-top: 32px;
+	}
 }
