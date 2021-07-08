@@ -356,7 +356,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 		let count = 0;
 
-		tabsVideo.forEach((item) => {
+		tabsVideo.forEach((item, idx) => {
 			item.addEventListener('ended', () => {
 				autoplay();
 			})
@@ -372,39 +372,23 @@ document.addEventListener("DOMContentLoaded", function () {
 			})
 		})
 
-		function animate({timing, draw, duration}) {
-			let start = performance.now();
-
-			requestAnimationFrame(function animate(time) {
-				let timeFraction = (time - start) / duration;
-				if (timeFraction > 1) timeFraction = 1;
-
-				let progress = timing(timeFraction);
-				draw(progress);
-
-				if (timeFraction < 1) {
-					requestAnimationFrame(animate);
-				}
-			});
-		}
-
 		function autoplay() {
 			tabs.forEach((tab) => tab.classList.remove("tab--active"));
 			tabsItems.forEach((tabsItem) => tabsItem.classList.remove("active"));
 
 			const currentVideo = tabsItems[count].querySelector('video');
 			const timeline = tabs[count].querySelector('.home-video__tab-timeline');
-			const videoDuration = Math.floor(currentVideo.duration) ? Math.floor(currentVideo.duration) : 9;
+			
+			timeline.classList.add('timeline--active');
 
-			animate({
-				duration: videoDuration * 1000,
-				timing(timeFraction) {
-				  return timeFraction;
-				},
-				draw(progress) {
-				  timeline.style.width = progress * 100 + '%';
+			currentVideo.addEventListener('timeupdate', () => {
+				timeline.style.width = `${(currentVideo.currentTime / (currentVideo.duration - 1.2)) * 100}%`;
+
+				if (currentVideo.currentTime === currentVideo.duration) {
+					timeline.style.width = 0;
+					timeline.classList.remove('timeline--active');
 				}
-			});
+			})
 
 			currentVideo.play();
 
@@ -420,7 +404,7 @@ document.addEventListener("DOMContentLoaded", function () {
 			}
 		};
 
-		$('.home-video__title').one('inview', function(event, isInView) {
+		$('.home-video__anchor').one('inview', function(event, isInView) {
 			if (isInView) {
 				autoplay();
 			}
@@ -431,15 +415,33 @@ document.addEventListener("DOMContentLoaded", function () {
 
 			target = target.closest(".home-video__tab");
 
-			if (target) {
+			if (target && !target.classList.contains('tab--active')) {
 				tabs.forEach((tab, idx) => {
 					tab.classList.remove("tab--active");
+					tab.querySelector('.home-video__tab-timeline').classList.remove('timeline--active');
 					tabsItems[idx].classList.remove("active");
 					const video = tabsItems[idx].querySelector('video');
 					video.pause();
-
+					video.currentTime = 0;
+					tabsVideo[idx].classList.remove('video--active');
+					
 					if (tab === target) {
 						tabsItems[idx].classList.add("active");
+						tab.querySelector('.home-video__tab-timeline').classList.add('timeline--active');
+						const currentVideo = tabsItems[idx].querySelector('video');
+						const timeline = tab.querySelector('.home-video__tab-timeline');
+						currentVideo.classList.add('video--active');
+
+						count = idx < 2 ? idx + 1 : 0;
+
+						currentVideo.addEventListener('timeupdate', () => {
+							timeline.style.width = `${(currentVideo.currentTime / currentVideo.duration) * 100}%`;
+			
+							if (currentVideo.currentTime === currentVideo.duration) {
+								timeline.style.width = 0;
+								timeline.classList.remove('timeline--active');
+							}
+						})
 						video.play();
 					}
 				});
@@ -769,7 +771,7 @@ document.addEventListener("DOMContentLoaded", function () {
 			}
 		})
 
-		$('.home-video__title').on('inview', function(event, isInView) {
+		$('.home-video__anchor').on('inview', function(event, isInView) {
 			const activeTab = document.querySelector('.home-video__tabs').querySelector('.active');
 			const activeVideo = activeTab.querySelector('video');
 

@@ -65,6 +65,7 @@
 		cursor: pointer;
 		flex-basis: 33.333333333333333333%;
 		text-align: center;
+		transition: 0.4s linear;
 
 		&:first-child {
 			text-align: left;
@@ -82,6 +83,10 @@
 			left: 0;
 			bottom: -14px;
 			opacity: 0;
+
+			&.timeline--active {
+				transition: width 1s linear;
+			}
 		}
 
 		&:not(:first-child) {
@@ -296,5 +301,14 @@
 				}
 			}
 		}
+	}
+
+	&__anchor {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		width: 100%;
+		height: 20px;
 	}
 }
