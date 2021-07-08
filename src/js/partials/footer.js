@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
 	const togglePopup = () => {
-		const policyPopup = document.querySelector(".footer-policy");
+		const policyPopup = document.getElementById("policyPopup");
 		const policyPopupBtn = document.querySelectorAll(".footer__policy");
 
 		const showPopup = () => {
