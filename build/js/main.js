@@ -365,7 +365,6 @@ document.addEventListener("DOMContentLoaded", function () {
 				if (item.currentTime >= item.duration - 1 && item.classList.contains('video--active')) {
 					item.classList.remove('video--active');
 				}
-
 				if (item.currentTime <= 1 && !item.classList.contains('video--active')) {
 					item.classList.add('video--active');
 				}
@@ -417,19 +416,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
 			if (target && !target.classList.contains('tab--active')) {
 				tabs.forEach((tab, idx) => {
+					tabsVideo[idx].classList.remove('video--active');
+					const video = tabsItems[idx].querySelector('video');
+					
 					tab.classList.remove("tab--active");
 					tab.querySelector('.home-video__tab-timeline').classList.remove('timeline--active');
 					tabsItems[idx].classList.remove("active");
-					const video = tabsItems[idx].querySelector('video');
 					video.pause();
 					video.currentTime = 0;
-					tabsVideo[idx].classList.remove('video--active');
-					
+
 					if (tab === target) {
-						tabsItems[idx].classList.add("active");
-						tab.querySelector('.home-video__tab-timeline').classList.add('timeline--active');
 						const currentVideo = tabsItems[idx].querySelector('video');
 						const timeline = tab.querySelector('.home-video__tab-timeline');
+
+						tabsItems[idx].classList.add("active");
+						tab.querySelector('.home-video__tab-timeline').classList.add('timeline--active');
 						currentVideo.classList.add('video--active');
 
 						count = idx < 2 ? idx + 1 : 0;
@@ -442,11 +443,13 @@ document.addEventListener("DOMContentLoaded", function () {
 								timeline.classList.remove('timeline--active');
 							}
 						})
+						
 						video.play();
 					}
+					target.classList.add("tab--active");
 				});
 
-				target.classList.add("tab--active");
+				
 			}
 		});
 	};
