@@ -1,11 +1,10 @@
 .contacts-hero {
-	margin-top: -102px;
 	background-color: $dark;
 	position: relative;
 	min-height: calc(100vh - 230px);
 
 	@include media(tablet-993) {
-		margin-top: -135px;
+
 	}
 
 	&__inner {
@@ -31,6 +30,20 @@
 					display: none;
 				}
 			}
+			&::after {
+				content: '';
+				position: absolute;
+				right: 13%;
+				top: 80px;
+				width: 1px;
+				height: calc(100vh - 310px);
+				background-color: rgba(160, 171, 123, 0.12);
+
+				@include media(tablet-993) {
+					display: none;
+				}
+			}
+
 
 			@include media(tablet-993) {
 				flex-basis: 100%;

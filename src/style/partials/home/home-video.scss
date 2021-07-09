@@ -3,6 +3,10 @@
 	color: $dark;
 	position: relative;
 
+	.fp-scroller {
+		height: 100%;
+	}
+
 	@include media(mobile) {
 		height: 752px;
 	}
@@ -163,8 +167,18 @@
 			opacity: 0;
 			transition: 1s;
 
+			.container {
+				visibility: hidden;
+				opacity: 0;
+			}
+
 			&.active {
 				opacity: 1;
+
+				.container {
+					visibility: visible;
+					opacity: 1;
+				}
 
 
 				video {
@@ -185,9 +199,13 @@
 				position: absolute;
 				font-family: $secondaryFont;
 				font-weight: bold;
-				font-size: 20.85vw;
-				line-height: 100%;
+				font-size: 120px;
+				margin-top: 5vh;
 				color: rgba(26, 25, 25, 0.9);
+
+				@media screen and (max-height: 750px) {
+					margin-top: 8%;
+				}
 
 				@include media(mobile) {
 					font-size: 111px;
@@ -257,8 +275,11 @@
 			max-width: 738px;
 			overflow: hidden;
 			border-radius: 9px;
+			-webkit-border-radius: 9px;
 			margin-top: 25px;
 			padding: 22px 0 6px;
+			background: rgba(0, 0, 0, 0.32);
+			
 
 			@include media(mobile) {
 				margin-top: 0;
@@ -266,11 +287,11 @@
 			}
 
 			&::before {
-				content: "";
+				// content: "";
 				position: absolute;
 				width: calc(100% + 20px);
 				height: calc(100% + 20px);
-				background: rgba(0, 0, 0, 0.08);
+				background: rgba(0, 0, 0, 0.32);
 				filter: blur(11px);
 				left: -10px;
 				top: -10px;
@@ -278,6 +299,7 @@
 				bottom: -10px;
 				z-index: -1;
 				border-radius: 9px;
+				-webkit-border-radius: 9px;
 				pointer-events: none;
 			}
 

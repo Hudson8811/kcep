@@ -1,7 +1,6 @@
 .knowledge-hero {
 	padding-top: 102px;
 	padding-bottom: 24px;
-	margin-top: -102px;
 	background-color: $dark;
 	font-family: $secondaryFont;
 	font-weight: bold;
@@ -10,7 +9,6 @@
 
 	@include media(tablet-993) {
 		padding-top: 135px;
-		margin-top: -135px;
 	}
 	&__inner {
 		&-left {

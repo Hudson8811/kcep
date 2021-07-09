@@ -21,14 +21,12 @@
     }
     &-select{
         padding-top: 102px;
-        margin-top: -102px;
         padding-bottom: 37px;
         background: #1A1919;
         display: flex;
 
         @include media(tablet-993) {
             padding-top: 135px;
-            margin-top: -135px;
         }
 
         &__big{
@@ -104,10 +102,10 @@
             &::before {
 				content: '';
 				position: absolute;
-				left: 40.3%;
+				left: 41.7%;
 				top: 0;
 				width: 1px;
-				height: 593px;
+				height: calc(100% + 175px);
 				background-color: rgba(160, 171, 123, 0.12);
 
 				@include media(tablet-993) {
@@ -121,7 +119,7 @@
 				right: 18%;
 				top: 0;
 				width: 1px;
-				height: 593px;
+				height: calc(100% + 175px);
 				background-color: rgba(160, 171, 123, 0.12);
 
 				@include media(tablet-993) {
@@ -145,7 +143,7 @@
 				right: 0;
 				top: 0;
 				width: 1px;
-				height: 593px;
+				height: calc(100% + 175px);
 				background-color: rgba(160, 171, 123, 0.12);
 
 				@include media(tablet-993) {

@@ -1,11 +1,14 @@
 .about-hero {
-	margin-top: -105px;
 	min-height: 690px;
 	position: relative;
+	z-index: 1;
 
 	@include media(tablet-993) {
-		margin-top: -135px;
 		min-height: 600px;
+	}
+
+	@include media(mobile) {
+		min-height: 500px;
 	}
 
 	h1 {
@@ -50,6 +53,20 @@
 
 	&__inner {
 		&-left {
+			position: relative;
+			&::before {
+				content: '';
+				position: absolute;
+				right: -1px;
+				top: 50px;
+				width: 1px;
+				height: 640px;
+				background-color: rgba(160, 171, 123, 0.12);
+
+				@include media(tablet-993) {
+					display: none;
+				}
+			}
 			@include media(tablet-993) {
 				flex-basis: 0;
 			}
@@ -65,7 +82,20 @@
 			&::before {
 				content: '';
 				position: absolute;
-				left: 0;
+				left: 42.5%;
+				top: -110px;
+				width: 1px;
+				height: 601px;
+				background-color: rgba(160, 171, 123, 0.12);
+
+				@include media(tablet-993) {
+					display: none;
+				}
+			}
+			&::after {
+				content: '';
+				position: absolute;
+				right: 12%;
 				top: -110px;
 				width: 1px;
 				height: 601px;
@@ -93,6 +123,10 @@
 		border-radius: 50%;
 		text-decoration: none;
 		margin-top: 58px;
+
+		@include media(mobile) {
+			display: none;
+		}
 
 		&:hover {
 			@media screen and (min-width: 1025px) {

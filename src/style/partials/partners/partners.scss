@@ -11,7 +11,6 @@
 	}
 	&-select {
 		padding-top: 102px;
-		margin-top: -102px;
 		padding-bottom: 37px;
 		background: #1a1919;
 		display: flex;
@@ -57,10 +56,10 @@
 			&::before {
 				content: '';
 				position: absolute;
-				left: 0;
-				top: -64px;
+				left: 41.7%;
+				top: 0;
 				width: 1px;
-				height: 500px;
+				height: calc(100% + 175px);
 				background-color: rgba(160, 171, 123, 0.12);
 
 				@include media(tablet-993) {
@@ -68,13 +67,14 @@
 				}
 			}
 
+
 			&::after {
 				content: '';
 				position: absolute;
-				left: 40.5%;
+				right: 13%;
 				top: 0;
 				width: 1px;
-				height: 662px;
+				height: calc(100% + 175px);
 				background-color: rgba(160, 171, 123, 0.12);
 
 				@include media(tablet-993) {
@@ -90,6 +90,23 @@
 			}
 		}
 		&__left {
+			position: relative;
+
+
+			&::after {
+				content: '';
+				position: absolute;
+				right: 0;
+				top: 0;
+				width: 1px;
+				height: calc(100% + 175px);
+				background-color: rgba(160, 171, 123, 0.12);
+
+				@include media(tablet-993) {
+					display: none;
+				}
+			}
+
 			@include media(mobile-620) {
 				flex-basis: 0;
 			}

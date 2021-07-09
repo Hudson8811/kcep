@@ -50,7 +50,7 @@
 				right: -1px;
 				top: 0;
 				width: 1px;
-				height: 593px;
+				height: calc(100% + 288px);
 				background-color: rgba(160, 171, 123, 0.12);
 
 				@include media(tablet-993) {
@@ -70,10 +70,10 @@
 			&::before {
 				content: '';
 				position: absolute;
-				left: 40%;
+				left: 41.7%;
 				top: 0;
 				width: 1px;
-				height: 297px;
+				height: calc(100% + 288px);
 				background-color: rgba(160, 171, 123, 0.12);
 
 				@include media(tablet-993) {
@@ -87,7 +87,7 @@
 				right: 18%;
 				top: 0;
 				width: 1px;
-				height: 593px;
+				height: calc(100% + 288px);
 				background-color: rgba(160, 171, 123, 0.12);
 
 				@include media(tablet-993) {
@@ -161,6 +161,7 @@
 					cursor: pointer;
 
 					@include media(mobile) {
+						padding: 0px 10px 13px;
 						padding-bottom: 13px;
 					}
 
@@ -171,6 +172,10 @@
 						line-height: 21px;
 						color: #f2f2f2;
 						opacity: 0.02;
+
+						@include media(mobile) {
+							display: none;
+						}
 					}
 
 					.text {

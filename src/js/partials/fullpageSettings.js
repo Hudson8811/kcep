@@ -7,7 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
 		paddingTop: '0',
 		paddingBottom: '0',
 		verticalCentered: false,
-		responsiveHeight: true
+		responsiveHeight: true,
+		normalScrollElements: '.footer-policy, nav'
 	});
 	
 	//methods

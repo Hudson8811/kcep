@@ -86,7 +86,7 @@
 			&::before {
 				content: '';
 				position: absolute;
-				right: 100px;
+				right: 13%;
 				top: 30px;
 				width: 1px;
 				height: calc(100vh - 30px);
@@ -96,20 +96,7 @@
 					display: none;
 				}
 			}
-			&::after {
-				content: '';
-				position: absolute;
-				right: 55%;
-				top: 30px;
-				width: 1px;
-				height: calc(100vh - 30px);
-				background-color: rgba(160, 171, 123, 0.12);
 
-				@include media(tablet-993) {
-					display: none;
-				}
-				z-index: 0;
-			}
 
 			@include media(mobile) {
 				flex-basis: 100%;

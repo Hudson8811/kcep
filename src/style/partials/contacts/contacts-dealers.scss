@@ -37,6 +37,20 @@
 				}
 			}
 
+			&::after {
+				content: '';
+				position: absolute;
+				right: 14.1%;
+				top: -129px;
+				width: 1px;
+				height: 120.2%;
+				background-color: rgba(160, 171, 123, 0.12);
+
+				@include media(tablet-993) {
+					display: none;
+				}
+			}
+
 			.section-title {
 				font-family: $secondaryFont;
 			}
@@ -58,6 +72,8 @@
 	}
 
 	&__top {
+		position: relative;
+		z-index: 1;
 		&-cards {
 			margin-top: 45px;
 			display: flex;
@@ -110,6 +126,9 @@
 	}
 
 	&__bottom {
+		position: relative;
+		z-index: 1;
+		
 		.section-title {
 			margin-top: 64px;
 

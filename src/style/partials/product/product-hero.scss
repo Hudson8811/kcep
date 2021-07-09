@@ -1,12 +1,10 @@
 .product-hero {
 	background-color: $dark;
-	margin-top: -102px;
 	padding-top: 102px;
 	min-height: 500px;
 
 	@include media(tablet-993) {
 		padding-top: 135px;
-		margin-top: -135px;
 	}
 
 	@include media(mobile) {
@@ -34,7 +32,7 @@
 		&-left {
 			padding-left: 39px;
 
-			@include media(mobile) {
+			@include media(tablet-993) {
 				padding-left: 0;
 				display: none;
 			}
@@ -47,11 +45,25 @@
 			padding-bottom: 18px;
 			padding-top: 3px;
 			position: relative;
+			box-sizing: border-box;
 
 			&::before {
 				content: '';
 				position: absolute;
-				left: 0;
+				left: -1px;
+				top: -64px;
+				width: 1px;
+				height: 550px;
+				background-color: rgba(160, 171, 123, 0.12);
+
+				@include media(tablet-993) {
+					display: none;
+				}
+			}
+			&::after {
+				content: '';
+				position: absolute;
+				right: 13%;
 				top: -64px;
 				width: 1px;
 				height: 550px;
@@ -64,12 +76,18 @@
 
 			@include media(tablet-993) {
 				padding-top: 48px;
+				padding-left: 38px;
 			}
 
 			@include media(mobile) {
 				flex-basis: 100%;
 				width: 100%;
 				overflow: auto;
+				padding-left: 68px;
+			}
+
+			@include media(550) {
+				padding-left: 0;
 			}
 
 			@include media(400) {
@@ -85,7 +103,7 @@
 		line-height: 43px;
 
 		@include media(mobile) {
-			padding-left: 68px;
+			padding-left: 0;
 			padding-right: 30px;
 			font-size: 27px;
 			line-height: 36px;
@@ -108,11 +126,9 @@
 		margin-top: 4px;
 
 		@include media(mobile) {
-			padding-left: 68px;
 		}
 
 		@include media(550) {
-			padding-left: 32px;
 			padding-right: 32px;
 		}
 
@@ -169,10 +185,12 @@
 			position: relative;
 			min-height: 300px;
 			width: 100%;
+			z-index: 1;
 
 
 			@include media(400) {
 				min-height: 261px;
+				margin-top: 30px;
 			}
 		}
 	}
@@ -187,15 +205,23 @@
 		@include media(mobile) {
 			display: flex;
 			align-items: center;
+			height: auto;
 		}
 
 		@include media(400) {
 			max-width: 353px;
 			min-height: 220px;
+			margin: 0 25px;
 		}
 
 		&.active {
 			opacity: 1;
+		}
+	}
+
+	&__button-prev {
+		@include media(tablet-993) {
+			display: none;
 		}
 	}
 }

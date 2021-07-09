@@ -35,6 +35,36 @@
 
 		&-right {
 			flex-direction: column;
+			position: relative;
+
+
+			&::before {
+				content: '';
+				position: absolute;
+				left: 0;
+				top: -128px;
+				width: 1px;
+				height: calc(100% + 274px);
+				background-color: rgba(160, 171, 123, 0.12);
+
+				@include media(tablet-993) {
+					display: none;
+				}
+			}
+			
+			&::after {
+				content: '';
+				position: absolute;
+				right: 13%;
+				top: -128px;
+				width: 1px;
+				height: calc(100% + 274px);
+				background-color: rgba(160, 171, 123, 0.12);
+
+				@include media(tablet-993) {
+					display: none;
+				}
+			}
 
 			@include media(tablet-993) {
 				flex-basis: 100%;
@@ -67,6 +97,8 @@
 		display: flex;
 		list-style: none;
 		margin-top: 44px;
+		position: relative;
+		z-index: 1;
 
 		@include media(tablet-993) {
 			margin-top: 75px;

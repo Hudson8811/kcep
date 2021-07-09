@@ -2,11 +2,9 @@
 	&-hero {
 		position: relative;
 		min-height: 601px;
-
-		margin-top: -102px;
+		z-index: 1;
 
 		@include media(tablet-993) {
-			margin-top: -135px;
 			padding-top: 33px;
 		}
 
@@ -69,7 +67,7 @@
 					right: 16.4%;
 					top: -50px;
 					width: 1px;
-					height: 546px;
+					height: 550px;
 					background-color: rgba(160, 171, 123, 0.12);
 	
 					@include media(tablet-993) {
@@ -136,7 +134,7 @@
 					right: 0;
 					top: 0;
 					width: 1px;
-					height: 1200px;
+					height: calc(100% + 160px);
 					background-color: rgba(160, 171, 123, 0.12);
 	
 					@include media(tablet-993) {

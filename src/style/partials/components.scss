@@ -174,7 +174,7 @@
 		align-items: center;
 		justify-content: center;
 
-		@include media(580) {
+		@include media(tablet-993) {
 			right: 0;
 			top: -45px;
 			width: 35px;
@@ -195,7 +195,66 @@
 
 		&:hover {
 			svg {
-				fill: $gold;
+				@media screen and (min-width: 1025px) {
+					fill: $gold;
+				}
+			}
+		}
+	}
+
+	&--transparent {
+		@media screen and (max-height: 500px) {
+			padding-bottom: 30px;
+			padding-top: 30px;
+			align-items: flex-end;
+		}
+
+		.button-prev {
+			display: none;
+		}
+		.img-popup__close {
+			right: 0;
+			top: 0;
+
+			@include media(tablet-993) {
+				top: -55px;
+				right: 0;
+			}
+
+			@media screen and (max-height: 500px) {
+				right: -35px;
+				top: -35px;
+			}
+		}
+		.img-popup__dialog {
+			background-color: transparent;
+			width: calc(100% - 90px);
+			height: calc(100% - 90px);
+			padding: 60px;
+			display: flex;
+			align-items: center;
+			
+			@include media(tablet-993) {
+				padding: 0;
+				width: calc(100% - 30px * 2);
+				height: calc(100% - 150px);
+			}
+
+			@media screen and (max-height: 500px) {
+				width: calc(100% - 100px * 2);
+				height: calc(100% - 15px);
+			}
+
+			img {
+				object-fit: cover;
+				height: 100%;
+				width: 100%;
+				max-height: 100%;
+
+			}
+	
+			&::after {
+				display: none;
 			}
 		}
 	}
@@ -270,6 +329,10 @@
 	@include media(1441) {
 		left: 49.7%;
 		transform: translateX(-43.4%);
+	}
+
+	@include media(tablet-993) {
+		display: none;
 	}
 
 	&--margin {

@@ -50,6 +50,7 @@
 	&__right {
 		padding: 157px 0;
 		position: relative;
+		background-color: #fff;
 
 		&::after {
 			content: '';
@@ -99,6 +100,11 @@
 			@include media(370) {
 				padding-left: 17px;
 			}
+
+			@media screen and (max-height: 750px) {
+				margin-top: 50px;
+			}
+
 			&-item {
 				font-size: 44px;
 				line-height: 32px;
@@ -109,6 +115,10 @@
 
 				&:not(:first-child) {
 					margin-top: 70px;
+
+					@media screen and (max-height: 750px) {
+						margin-top: 40px;
+					}
 				}
 
 				span {
@@ -138,5 +148,9 @@
 		@include media(mobile) {
 			bottom: 90px;
 		}
+	}
+
+	.fp-scroller {
+		height: 100%;
 	}
 }

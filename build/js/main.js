@@ -123,22 +123,30 @@ $(document).ready(function () {
 		dotsClass: "slider-pagination",
 	});
 
-	const productSliderInit = () => {
-		const productSlider = $("#productSlider").slick({
-			slidesToShow: 1,
-			arrows: false,
-			autoplay: true,
-			autoplaySpeed: 3000,
-			dots: true,
-			dotsClass: 'product-hero__pagination',
-			customPaging: function(slick,index) {
-				var targetImage = slick.$slides.eq(index).find('img').attr('src');
-				return '<img src=" ' + targetImage + ' "/><div class="timeline"></div>';
+	const productSlider = $("#productSlider").slick({
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		arrows: false,
+		autoplay: true,
+		autoplaySpeed: 3000,
+		dots: true,
+		dotsClass: 'product-hero__pagination',
+		customPaging: function(slick,index) {
+			var targetImage = slick.$slides.eq(index).find('img').attr('src');
+			return '<img src=" ' + targetImage + ' "/><div class="timeline"></div>';
+		},
+		responsive: [
+			{
+				breakpoint: 400,
+				settings: {
+					slidesToShow: 1,
+					slidesToScroll: 1,
+					centerMode: true,
+					variableWidth: true
+				}
 			}
-		})
-	}
-
-	productSliderInit();
+		]
+	})
 });
 document.addEventListener("DOMContentLoaded", function () {
 	const toggleVideoPopup = () => {
@@ -301,7 +309,8 @@ document.addEventListener('DOMContentLoaded', () => {
 		paddingTop: '0',
 		paddingBottom: '0',
 		verticalCentered: false,
-		responsiveHeight: true
+		responsiveHeight: true,
+		normalScrollElements: '.footer-policy, nav'
 	});
 	
 	//methods
@@ -443,7 +452,7 @@ document.addEventListener("DOMContentLoaded", function () {
 								timeline.classList.remove('timeline--active');
 							}
 						})
-						
+
 						video.play();
 					}
 					target.classList.add("tab--active");
@@ -811,4 +820,36 @@ document.addEventListener("DOMContentLoaded", function () {
 	}
 
 	toggleVideo();
+
+	const fixHeader = () => {
+		const html = document.documentElement;
+
+		if (html.classList.contains('fp-enabled')) {
+			const main = document.querySelector('main');
+
+			main.style.backgroundColor = "transparent";
+			return;
+		}
+
+		const header = document.querySelector('header');
+
+		header.style.position = 'fixed';
+	}
+	fixHeader();
+
+	const switchClassImgPopup = () => {
+		const aboutSection = document.querySelector('.about-hero');
+
+		if (!aboutSection) {
+			return;
+		}
+
+		const popup = document.querySelector('.img-popup');
+
+		popup.classList.add('img-popup--transparent');
+
+		
+	}
+
+	switchClassImgPopup();
 });

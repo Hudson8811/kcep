@@ -127,7 +127,7 @@ document.addEventListener("DOMContentLoaded", function () {
 								timeline.classList.remove('timeline--active');
 							}
 						})
-						
+
 						video.play();
 					}
 					target.classList.add("tab--active");
@@ -495,4 +495,36 @@ document.addEventListener("DOMContentLoaded", function () {
 	}
 
 	toggleVideo();
+
+	const fixHeader = () => {
+		const html = document.documentElement;
+
+		if (html.classList.contains('fp-enabled')) {
+			const main = document.querySelector('main');
+
+			main.style.backgroundColor = "transparent";
+			return;
+		}
+
+		const header = document.querySelector('header');
+
+		header.style.position = 'fixed';
+	}
+	fixHeader();
+
+	const switchClassImgPopup = () => {
+		const aboutSection = document.querySelector('.about-hero');
+
+		if (!aboutSection) {
+			return;
+		}
+
+		const popup = document.querySelector('.img-popup');
+
+		popup.classList.add('img-popup--transparent');
+
+		
+	}
+
+	switchClassImgPopup();
 });

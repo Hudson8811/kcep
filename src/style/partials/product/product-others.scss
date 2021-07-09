@@ -28,6 +28,35 @@
 		}
 		&-right {
 			flex-direction: column;
+			position: relative;
+
+			&::before {
+				content: '';
+				position: absolute;
+				left: 0;
+				top: -10px;
+				width: 1px;
+				height: calc(100% + 10px);
+				background-color: rgba(160, 171, 123, 0.12);
+
+				@include media(tablet-993) {
+					display: none;
+				}
+			}
+			
+			&::after {
+				content: '';
+				position: absolute;
+				right: 13%;
+				top: -10px;
+				width: 1px;
+				height: calc(100% + 10px);
+				background-color: rgba(160, 171, 123, 0.12);
+
+				@include media(tablet-993) {
+					display: none;
+				}
+			}
 
 			@include media(tablet-993) {
 				overflow: scroll;
@@ -78,6 +107,8 @@
 		list-style: none;
 		font-size: 15px;
 		line-height: 21px;
+		position: relative;
+		z-index: 1;
 
 		@include media(tablet-993) {
 			margin-top: 75px;

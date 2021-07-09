@@ -4,12 +4,10 @@
 			rgba($color: #1a1919, $alpha: 0.32) no-repeat;
 		background-size: cover;
 		padding-top: 102px;
-		margin-top: -102px;
 		min-height: 601px;
 
 		@include media(mobile) {
 			padding-top: 135px;
-			margin-top: -135px;
 			min-height: 550px;
 			padding-bottom: 50px;
 		}
@@ -40,7 +38,21 @@
 				left: 0;
 				top: -30px;
 				width: 1px;
-				height: 550px;
+				height: 554px;
+				background-color: rgba(160, 171, 123, 0.12);
+
+				@include media(tablet-993) {
+					display: none;
+				}
+			}
+
+			&::after {
+				content: '';
+				position: absolute;
+				right: 13%;
+				top: -30px;
+				width: 1px;
+				height: 554px;
 				background-color: rgba(160, 171, 123, 0.12);
 
 				@include media(tablet-993) {
@@ -96,6 +108,19 @@
 				content: '';
 				position: absolute;
 				left: 0;
+				top: 0;
+				width: 1px;
+				height: 100%;
+				background-color: rgba(160, 171, 123, 0.12);
+
+				@include media(tablet-993) {
+					display: none;
+				}
+			}
+			&::after {
+				content: '';
+				position: absolute;
+				right: 13%;
 				top: 0;
 				width: 1px;
 				height: 100%;
@@ -188,6 +213,21 @@
 		padding-bottom: 96px;
 
 		&__left {
+			position: relative;
+
+			&::before {
+				content: '';
+				position: absolute;
+				right: 0;
+				top: -64px;
+				width: 1px;
+				height: 450px;
+				background-color: rgba(160, 171, 123, 0.12);
+
+				@include media(tablet-993) {
+					display: none;
+				}
+			}
 			@include media(mobile) {
 				flex-basis: 0;
 			}
@@ -196,12 +236,12 @@
 			display: flex;
 			flex-direction: column;
 			position: relative;
-			max-width: 720px;
+			max-width: 757px;
 
 			&::before {
 				content: '';
 				position: absolute;
-				left: 0;
+				right: 0;
 				top: -64px;
 				width: 1px;
 				height: 450px;

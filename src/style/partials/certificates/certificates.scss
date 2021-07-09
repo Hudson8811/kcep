@@ -12,7 +12,6 @@
 		align-items: flex-start;
 	}
 	&-select {
-		margin-top: -102px;
 		padding-top: 102px;
 		padding-bottom: 22px;
 		background: #1a1919;
@@ -20,7 +19,6 @@
 
 		@include media(tablet-993) {
 			padding-top: 135px;
-			margin-top: -135px;
 		}
 		&__title {
 			font-weight: bold;
@@ -79,10 +77,24 @@
 			&::before {
 				content: '';
 				position: absolute;
-				left: 40%;
+				left: 41.8%;
 				top: 0;
 				width: 1px;
-				height: 297px;
+				height: calc(100% + 180px);
+				background-color: rgba(160, 171, 123, 0.12);
+
+				@include media(tablet-993) {
+					display: none;
+				}
+			}
+
+			&::after {
+				content: '';
+				position: absolute;
+				right: 13%;
+				top: 0;
+				width: 1px;
+				height: calc(100% + 180px);
 				background-color: rgba(160, 171, 123, 0.12);
 
 				@include media(tablet-993) {
@@ -106,7 +118,7 @@
 				right: 0;
 				top: 0;
 				width: 1px;
-				height: 593px;
+				height: calc(100% + 180px);
 				background-color: rgba(160, 171, 123, 0.12);
 
 				@include media(tablet-993) {
