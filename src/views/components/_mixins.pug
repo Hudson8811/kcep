@@ -34,3 +34,11 @@ mixin button-prev(customClass)
 				<use xlink:href="img/sprite.svg#arrow-prev"></use>
 			</svg>
 		span назад
+
+mixin coockies-popup()
+	.coockies-popup 
+		.coockies-popup__dialog 
+			p.coockies-popup__text Этот сайт использует файлы cookies для более комфортной работы пользователя. Продолжая просмотр страниц сайта, вы соглашаетесь с использованием файлов cookies. В противном случае вы можете покинуть сайт.
+			button.coockies-popup__close 
+				svg(class="about-popup__close-icon")
+					use(xlink:href="img/sprite.svg#close")

@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		paddingBottom: '0',
 		verticalCentered: false,
 		responsiveHeight: true,
-		normalScrollElements: '.footer-policy, nav'
+		normalScrollElements: '.footer-policy, nav, .coockies-popup'
 	});
 	
 	//methods
