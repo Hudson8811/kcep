@@ -69,7 +69,7 @@
 		cursor: pointer;
 		flex-basis: 33.333333333333333333%;
 		text-align: center;
-		transition: 0.4s linear;
+		transition: 0.2s linear;
 
 		&:first-child {
 			text-align: left;
@@ -106,8 +106,6 @@
 
 			.home-video__tab-timeline {
 				opacity: 1;
-				// width: 100%;
-				// transition: width 9s;
 			}
 
 			@include media(mobile) {
