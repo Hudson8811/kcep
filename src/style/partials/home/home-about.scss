@@ -151,6 +151,8 @@
 	}
 
 	.fp-scroller {
-		height: 100%;
+		@media screen and (min-width: 768px) {
+			height: 100%;
+		}
 	}
 }
