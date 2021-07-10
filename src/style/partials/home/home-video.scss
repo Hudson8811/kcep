@@ -202,6 +202,7 @@
 				font-size: 120px;
 				margin-top: 5vh;
 				color: rgba(26, 25, 25, 0.9);
+				white-space: nowrap;
 
 				@media screen and (max-height: 750px) {
 					margin-top: 8%;
@@ -210,7 +211,7 @@
 				@include media(mobile) {
 					font-size: 111px;
 					line-height: 46px;
-					text-align: center;
+					text-align: left;
 					width: 100%;
 					position: static;
 				}
@@ -223,7 +224,7 @@
 				}
 
 				@include media(400) {
-					font-size: 95px;
+					font-size: 85px;
 					max-width: 265px;
 				}
 
