@@ -136,18 +136,13 @@
 		@include media(tablet-1200) {
 			left: -140px;
 		}
-		@include media(tablet-993) {
-			left: -115px;
-		}
 
-		@include media(580) {
+		@include media(tablet-993) {
 			left: 0;
 			top: -44px;
 			width: 35px;
 			height: 35px;
-		}
 
-		@include media(580) {
 			.button-prev-img {
 				width: 35px;
 				height: 35px;
@@ -261,25 +256,24 @@
 
 	&__dialog {
 		position: relative;
-		width: 40vw;
-		height: 86vh;
+		width: 50%;
+		height: auto;
 		padding: 25px 38px;
 		border-radius: 0 0 0 12px;
 		color: $dark;
 		background-color: #fff;
 
-		@include media(1025) {
-			width: 70%;
-			height: 80vh;
+		@include media(tablet-993) {
+			width: 55%;
 		}
 
 		@include media(mobile) {
-			width: 60%;
+			width: 73%;
+		}
+		@include media(576) {
+			width: 90%;
 		}
 
-		@include media(550) {
-			width: 70%;
-		}
 
 		&::after {
 			content: "";

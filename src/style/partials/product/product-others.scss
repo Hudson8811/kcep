@@ -10,7 +10,7 @@
 	}
 
 	@include media(400) {
-		padding-top: 0;
+		padding-top: 50px;
 	}
 
 	&__container {
@@ -90,11 +90,22 @@
 	}
 
 	.section-title {
-		@include media(tablet-993) {
-			position: absolute;
-		}
+		display: block;
 
+		@include media(tablet-993) {
+			display: none;
+		}
+	}
+	.section-title-mobile {
+		display: none;
+
+		@include media(tablet-993) {
+			display: block;
+			position: absolute;
+			left: 68px;
+		}
 		@include media(550) {
+			left: 32px;
 			max-width: 300px;
 			font-size: 27px;
 			line-height: 36px;
@@ -119,11 +130,11 @@
 		}
 
 		@include media(550) {
-			margin-top: 107px;
+			margin-top: 90px;
 		}
 
-		@include media(500) {
-			margin-top: 103px;
+		@include media(400) {
+			margin-top: 90px;
 		}
 	}
 

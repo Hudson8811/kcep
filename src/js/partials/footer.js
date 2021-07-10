@@ -2,10 +2,13 @@ document.addEventListener("DOMContentLoaded", function () {
 	const togglePopup = () => {
 		const policyPopup = document.getElementById("policyPopup");
 		const policyPopupBtn = document.querySelectorAll(".footer__policy");
+		const policyDialog = document.querySelector(".footer-policy__content");
 
 		const showPopup = () => {
 			policyPopup.classList.add("active");
 			document.body.classList.add("scroll-stoped");
+
+			policyDialog.style.maxHeight = `${Math.floor(document.documentElement.clientHeight * 0.92)}px`;
 		};
 
 		const hidePopup = () => {
