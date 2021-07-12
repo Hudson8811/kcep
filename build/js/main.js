@@ -577,7 +577,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 				mapListItems.forEach((li, index) => {
 					if (target.closest("li") === li) {
-						points[index].classList.add("active");
+						if (points[index]) {
+							points[index].classList.add("active");
+						}
 					}
 				});
 			}
@@ -592,7 +594,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 				mapListItems.forEach((li, index) => {
 					if (target.closest("li") === li) {
-						points[index].classList.remove("active");
+						if (points[index].classList.contains('active')) {
+							points[index].classList.remove("active");
+						}
 					}
 				});
 			}
