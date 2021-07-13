@@ -272,6 +272,10 @@
 			height: 100%;
 			width: 100%;
 			z-index: -1;
+
+			@include media(tablet-993) {
+				display: none;
+			}
 		}
 	}
 }

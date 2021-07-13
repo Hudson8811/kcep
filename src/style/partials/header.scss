@@ -167,6 +167,7 @@
 					font-family: $secondaryFont;
 					text-decoration: none;
 					color: inherit;
+					white-space: nowrap;
 
 					&:visited {
 						color: inherit;
