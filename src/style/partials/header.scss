@@ -64,7 +64,7 @@
 
 		&-right {
 			justify-content: space-between;
-			padding-right: 15px;
+			padding-right: 26px;
 
 			@media screen and (max-width: 993px) {
 				justify-content: flex-end;
@@ -164,6 +164,7 @@
 				}
 
 				a {
+					font-family: $secondaryFont;
 					text-decoration: none;
 					color: inherit;
 
