@@ -7,6 +7,13 @@
 	font-size: 16px;
 	line-height: 30px;
 
+	.footer__wrapper {
+		@include media(340) {
+			height: 100vh !important;
+			padding: 140px 30px 43px;
+		}
+	}
+
 	&__wrapper {
 		max-width: 1206px;
 		margin-right: 9.5vw;

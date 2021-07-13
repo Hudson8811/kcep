@@ -146,6 +146,12 @@
 						}
 					}
 				}
+
+				@include media(1025) {
+					.header__nav-list-sub-menu {
+					}
+				}
+
 				&:not(:last-child) {
 					margin-right: 40px;
 					@include media(tablet-1200) {
@@ -188,6 +194,10 @@
 				padding: 40px 0 0 0;
 				transform-origin: top;
 				transform: rotateX(-90deg);
+
+				@include media(tablet-993) {
+					
+				}
 
 				&::before {
 					content: "";
