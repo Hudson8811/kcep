@@ -143,6 +143,11 @@
 				line-height: 32px;
 				max-width: 225px;
 
+				span {
+					font-size: 16px !important;
+					font-weight: 400 !important;
+				}
+
 				@include media(370) {
 					font-size: 14px;
 					line-height: 28px;
