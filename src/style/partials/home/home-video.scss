@@ -2,6 +2,8 @@
 	height: 900px;
 	color: $dark;
 	position: relative;
+	background: url('../images/home/video-bg.png') no-repeat center / cover;
+	z-index: 0;
 
 	.fp-scroller {
 		height: 100%;
