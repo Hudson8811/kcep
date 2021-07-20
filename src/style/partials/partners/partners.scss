@@ -4,6 +4,10 @@
 		display: flex;
 		position: relative;
 		z-index: 1;
+
+		@include media(tablet-993) {
+			padding-top: 30px;
+		}
 	}
 	&__inner {
 		display: flex;
@@ -14,7 +18,15 @@
 		padding-bottom: 37px;
 		background: #1a1919;
 		display: flex;
+
 		&__left {
+			align-items: flex-start;
+			padding: 20px 0 0 39px;
+
+			@include media(tablet-993) {
+				padding: 0;
+			}
+
 			@include media(mobile-620) {
 				display: none;
 			}
@@ -54,7 +66,7 @@
 			position: relative;
 
 			&::before {
-				content: '';
+				content: "";
 				position: absolute;
 				left: 41.7%;
 				top: 0;
@@ -67,9 +79,8 @@
 				}
 			}
 
-
 			&::after {
-				content: '';
+				content: "";
 				position: absolute;
 				right: 13%;
 				top: 0;
@@ -92,9 +103,8 @@
 		&__left {
 			position: relative;
 
-
 			&::after {
-				content: '';
+				content: "";
 				position: absolute;
 				right: 0;
 				top: 0;
@@ -151,7 +161,6 @@
 			margin-bottom: 16px;
 		}
 		&__img {
-
 			height: 100%;
 			object-fit: contain;
 
