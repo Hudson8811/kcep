@@ -1,9 +1,5 @@
 .product-others {
 	color: $textDark;
-	margin-top: -17px;
-	@include media(tablet-1200) {
-		margin-top: 0;
-	}
 
 	@include media(tablet-993) {
 		padding-top: 50px;

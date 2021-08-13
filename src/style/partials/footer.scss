@@ -188,6 +188,7 @@
 		line-height: 18px;
 		opacity: 0.32;
 		color: inherit;
+		text-transform: lowercase;
 
 		@include media(mobile) {
 			order: 1;
@@ -299,6 +300,35 @@
 			}
 		}
 
+		&__text{
+			margin-top: 55px;
+			font-size: 15px;
+			line-height: 21px;
+			font-family: $mainFont;
+			font-weight: normal;
+			h2,h3,h4{
+				font-weight: bold;
+				font-size: 27px;
+				line-height: 32px;
+				@include media(mobile) {
+					font-size: 22px;
+				}
+				&:not(:first-child) {
+					margin-top: 32px;
+
+					@include media(mobile) {
+						margin-top: 25px;
+					}
+				}
+			}
+			> * + *{
+				margin-top: 35px;
+				@include media(mobile) {
+					margin-top: 10px;
+				}
+			}
+		}
+
 		&__content {
 			width: 100%;
 			max-width: 872px;
@@ -329,45 +359,6 @@
 			&::-webkit-scrollbar-thumb {
 				background-color: $gold;
 				border-radius: 1px;
-			}
-
-			ol {
-				list-style: inside;
-				list-style-type: decimal;
-				margin-top: 55px;
-
-				@include media(mobile) {
-					margin-top: 30px;
-				}
-
-				li {
-					font-weight: bold;
-					font-size: 27px;
-					line-height: 32px;
-
-					@include media(mobile) {
-						font-size: 22px;
-					}
-
-					&:not(:first-child) {
-						margin-top: 32px;
-
-						@include media(mobile) {
-							margin-top: 25px;
-						}
-					}
-					p {
-						margin-top: 35px;
-						font-family: $mainFont;
-						font-weight: normal;
-						font-size: 15px;
-						line-height: 21px;
-
-						@include media(mobile) {
-							margin-top: 10px;
-						}
-					}
-				}
 			}
 		}
 

@@ -63,6 +63,8 @@
 		display: flex;
 		flex-direction: column;
 		align-items: flex-start;
+		max-width: 50%;
+		padding-bottom: 20px;
 
 		@include media(tablet-993) {
 			padding-top: 148px;
@@ -76,6 +78,7 @@
 		@include media(450) {
 			padding-top: 375px;
 			padding-bottom: 70px;
+			max-width: 100%;
 		}
 	}
 

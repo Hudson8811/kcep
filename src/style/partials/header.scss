@@ -129,9 +129,7 @@
 				position: relative;
 				transition: 0.4s;
 
-				&.active {
-					color: $gold;
-				}
+
 
 				@media screen and (min-width: 1025px) {
 					&:hover {
@@ -179,6 +177,12 @@
 						color: inherit;
 					}
 				}
+			}
+
+			> .current-menu-item > a,
+			> .current_page_parent > a,
+			> .current_page_item > a {
+				color: $gold;
 			}
 
 			&-sub-menu {
@@ -236,22 +240,25 @@
 			}
 		}
 	}
+
+	&__lang{
+		display: block;
+		position: relative;
+		z-index: 100;
+		@include media(tablet-993) {
+			display: none;
+
+			&.nav--open {
+				display: block;
+			}
+		}
+	}
 	&__dropdown {
 		display: flex;
 		align-items: center;
 		font-weight: bold;
 		font-size: 12px;
 		position: relative;
-		z-index: 100;
-
-		@include media(tablet-993) {
-			display: none;
-
-			&.nav--open {
-				display: flex;
-			}
-		}
-
 		img {
 			margin-left: 6px;
 		}
@@ -307,6 +314,68 @@
 				transform: rotate(90deg);
 				bottom: 0;
 			}
+		}
+	}
+}
+
+
+.langs{
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	width: auto;
+	right: 50%;
+	top: 100%;
+	font-size: 15px;
+	line-height: 180%;
+	color: #1a1919;
+	padding: 40px 0 0 0;
+	transform-origin: top;
+	transform: rotateX(-90deg) translateX(50%);
+	transition-property: transform;
+	transition-duration: .4s;
+	@include media(tablet-993) {
+		padding: 0;
+	}
+	&.active{
+		transform: rotateX(0)  translateX(50%);
+	}
+
+	&::before{
+		content: "";
+		position: absolute;
+		width: 100%;
+		height: calc(100% - 40px);
+		background-color: #f7f7f7;
+		border-radius: 3px;
+		z-index: -1;
+		@include media(tablet-993) {
+			height: 100%;
+		}
+	}
+	.sh-lang-switcher{
+		color: inherit;
+		position: relative;
+		transition: .4s;
+		padding: 0 18px;
+		a{
+			font-family: Calibri,sans-serif;
+			display: flex;
+			text-decoration: none;
+			color: inherit;
+			white-space: nowrap;
+			transition: color .4s;
+			&:hover {
+				@media screen and (min-width: 1025px) {
+					color: $gold;
+				}
+			}
+		}
+		&:first-child {
+			padding-top: 16px;
+		}
+		&:last-child {
+			padding-bottom: 16px;
 		}
 	}
 }

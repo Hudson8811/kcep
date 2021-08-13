@@ -101,6 +101,7 @@
 		font-weight: bold;
 		font-size: 27px;
 		line-height: 43px;
+		max-width: 760px;
 
 		@include media(mobile) {
 			padding-left: 0;

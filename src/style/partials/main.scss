@@ -119,6 +119,26 @@ body {
 	&.compensate-for-scrollbar {
 		overflow: hidden;
 	}
+
+	&::-webkit-scrollbar {
+		width: 7px;
+	}
+
+	&::-webkit-scrollbar-track {
+		background-color: #1A1919;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		border-radius: 8px;
+		border: 1px solid #1A1919;
+		background-color: $gold;
+	}
+}
+
+#page{
+	display: flex;
+	flex-grow: 1;
+	flex-direction: column;
 }
 
 html {

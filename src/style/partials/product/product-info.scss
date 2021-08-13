@@ -1,6 +1,6 @@
 .product-info {
 	color: $textDark;
-
+	overflow: hidden;
 	&__container {
 		@include media(mobile) {
 			width: 100%;
@@ -8,6 +8,12 @@
 		}
 	}
 	&__inner {
+		@include media(tablet-993) {
+			padding-left: 38px;
+		}
+		@include media(mobile) {
+			padding-left: 0;
+		}
 		&-left {
 			@include media(tablet-993) {
 				flex-basis: 0;
@@ -20,34 +26,22 @@
 			@include media(tablet-993) {
 				flex-basis: 100%;
 				padding-top: 10px;
-				overflow-x: auto;
-				overflow-y: hidden;
-				scrollbar-color: $gold $gold;
-				scrollbar-width: thin;
-
-				&::-webkit-scrollbar {
-					width: 0;
-					height: 3px;
-					border-radius: 2px;
-				}
-
-				&::-webkit-scrollbar-track {
-					-webkit-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
-					box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
-				}
-
-				&::-webkit-scrollbar-thumb {
-					background-color: $gold;
-					border-radius: 1px;
-				}
+				width: 100%;
 			}
 
-			@include media(mobile) {
-			}
 		}
 	}
 
 	&__tabs {
+		&-inner{
+			width: 100%;
+			overflow: auto;
+			-ms-overflow-style: none;
+			scrollbar-width: none;
+			&::-webkit-scrollbar {
+				display: none;
+			}
+		}
 		&-control {
 			margin-top: 99px;
 			height: 50px;
@@ -72,6 +66,11 @@
 				min-width: 120px;
 				transition: 0.2s linear;
 
+				@include media(tablet-993) {
+					width: auto;
+					min-width: auto;
+				}
+
 				span {
 					display: inline-block;
 					position: relative;
@@ -94,6 +93,9 @@
 
 					@include media(1100) {
 						margin-right: 140px;
+					}
+					@include media(tablet-993) {
+						margin-right: 24px;
 					}
 				}
 
@@ -129,43 +131,13 @@
 				margin-top: 46px;
 			}
 
-			@include media(500) {
-				min-width: 375px;
-			}
-
 			&.active {
 				display: flex;
 			}
 
 			&--structure {
-				position: relative;
-				align-items: flex-end;
-				max-width: 862px;
-
-				img {
-					@include media(500) {
-						position: absolute;
-						top: 50%;
-					}
-				}
-
-				@include media(1290) {
-					align-items: center;
-					padding-top: 50px;
-					max-width: 640px;
-				}
-
-				@include media(tablet-993) {
-					min-height: 330px;
-				}
-
-				@include media(mobile) {
-					min-height: 350px;
-				}
-
-				@include media(500) {
-					max-width: 375px;
-				}
+				align-items: center;
+				max-width: 100% !important;
 			}
 
 			&--characteristics {
@@ -178,6 +150,7 @@
 
 				@include media(550) {
 					padding-left: 32px;
+					padding-right: 32px;
 				}
 			}
 
@@ -194,188 +167,7 @@
 				}
 			}
 
-			&-popup {
-				position: absolute;
-				left: 0;
-				right: 0;
-				bottom: 0;
-				width: 100%;
-				height: 100%;
-			}
 
-			&-point {
-				position: absolute;
-				top: 50%;
-				left: -9px;
-				transform: translateY(calc(-50% + 27px));
-				width: 22px;
-				height: 22px;
-				background-color: $gold;
-				border-radius: 50%;
-				cursor: pointer;
-				transition: 0.1s;
-
-				@include media(500) {
-					top: 69.5%;
-				}
-
-				&::after {
-					content: "";
-					position: absolute;
-					top: 50%;
-					left: 50%;
-					transform: translate(-50%, -50%);
-					width: 8px;
-					height: 8px;
-					border-radius: 50%;
-					background-color: #fff;
-					pointer-events: none;
-				}
-
-				&::before {
-					content: "";
-					position: absolute;
-					box-sizing: border-box;
-					width: 60px;
-					height: 60px;
-					left: -8px;
-					right: -8px;
-					bottom: -8px;
-					top: -8px;
-					border-radius: 50%;
-					border: 2px solid rgba(155, 138, 96, 0.32);
-					opacity: 0;
-					pointer-events: none;
-				}
-
-				&-wrapper {
-					position: absolute;
-					height: 100%;
-					width: 0;
-
-					&:nth-child(1) {
-						left: 8.9%;
-
-						@include media(mobile) {
-							left: 20.5%;
-						}
-					}
-
-					&:nth-child(2) {
-						left: 78%;
-
-						@include media(tablet-993) {
-							left: 66%;
-						}
-					}
-
-					&:nth-child(3) {
-						left: 83%;
-
-						@include media(tablet-993) {
-							left: 78%;
-						}
-					}
-
-					&:nth-child(4) {
-						left: 88%;
-
-						@include media(mobile) {
-							left: 90%;
-						}
-					}
-
-					&.active {
-						&::before {
-							width: 209px;
-							transition: 0.2s;
-
-							@include media(tablet-993) {
-								width: 16vw;
-							}
-
-							@include media(mobile) {
-								width: 140px;
-							}
-
-							@include media(500) {
-								width: 209px;
-							}
-						}
-
-						div {
-							&:first-child {
-								width: 44px;
-								height: 44px;
-
-								&:nth-child(1) {
-									left: -20px;
-								}
-
-								&::after {
-									width: 13px;
-									height: 13px;
-								}
-
-								&::before {
-									opacity: 1;
-									transition: 0.2s;
-								}
-							}
-
-							&:last-child {
-								animation: popup 0.2s linear 0.2s forwards;
-							}
-						}
-					}
-
-					&::before {
-						content: "";
-						position: absolute;
-						bottom: 252px;
-						left: 2px;
-						height: 1px;
-						width: 0;
-						background-color: $gold;
-						transform: rotate(-90deg);
-						transform-origin: left;
-
-						@include media(tablet-993) {
-							bottom: 53%;
-						}
-
-						@include media(mobile) {
-							bottom: 190px;
-						}
-
-						@include media(500) {
-							bottom: 117px;
-						}
-					}
-				}
-			}
-
-			&-text {
-				width: 180px;
-				display: flex;
-				position: relative;
-				padding-left: 15px;
-				font-size: 15px;
-				line-height: 21px;
-				opacity: 0;
-				transition: 0.3s;
-
-				&::before {
-					content: "";
-					position: absolute;
-					left: 0;
-					top: 8px;
-					width: 5px;
-					height: 5px;
-					background-color: $gold;
-					border-radius: 50%;
-				}
-			}
 		}
 
 		.section-title {
@@ -394,26 +186,37 @@
 			display: flex;
 			font-weight: bold;
 			font-size: 18px;
-			line-height: 43px;
+			line-height: 1.2;
+			@include media(mobile) {
+				font-size: 16px;
+			}
 			&-left {
 				padding: 8px 20px;
 				width: calc(100% - 6px);
 				margin-right: 6px;
 				background-color: #f0f0f0;
+				display: flex;
+				align-items: center;
+				min-height: 60px;
 			}
 
 			&-right {
 				width: 216px;
 				padding: 8px 20px;
 				background-color: #f0f0f0;
+				display: flex;
+				align-items: center;
+				min-height: 60px;
 			}
 		}
 
 		&-body {
 			font-weight: normal;
 			font-size: 18px;
-			line-height: 43px;
-
+			line-height: 1.2;
+			@include media(mobile) {
+				font-size: 16px;
+			}
 			&-row {
 				display: flex;
 				transition: 0.3s;
@@ -428,6 +231,9 @@
 				&-left,
 				&-right {
 					padding: 8px 20px;
+					min-height: 60px;
+					display: flex;
+					align-items: center;
 				}
 
 				&-left {
@@ -494,5 +300,141 @@
 
 	100% {
 		opacity: 1;
+	}
+}
+
+
+
+
+.p-sheme{
+	width: 100%;
+	position: relative;
+	max-width: 862px;
+	margin-top: 210px;
+	margin-bottom: 150px;
+	@include media(tablet-993) {
+		margin-bottom: 33px;
+	}
+	&__img{
+		width: 100%;
+		display: block;
+		img{
+			display: block;
+			width: 100%;
+			height: auto;
+		}
+	}
+	&__dots{
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		left: 0;
+		top: 0;
+		z-index: 1;
+	}
+	&__dot{
+		position: absolute;
+		left: 0;
+		top: 50%;
+		transform: translateX(-50%) translateY(-50%);
+		&-point{
+			width: 22px;
+			height: 22px;
+			background-color: $gold;
+			border-radius: 50%;
+			cursor: pointer;
+			transition: transform 0.1s;
+			position: relative;
+			&::after {
+				content: "";
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				width: 8px;
+				height: 8px;
+				border-radius: 50%;
+				background-color: #fff;
+				pointer-events: none;
+			}
+
+			&::before {
+				content: "";
+				position: absolute;
+				box-sizing: border-box;
+				width: 30px;
+				height: 30px;
+				left: 50%;
+				top: 50%;
+				transform: translateX(-50%) translateY(-50%);
+				border-radius: 50%;
+				border: 1px solid rgba(155, 138, 96, 0.32);
+				opacity: 0;
+				pointer-events: none;
+			}
+		}
+		&-line{
+			width: 1px;
+			display: block;
+			height: 209px;
+			position: absolute;
+			left: 11px;
+			bottom: 50px;
+			user-select: none;
+			pointer-events: none;
+			&::before{
+				content: "";
+				background: $gold;
+				height: 0;
+				width: 100%;
+				display: block;
+				transition: height 0.2s;
+				position: absolute;
+				bottom: 0;
+				left: 0;
+			}
+		}
+		&-text{
+			width: 180px;
+			display: flex;
+			position: absolute;
+			padding-left: 15px;
+			font-size: 15px;
+			line-height: 21px;
+			transition: 0.3s;
+			top: -25px;
+			left: -2px;
+			opacity: 0;
+			user-select: none;
+			pointer-events: none;
+
+			&::before {
+				content: "";
+				position: absolute;
+				left: 0;
+				top: 8px;
+				width: 6px;
+				height: 6px;
+				background-color: $gold;
+				border-radius: 50%;
+				transition: opacity 0.2s;
+			}
+		}
+		&.active{
+			.p-sheme__dot-point{
+				transform: scale(2);
+				&::before{
+					opacity: 1;
+				}
+			}
+			.p-sheme__dot-line{
+				&::before{
+					height: 100%;
+				}
+			}
+			.p-sheme__dot-text{
+				animation: popup 0.2s linear 0.2s forwards;
+			}
+		}
 	}
 }

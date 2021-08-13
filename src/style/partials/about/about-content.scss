@@ -74,15 +74,31 @@
 	&__mission {
 		max-width: 730px;
 
+		h2,
+		h3,
 		&-title {
-			margin-top: 66px;
 			font-weight: bold;
 			font-size: 27px;
 			line-height: 32px;
 			font-family: $secondaryFont;
-
+			&:not(:first-child) {
+				margin-top: 66px;
+			}
 			@include media(tablet-993) {
-				margin-top: 40px;
+				&:not(:first-child) {
+					margin-top: 40px;
+				}
+			}
+		}
+		p{
+			font-size: 18px;
+			line-height: 24px;
+
+			@include media(mobile) {
+				font-size: 16px;
+			}
+			&:not(:first-child) {
+				margin-top: 30px;
 			}
 		}
 	}

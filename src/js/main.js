@@ -1,7 +1,7 @@
 /* libs */
 
 //= libs/jquery-3.3.1.min.js
-//= libs/jquery.fancybox.min.js
+// libs/jquery.fancybox.min.js
 //= libs/slick.min.js
 //= libs/scrolloverflow.min.js
 //= libs/fullpage.min.js
@@ -18,3 +18,5 @@
 //= partials/map.js
 //= partials/fullpageSettings.js
 //= partials/main.js
+
+//= partials/add.js

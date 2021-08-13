@@ -170,7 +170,7 @@
 		padding: 30px 32px 19px;
 		line-height: 24px;
 
-		@include media(tablet-993) {
+		@include media(tablet-1200) {
 			width: 100%;
 			max-width: 430px;
 			flex-basis: 47.8%;
@@ -246,7 +246,6 @@
 			font-size: 15px;
 			line-height: 24px;
 			margin-top: 32px;
-			max-width: 250px;
 		}
 	}
 

@@ -74,7 +74,6 @@ document.addEventListener("DOMContentLoaded", function () {
 			})
 
 			currentVideo.play();
-
 			if (count < tabsItems.length) {
 				tabs[count].classList.add("tab--active");
 				tabsItems[count].classList.add("active");
@@ -141,14 +140,11 @@ document.addEventListener("DOMContentLoaded", function () {
 	toggleTabs();
 
 	const toggleInfoPopups = () => {
-		const popupsBtns = document.querySelectorAll(
-			".product-info__tabs-item-point-wrapper"
-		);
-		const itemPopupWrap = document.querySelector('.product-info__tabs-item-popup');
+
 		const tabs = document.querySelectorAll(".product-info__tabs-item");
 		const slides = document.querySelectorAll(".product-hero__slide");
 		const tabsControlItems = document.querySelectorAll(
-			".product-info__tabs-control-item"
+				".product-info__tabs-control-item"
 		);
 
 		if (!tabs.length) {
@@ -156,27 +152,26 @@ document.addEventListener("DOMContentLoaded", function () {
 		}
 
 		tabsControlItems[0].classList.add("active");
-		popupsBtns[0].classList.add("active");
 		tabs[0].classList.add("active");
 		slides[0].classList.add("active");
 
 		const toggleActiveClass = (targetItem) => {
 			const items = document.querySelectorAll(`.${targetItem.className}`);
 			const activeTab = document.querySelector(
-				".product-info__tabs-item.active"
+					".product-info__tabs-item.active"
 			);
 			const activeSlide = document.querySelector(".product-hero__slide.active");
 
 			if (
-				targetItem.classList.contains("product-info__tabs-control-item") &&
-				!targetItem.classList.contains("active")
+					targetItem.classList.contains("product-info__tabs-control-item") &&
+					!targetItem.classList.contains("active")
 			) {
 				activeTab.classList.remove("active");
 			}
 
 			if (
-				targetItem.classList.contains("product-hero__pagination-item") &&
-				!targetItem.classList.contains("active")
+					targetItem.classList.contains("product-hero__pagination-item") &&
+					!targetItem.classList.contains("active")
 			) {
 				activeSlide.classList.remove("active");
 			}
@@ -189,7 +184,7 @@ document.addEventListener("DOMContentLoaded", function () {
 					item.classList.add("active");
 
 					if (
-						targetItem.classList.contains("product-info__tabs-control-item")
+							targetItem.classList.contains("product-info__tabs-control-item")
 					) {
 						tabs[index].classList.add("active");
 					}
@@ -204,11 +199,6 @@ document.addEventListener("DOMContentLoaded", function () {
 		const clickHandler = (e) => {
 			let target = e.target;
 
-			if (target.closest(".product-info__tabs-item-point")) {
-				toggleActiveClass(
-					target.closest(".product-info__tabs-item-point-wrapper")
-				);
-			}
 			if (target.closest(".product-info__tabs-control-item")) {
 				toggleActiveClass(target.closest(".product-info__tabs-control-item"));
 			}
@@ -218,19 +208,8 @@ document.addEventListener("DOMContentLoaded", function () {
 			}
 		};
 
-		const mouseHandler = (e) => {
-			let target = e.target;
-
-			if (target.closest(".product-info__tabs-item-point")) {
-				toggleActiveClass(
-					target.closest(".product-info__tabs-item-point-wrapper")
-				);
-			}
-		}
 
 		document.addEventListener("click", clickHandler);
-		itemPopupWrap.addEventListener("mouseover", mouseHandler);
-		itemPopupWrap.addEventListener("mouseout", mouseHandler);
 	};
 
 	toggleInfoPopups();
@@ -343,7 +322,7 @@ document.addEventListener("DOMContentLoaded", function () {
 						target = target.closest("img");
 		
 						if (target) {
-							const imgSrc = target.src;
+							const imgSrc = target.dataset.popup;
 		
 							popupInnerImg.src = imgSrc;
 		
@@ -358,7 +337,7 @@ document.addEventListener("DOMContentLoaded", function () {
 						const img = target.querySelector('img');
 						const text = target.querySelector('p').textContent;
 
-						popupInnerImg.src = img.src;
+						popupInnerImg.src = img.dataset.popup;
 						PopupText.textContent = text;
 
 						imgPopup.classList.add("active");
@@ -374,7 +353,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 				if (
 					target.matches(".img-popup") ||
-					target.closest(".img-popup__close")
+					target.closest(".img-popup__close") ||
+					target.closest(".img-popup__button-prev")
 				) {
 					imgPopup.classList.remove("active");
 					document.body.classList.remove("scroll-stoped");
@@ -500,21 +480,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 	toggleVideo();
 
-	const fixHeader = () => {
-		const html = document.documentElement;
-
-		if (html.classList.contains('fp-enabled')) {
-			const main = document.querySelector('main');
-
-			main.style.backgroundColor = "transparent";
-			return;
-		}
-
-		const header = document.querySelector('header');
-
-		header.style.position = 'fixed';
-	}
-	fixHeader();
 
 	const switchClassImgPopup = () => {
 		const aboutSection = document.querySelector('.about-hero');
