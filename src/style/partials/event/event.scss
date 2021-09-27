@@ -65,7 +65,7 @@
 				&::before {
 					content: '';
 					position: absolute;
-					right: 16.4%;
+					right: 12.9%;
 					top: -50px;
 					width: 1px;
 					height: 550px;
@@ -97,6 +97,11 @@
 		color: $textDark;
 		padding-bottom: 160px;
 
+		.button{
+			margin-top: 32px;
+			display: inline-block;
+		}
+
 		@include media(mobile) {
 			padding-bottom: 60px;
 		}
@@ -113,7 +118,7 @@
 				flex-direction: column;
 				align-items: flex-start;
 				justify-content: flex-start;
-				max-width: 727px;
+				max-width: 757px;
 
 				&::after {
 					content: '';
@@ -152,242 +157,224 @@
 					padding-left: 17px;
 				}
 			}
+
+
 		}
 
-		h1,
-		h2,
-		h3,
-		h4 {
-			font-family: $secondaryFont;
-			font-weight: bold;
 
-			&:first-child {
-				margin-top: 37px;
-			}
-
-			&:not(:first-child) {
-				margin-top: 64px;
-
-				@include media(mobile) {
-					margin-top: 30px;
-				}
-			}
-		}
-
-		h2 {
-			font-size: 27px;
-			line-height: 43px;
-
-			@include media(mobile) {
-				font-size: 24px;
-				line-height: 150%;
-			}
-		}
-
-		h3 {
-			font-size: 24px;
-			line-height: 40px;
-
-			@include media(mobile) {
-				font-size: 21px;
-				line-height: 150%;
-			}
-		}
-
-		h4 {
-			font-size: 21px;
-			line-height: 37px;
-
-			@include media(mobile) {
-				font-size: 18px;
-				line-height: 150%;
-			}
-		}
-
-		p {
-			font-weight: normal;
-			font-size: 18px;
-			line-height: 24px;
-			margin-top: 21px;
-
-			@include media(mobile) {
-				font-size: 16px;
-				margin-top: 18px;
-			}
-		}
-
-		i {
-			font-weight: 300;
-		}
-
-		u {
-			&::after {
-				background-color: $dark;
-			}
-		}
-
-		a {
-			&::after {
-				transition: 0.3s;
-				background-color: #0500eb;
-			}
-
-			&:hover {
-				&::after {
-					width: 0;
-				}
-			}
-		}
-
-		a,
-		i,
-		b,
-		u {
-			display: inline-block;
-		}
-
-		u,
-		a {
-			position: relative;
-			display: inline-block;
-			text-decoration: none !important;
-
-			&::after {
-				content: "";
-				position: absolute;
-				left: 0;
-				right: 0;
-				bottom: 1px;
-				height: 1px;
-				width: 100%;
-			}
-		}
-
-		a {
-			font-style: italic;
-			font-weight: 500;
-			font-size: 18px;
-			line-height: 21px;
-			text-decoration-line: underline;
-			color: #0500eb;
-
-			@include media(mobile) {
-				font-size: 16px;
-			}
-		}
-
-		p {
-			a,
-			b,
-			i,
-			u {
-				margin-top: 33px;
-			}
-		}
-
-		a,
-		b,
-		i,
-		u {
-			margin-top: 54px;
-		}
-
-		img {
-			margin-top: 97px;
-
-			@include media(mobile) {
-				margin-top: 60px;
-			}
-		}
-
-		ul,
-		ol {
-			font-family: $secondaryFont;
-			font-weight: bold;
-			font-size: 27px;
-			line-height: 43px;
-			margin-top: 64px;
-			list-style: inside;
-
-			@include media(mobile) {
-				font-size: 24px;
-				line-height: 150%;
-				margin-top: 40px;
-			}
-
-			li {
-				font-family: $mainFont;
-				font-weight: normal;
-				font-size: 15px;
-				line-height: 32px;
-				padding-left: 10px;
+		&-text{
+			h1,
+			h2,
+			h3,
+			h4 {
+				font-family: $secondaryFont;
+				font-weight: bold;
 
 				&:first-child {
-					margin-top: 22px;
+					margin-top: 37px;
+				}
+
+				&:not(:first-child) {
+					margin-top: 64px;
+
+					@include media(mobile) {
+						margin-top: 30px;
+					}
 				}
 			}
-		}
 
-		ol {
-			list-style: inside;
-			list-style-type: decimal;
-		}
+			h2 {
+				font-size: 27px;
+				line-height: 43px;
 
-		table {
-			width: 100%;
-			border-spacing: 6px;
-			text-align: left;
-			font-family: $secondaryFont;
-			margin-left: -6px;
-			margin-top: 47px;
+				@include media(mobile) {
+					font-size: 24px;
+					line-height: 150%;
+				}
+			}
 
-			thead {
-				th {
-					padding: 9px 10px 9px 16px;
-					font-weight: bold;
+			h3 {
+				font-size: 24px;
+				line-height: 40px;
+
+				@include media(mobile) {
+					font-size: 21px;
+					line-height: 150%;
+				}
+			}
+
+			h4 {
+				font-size: 21px;
+				line-height: 37px;
+
+				@include media(mobile) {
+					font-size: 18px;
+					line-height: 150%;
+				}
+			}
+
+			p {
+				font-weight: normal;
+				font-size: 15px;
+				line-height: 21px;
+				margin-top: 21px;
+
+				@include media(mobile) {
+					font-size: 15px;
+					margin-top: 18px;
+				}
+			}
+
+			i {
+				font-weight: 300;
+			}
+
+			u {
+				&::after {
+					background-color: $dark;
+				}
+			}
+
+			a {
+				&::after {
+					transition: 0.3s;
+					background-color: #0500eb;
+				}
+
+				&:hover {
+					&::after {
+						width: 0;
+					}
+				}
+			}
+
+			a,
+			i,
+			b,
+			u {
+				display: inline-block;
+			}
+
+			u,
+			a {
+				position: relative;
+				display: inline-block;
+				text-decoration: none !important;
+
+				&::after {
+					content: "";
+					position: absolute;
+					left: 0;
+					right: 0;
+					bottom: 1px;
+					height: 1px;
+					width: 100%;
+				}
+			}
+
+			a {
+				font-style: italic;
+				font-weight: 500;
+				font-size: 18px;
+				line-height: 21px;
+				text-decoration-line: underline;
+				color: #0500eb;
+
+				@include media(mobile) {
+					font-size: 16px;
+				}
+			}
+
+
+			img {
+				margin-top: 97px;
+				height: auto !important;
+
+				@include media(mobile) {
+					margin-top: 60px;
+				}
+			}
+
+			ul,
+			ol {
+				font-family: $secondaryFont;
+				font-weight: bold;
+				font-size: 27px;
+				line-height: 43px;
+				margin-top: 22px;
+				list-style: inside;
+
+				@include media(mobile) {
+					font-size: 24px;
+					line-height: 150%;
+					margin-top: 40px;
+				}
+
+				li {
+					font-family: $mainFont;
+					font-weight: normal;
+					font-size: 15px;
+					line-height: 32px;
+					padding-left: 10px;
+				}
+			}
+
+			ol {
+				list-style: inside;
+				list-style-type: decimal;
+			}
+
+			table {
+				width: 100%;
+				border-spacing: 6px;
+				text-align: left;
+				font-family: $secondaryFont;
+				margin-left: -6px;
+				margin-top: 47px;
+				border-collapse: separate !important;
+
+				thead {
+					td,
+					th {
+						padding: 9px 10px 9px 16px;
+						font-weight: bold;
+						font-size: 18px;
+						line-height: 43px;
+
+						background: #f0f0f0;
+
+						width: auto !important;
+					}
+				}
+
+				tbody {
 					font-size: 18px;
 					line-height: 43px;
+					tr {
+						cursor: pointer;
 
-					background: #f0f0f0;
+						td {
+							transition: 0.3s;
+							width: auto !important;
+						}
 
-					&:first-child {
-						width: 74.54%;
-						max-width: 650px;
-					}
+						&:hover {
+							@media screen and (min-width: 1025px) {
+								td {
 
-					&:last-child {
-						width: 25.46%;
-						max-width: 216px;
-					}
-				}
-			}
-
-			tbody {
-				font-size: 18px;
-				line-height: 43px;
-				tr {
-					cursor: pointer;
-
-					td {
-						transition: 0.3s;
-					}
-
-					&:hover {
-						@media screen and (min-width: 1025px) {
-							td {
-
-								background-color: #f5f5f5;
+									background-color: #f5f5f5;
+								}
 							}
 						}
-					}
 
-					&:first-child {
-						margin-top: -6px;
+						&:first-child {
+							margin-top: -6px;
+						}
 					}
-				}
-				td {
-					padding: 9px 10px 9px 16px;
-					background-color: #fff;
+					td {
+						padding: 9px 10px 9px 16px;
+						background-color: #fff;
+					}
 				}
 			}
 		}

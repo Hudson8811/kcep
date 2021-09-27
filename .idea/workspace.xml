@@ -20,51 +20,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9c47186b-5ef3-4871-a358-583c06a2b114" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/js/partials/add.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/404.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/career.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/career.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/certificates.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/certificates.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/contacts.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/contacts.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/build/css/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/css/maps/main.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/build/css/maps/main.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/event.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/event.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/events.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/events.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/img/career/hh-bg.png" beforeDir="false" afterPath="$PROJECT_DIR$/build/img/career/hh-bg.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/knowledge.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/knowledge.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/partners.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/partners.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/product.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/product.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/production.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/products.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/products.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/start.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/start.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/partials/header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/partials/header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/partials/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/partials/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/style/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/main.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/style/partials/about/about-content.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/partials/about/about-content.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/style/partials/career/career.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/partials/career/career.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/style/partials/components.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/partials/components.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/style/partials/contacts/contacts-dealers.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/partials/contacts/contacts-dealers.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/style/partials/contacts/contacts-hero.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/partials/contacts/contacts-hero.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/style/partials/about/about-geography.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/partials/about/about-geography.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/style/partials/event/event.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/partials/event/event.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/style/partials/events/events.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/partials/events/events.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/style/partials/fonts.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/partials/fonts.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/style/partials/footer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/partials/footer.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/style/partials/header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/partials/header.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/style/partials/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/partials/main.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/style/partials/partners/partners.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/partials/partners/partners.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/style/partials/product/product-hero.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/partials/product/product-hero.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/style/partials/home/home-hero.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/partials/home/home-hero.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/style/partials/product/product-info.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/partials/product/product-info.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/style/partials/product/product-others.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/partials/product/product-others.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/style/partials/product/product-usage.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/partials/product/product-usage.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/style/partials/production/item.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/partials/production/item.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/style/partials/products/products.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/partials/products/products.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/partials/_header.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/partials/_header.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/partials/events/events.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/partials/events/events.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/partials/product/info.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/partials/product/info.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/partials/products/product.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/partials/products/product.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/style/partials/reset.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/partials/reset.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/partials/home/home.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/partials/home/home.pug" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -164,6 +130,9 @@
       <workItem from="1628745164792" duration="11223000" />
       <workItem from="1628831194254" duration="3112000" />
       <workItem from="1628839417029" duration="8000" />
+      <workItem from="1629361035556" duration="9774000" />
+      <workItem from="1632139903400" duration="1510000" />
+      <workItem from="1632728864097" duration="2686000" />
     </task>
     <servers />
   </component>
@@ -183,26 +152,35 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="3397" height="233" key="GridCell.Tab.0.bottom" timestamp="1628839022966">
+    <state x="1552" y="555" key="#Other_File_Types" timestamp="1629364348434">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state width="3397" height="233" key="GridCell.Tab.0.bottom/0.0.3440.1400@0.0.3440.1400" timestamp="1628839022966" />
-    <state width="3397" height="233" key="GridCell.Tab.0.center" timestamp="1628839022966">
+    <state x="1552" y="555" key="#Other_File_Types/0.0.3440.1400@0.0.3440.1400" timestamp="1629364348434" />
+    <state width="3397" height="233" key="GridCell.Tab.0.bottom" timestamp="1632732076546">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state width="3397" height="233" key="GridCell.Tab.0.center/0.0.3440.1400@0.0.3440.1400" timestamp="1628839022966" />
-    <state width="3397" height="233" key="GridCell.Tab.0.left" timestamp="1628839022966">
+    <state width="3397" height="233" key="GridCell.Tab.0.bottom/0.0.3440.1400/3440.-788.1080.2520@0.0.3440.1400" timestamp="1632732076546" />
+    <state width="3397" height="233" key="GridCell.Tab.0.bottom/0.0.3440.1400@0.0.3440.1400" timestamp="1629389417695" />
+    <state width="3397" height="233" key="GridCell.Tab.0.center" timestamp="1632732076546">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state width="3397" height="233" key="GridCell.Tab.0.left/0.0.3440.1400@0.0.3440.1400" timestamp="1628839022966" />
-    <state width="3397" height="233" key="GridCell.Tab.0.right" timestamp="1628839022966">
+    <state width="3397" height="233" key="GridCell.Tab.0.center/0.0.3440.1400/3440.-788.1080.2520@0.0.3440.1400" timestamp="1632732076546" />
+    <state width="3397" height="233" key="GridCell.Tab.0.center/0.0.3440.1400@0.0.3440.1400" timestamp="1629389417695" />
+    <state width="3397" height="233" key="GridCell.Tab.0.left" timestamp="1632732076546">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state width="3397" height="233" key="GridCell.Tab.0.right/0.0.3440.1400@0.0.3440.1400" timestamp="1628839022966" />
-    <state x="1576" y="323" width="990" height="750" key="find.popup" timestamp="1628839423118">
+    <state width="3397" height="233" key="GridCell.Tab.0.left/0.0.3440.1400/3440.-788.1080.2520@0.0.3440.1400" timestamp="1632732076546" />
+    <state width="3397" height="233" key="GridCell.Tab.0.left/0.0.3440.1400@0.0.3440.1400" timestamp="1629389417695" />
+    <state width="3397" height="233" key="GridCell.Tab.0.right" timestamp="1632732076546">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state x="1576" y="323" width="990" height="750" key="find.popup/0.0.3440.1400@0.0.3440.1400" timestamp="1628839423118" />
+    <state width="3397" height="233" key="GridCell.Tab.0.right/0.0.3440.1400/3440.-788.1080.2520@0.0.3440.1400" timestamp="1632732076546" />
+    <state width="3397" height="233" key="GridCell.Tab.0.right/0.0.3440.1400@0.0.3440.1400" timestamp="1629389417695" />
+    <state x="1576" y="323" width="990" height="750" key="find.popup" timestamp="1632729890881">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="1576" y="323" width="990" height="750" key="find.popup/0.0.3440.1400/3440.-788.1080.2520@0.0.3440.1400" timestamp="1632729890881" />
+    <state x="1576" y="323" width="990" height="750" key="find.popup/0.0.3440.1400@0.0.3440.1400" timestamp="1629381510977" />
     <state x="1376" y="330" key="run.anything.popup" timestamp="1628503162692">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>

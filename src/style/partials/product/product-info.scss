@@ -129,6 +129,7 @@
 
 			@include media(mobile) {
 				margin-top: 46px;
+				max-width: 100%;
 			}
 
 			&.active {
@@ -244,6 +245,39 @@
 				&-right {
 					width: 216px;
 				}
+			}
+		}
+	}
+
+	&__techs{
+		margin-top: 32px;
+		font-size: 18px;
+		line-height: 1.2;
+		width: 100%;
+		overflow: auto;
+		&-inner{
+			min-width: 600px;
+			width: 100%;
+		}
+		@include media(mobile) {
+			font-size: 16px;
+		}
+		table{
+			width: 100%;
+			tr{
+			}
+			th{
+				padding: 8px 20px;
+				font-weight: bold;
+				background-color: #f0f0f0;
+				height: 60px;
+				border-color: #f9f9f9;
+				text-align: left;
+			}
+			td{
+				padding: 8px 20px;
+				height: 60px;
+				border-color: #f9f9f9;
 			}
 		}
 	}

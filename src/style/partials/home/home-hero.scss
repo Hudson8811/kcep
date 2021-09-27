@@ -213,7 +213,7 @@
 			justify-content: center;
 			cursor: pointer;
 			transition: 0.4s;
-
+			pointer-events: auto;
 			&:hover {
 				@media screen and (min-width: 1025px) {
 					box-shadow: 0 0px 10px 10px $gold;
@@ -281,6 +281,25 @@
 
 			@include media(mobile) {
 				display: none;
+			}
+		}
+	}
+
+	&__fix{
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		box-sizing: border-box;
+		pointer-events: none;
+		z-index: 100;
+		.container{
+			display: flex;
+			justify-content: flex-end;
+			padding-bottom: 41px;
+			padding-right: 39px;
+			@include media(550) {
+				padding-right: 17px;
 			}
 		}
 	}
