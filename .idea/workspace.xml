@@ -20,17 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9c47186b-5ef3-4871-a358-583c06a2b114" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/index.pug" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/build/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/css/maps/main.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/build/css/maps/main.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/style/partials/about/about-geography.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/partials/about/about-geography.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/style/partials/event/event.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/partials/event/event.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/style/partials/home/home-hero.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/partials/home/home-hero.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/style/partials/product/product-info.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/partials/product/product-info.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/style/partials/reset.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/partials/reset.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/partials/home/home.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/partials/home/home.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/event.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/event.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/partials/event/event.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/partials/event/event.pug" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +37,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="Pug File" />
       </list>
     </option>
   </component>
@@ -133,6 +127,7 @@
       <workItem from="1629361035556" duration="9774000" />
       <workItem from="1632139903400" duration="1510000" />
       <workItem from="1632728864097" duration="2686000" />
+      <workItem from="1632814716745" duration="560000" />
     </task>
     <servers />
   </component>
