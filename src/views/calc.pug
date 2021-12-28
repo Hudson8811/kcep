@@ -1,0 +1,351 @@
+extends layouts/default
+
+block vars
+    -
+        const title = 'Сертификаты';
+
+block scripts
+    script(src="js/muuri.min.js")
+    script(src="js/calc.js")
+
+block main
+
+    .calc
+        .sticky-offset.calc__top
+            .container.calc__container
+                .inner-left
+                    +button-prev("product-hero__button-prev")
+                .inner-right.calc__inner
+                    h1.title Расставить барабаны в автомобиле
+                    .calc__filter
+                        .calc__sizes
+                            label.calc__size
+                                input(type="radio" name="tuck_type" value="1" checked)
+                                span Еврофура
+                            label.calc__size
+                                input(type="radio" name="tuck_type" value="2")
+                                span Камаз
+                            label.calc__size
+                                input(type="radio" name="tuck_type" value="3")
+                                span Фургон
+                            label.calc__size
+                                input(type="radio" name="tuck_type" value="4")
+                                span Свой размер
+                        .calc__custom
+                            .calc__custom-input.calc__custom-input--width
+                                input(type="text" name="truck_width" readonly)
+                                span Ширина кузова:
+                            .calc__custom-input.calc__custom-input--height
+                                input(type="text" name="truck_height" readonly)
+                                span Длина кузова:
+
+        .calc__body
+            .sticky-bg
+            .container.calc__container
+                .inner-left
+                .inner-right
+                    .calc__flex
+                        .calc__left
+                            .calc__buttons
+                                button.button.button--white.js-truck-clear(type="button") Очистить
+                                button.button.js-truck-sort(type="button") Автоматическая расстановка
+                            .calc__info
+                                .calc__info-title Выберите нужные барабаны и они добавятся <br>в предполагаемый автомобиль.
+                                .calc__info-text Вы можете самостоятельно расставить катушки или нажать на кнопку «Автоматическая расстановка».
+
+                            .calc__reels
+                                button.reels__btn.button.js-show-reels(type="button") Выбрать барабан
+                                .reels
+                                    .reels__item(data-item="opt8")
+                                        .reels__item-top
+                                            .reels__item-icon(title='Барабан 8' data-item="opt8")
+                                                img(src='images/reels/8op.png')
+                                            button.reels__item-max.js-add-max(type="button") MAX
+                                        .reels__item-bottom
+                                            .reels__item-info
+                                                .reels__item-title Барабан 8
+                                                .reels__item-count Кол-во:
+                                                    span 0
+                                            .reels__item-btns
+                                                button.reels__item-btn.reels__item-btn--plus.js-plus-reel(type="button")
+                                                button.reels__item-btn.reels__item-btn--minus.js-minus-reel(type="button" )
+
+                                    .reels__item(data-item="opt10")
+                                        .reels__item-top
+                                            .reels__item-icon(title='Барабан 10' data-item="opt10")
+                                                img(src='images/reels/10op.png')
+                                            button.reels__item-max.js-add-max(type="button") MAX
+                                        .reels__item-bottom
+                                            .reels__item-info
+                                                .reels__item-title Барабан 10
+                                                .reels__item-count Кол-во:
+                                                    span 0
+                                            .reels__item-btns
+                                                button.reels__item-btn.reels__item-btn--plus.js-plus-reel(type="button")
+                                                button.reels__item-btn.reels__item-btn--minus.js-minus-reel(type="button" )
+
+                                    .reels__item(data-item="opt10a")
+                                        .reels__item-top
+                                            .reels__item-icon(title='Барабан 10а' data-item="opt10a")
+                                                img(src='images/reels/10-a-op.png')
+                                            button.reels__item-max.js-add-max(type="button") MAX
+                                        .reels__item-bottom
+                                            .reels__item-info
+                                                .reels__item-title Барабан 10а
+                                                .reels__item-count Кол-во:
+                                                    span 0
+                                            .reels__item-btns
+                                                button.reels__item-btn.reels__item-btn--plus.js-plus-reel(type="button")
+                                                button.reels__item-btn.reels__item-btn--minus.js-minus-reel(type="button" )
+
+                                    .reels__item(data-item="opt10b")
+                                        .reels__item-top
+                                            .reels__item-icon(title='Барабан 10б' data-item="opt10b")
+                                                img(src='images/reels/10-b-op.png')
+                                            button.reels__item-max.js-add-max(type="button") MAX
+                                        .reels__item-bottom
+                                            .reels__item-info
+                                                .reels__item-title Барабан 10б
+                                                .reels__item-count Кол-во:
+                                                    span 0
+                                            .reels__item-btns
+                                                button.reels__item-btn.reels__item-btn--plus.js-plus-reel(type="button")
+                                                button.reels__item-btn.reels__item-btn--minus.js-minus-reel(type="button" )
+
+                                    .reels__item(data-item="opt12a")
+                                        .reels__item-top
+                                            .reels__item-icon(title='Барабан 12а' data-item="opt12a")
+                                                img(src='images/reels/12-a-op.png')
+                                            button.reels__item-max.js-add-max(type="button") MAX
+                                        .reels__item-bottom
+                                            .reels__item-info
+                                                .reels__item-title Барабан 12а
+                                                .reels__item-count Кол-во:
+                                                    span 0
+                                            .reels__item-btns
+                                                button.reels__item-btn.reels__item-btn--plus.js-plus-reel(type="button")
+                                                button.reels__item-btn.reels__item-btn--minus.js-minus-reel(type="button" )
+
+                                    .reels__item(data-item="opt14")
+                                        .reels__item-top
+                                            .reels__item-icon(title='Барабан 14' data-item="opt14")
+                                                img(src='images/reels/14op.png')
+                                            button.reels__item-max.js-add-max(type="button") MAX
+                                        .reels__item-bottom
+                                            .reels__item-info
+                                                .reels__item-title Барабан 14
+                                                .reels__item-count Кол-во:
+                                                    span 0
+                                            .reels__item-btns
+                                                button.reels__item-btn.reels__item-btn--plus.js-plus-reel(type="button")
+                                                button.reels__item-btn.reels__item-btn--minus.js-minus-reel(type="button" )
+
+                                    .reels__item(data-item="opt14g")
+                                        .reels__item-top
+                                            .reels__item-icon(title='Барабан 14г' data-item="opt14g")
+                                                img(src='images/reels/14-g-op.png')
+                                            button.reels__item-max.js-add-max(type="button") MAX
+                                        .reels__item-bottom
+                                            .reels__item-info
+                                                .reels__item-title Барабан 14г
+                                                .reels__item-count Кол-во:
+                                                    span 0
+                                            .reels__item-btns
+                                                button.reels__item-btn.reels__item-btn--plus.js-plus-reel(type="button")
+                                                button.reels__item-btn.reels__item-btn--minus.js-minus-reel(type="button" )
+
+                                    .reels__item(data-item="opt18a")
+                                        .reels__item-top
+                                            .reels__item-icon(title='Барабан 18а' data-item="opt18a")
+                                                img(src='images/reels/18-a-op.png')
+                                            button.reels__item-max.js-add-max(type="button") MAX
+                                        .reels__item-bottom
+                                            .reels__item-info
+                                                .reels__item-title Барабан 18а
+                                                .reels__item-count Кол-во:
+                                                    span 0
+                                            .reels__item-btns
+                                                button.reels__item-btn.reels__item-btn--plus.js-plus-reel(type="button")
+                                                button.reels__item-btn.reels__item-btn--minus.js-minus-reel(type="button" )
+
+                                    .reels__item(data-item="opt18b")
+                                        .reels__item-top
+                                            .reels__item-icon(title='Барабан 18б' data-item="opt18b")
+                                                img(src='images/reels/empty.png')
+                                            button.reels__item-max.js-add-max(type="button") MAX
+                                        .reels__item-bottom
+                                            .reels__item-info
+                                                .reels__item-title Барабан 18б
+                                                .reels__item-count Кол-во:
+                                                    span 0
+                                            .reels__item-btns
+                                                button.reels__item-btn.reels__item-btn--plus.js-plus-reel(type="button")
+                                                button.reels__item-btn.reels__item-btn--minus.js-minus-reel(type="button" )
+
+                                    .reels__item(data-item="opt20")
+                                        .reels__item-top
+                                            .reels__item-icon(title='Барабан 20' data-item="opt20")
+                                                img(src='images/reels/20op.png')
+                                            button.reels__item-max.js-add-max(type="button") MAX
+                                        .reels__item-bottom
+                                            .reels__item-info
+                                                .reels__item-title Барабан 20
+                                                .reels__item-count Кол-во:
+                                                    span 0
+                                            .reels__item-btns
+                                                button.reels__item-btn.reels__item-btn--plus.js-plus-reel(type="button")
+                                                button.reels__item-btn.reels__item-btn--minus.js-minus-reel(type="button" )
+
+                                    .reels__item(data-item="opt20a")
+                                        .reels__item-top
+                                            .reels__item-icon(title='Барабан 20а' data-item="opt20a")
+                                                img(src='images/reels/20-a-op.png')
+                                            button.reels__item-max.js-add-max(type="button") MAX
+                                        .reels__item-bottom
+                                            .reels__item-info
+                                                .reels__item-title Барабан 20а
+                                                .reels__item-count Кол-во:
+                                                    span 0
+                                            .reels__item-btns
+                                                button.reels__item-btn.reels__item-btn--plus.js-plus-reel(type="button")
+                                                button.reels__item-btn.reels__item-btn--minus.js-minus-reel(type="button" )
+
+                                    .reels__item(data-item="opt25")
+                                        .reels__item-top
+                                            .reels__item-icon(title='Барабан 25' data-item="opt25")
+                                                img(src='images/reels/25op.png')
+                                            button.reels__item-max.js-add-max(type="button") MAX
+                                        .reels__item-bottom
+                                            .reels__item-info
+                                                .reels__item-title Барабан 25
+                                                .reels__item-count Кол-во:
+                                                    span 0
+                                            .reels__item-btns
+                                                button.reels__item-btn.reels__item-btn--plus.js-plus-reel(type="button")
+                                                button.reels__item-btn.reels__item-btn--minus.js-minus-reel(type="button" )
+
+                                    .reels__item(data-item="opt22")
+                                        .reels__item-top
+                                            .reels__item-icon(title='Барабан 22' data-item="opt22")
+                                                img(src='images/reels/empty.png')
+                                            button.reels__item-max.js-add-max(type="button") MAX
+                                        .reels__item-bottom
+                                            .reels__item-info
+                                                .reels__item-title Барабан 22
+                                                .reels__item-count Кол-во:
+                                                    span 0
+                                            .reels__item-btns
+                                                button.reels__item-btn.reels__item-btn--plus.js-plus-reel(type="button")
+                                                button.reels__item-btn.reels__item-btn--minus.js-minus-reel(type="button" )
+
+                                    .reels__item(data-item="opt22b")
+                                        .reels__item-top
+                                            .reels__item-icon(title='Барабан 22в' data-item="opt22b")
+                                                img(src='images/reels/empty.png')
+                                            button.reels__item-max.js-add-max(type="button") MAX
+                                        .reels__item-bottom
+                                            .reels__item-info
+                                                .reels__item-title Барабан 22в
+                                                .reels__item-count Кол-во:
+                                                    span 0
+                                            .reels__item-btns
+                                                button.reels__item-btn.reels__item-btn--plus.js-plus-reel(type="button")
+                                                button.reels__item-btn.reels__item-btn--minus.js-minus-reel(type="button" )
+
+
+                                    .reels__item(data-item="okko1")
+                                        .reels__item-top
+                                            .reels__item-icon(title='Катушка ОККО №1' data-item="okko1")
+                                                img(src='images/reels/okko1.png')
+                                            button.reels__item-max.js-add-max(type="button") MAX
+                                        .reels__item-bottom
+                                            .reels__item-info
+                                                .reels__item-title Катушка ОККО №1
+                                                .reels__item-count Кол-во:
+                                                    span 0
+                                            .reels__item-btns
+                                                button.reels__item-btn.reels__item-btn--plus.js-plus-reel(type="button")
+                                                button.reels__item-btn.reels__item-btn--minus.js-minus-reel(type="button" )
+                                    .reels__item(data-item="okko2k")
+                                        .reels__item-top
+                                            .reels__item-icon(title='Катушка ОККО №2' data-item="okko2k")
+                                                img(src='images/reels/okko2.png')
+                                            button.reels__item-max.js-add-max(type="button") MAX
+                                        .reels__item-bottom
+                                            .reels__item-info
+                                                .reels__item-title Катушка ОККО №2
+                                                .reels__item-count Кол-во:
+                                                    span 0
+                                            .reels__item-btns
+                                                button.reels__item-btn.reels__item-btn--plus.js-plus-reel(type="button")
+                                                button.reels__item-btn.reels__item-btn--minus.js-minus-reel(type="button" )
+                                    .reels__item(data-item="okko3")
+                                        .reels__item-top
+                                            .reels__item-icon(title='Катушка ОККО №3' data-item="okko3")
+                                                img(src='images/reels/okko3.png')
+                                            button.reels__item-max.js-add-max(type="button") MAX
+                                        .reels__item-bottom
+                                            .reels__item-info
+                                                .reels__item-title Катушка ОККО №3
+                                                .reels__item-count Кол-во:
+                                                    span 0
+                                            .reels__item-btns
+                                                button.reels__item-btn.reels__item-btn--plus.js-plus-reel(type="button")
+                                                button.reels__item-btn.reels__item-btn--minus.js-minus-reel(type="button" )
+                                    .reels__item(data-item="okko4")
+                                        .reels__item-top
+                                            .reels__item-icon(title='Катушка ОККО №4' data-item="okko4")
+                                                img(src='images/reels/okko4.png')
+                                            button.reels__item-max.js-add-max(type="button") MAX
+                                        .reels__item-bottom
+                                            .reels__item-info
+                                                .reels__item-title Катушка ОККО №4
+                                                .reels__item-count Кол-во:
+                                                    span 0
+                                            .reels__item-btns
+                                                button.reels__item-btn.reels__item-btn--plus.js-plus-reel(type="button")
+                                                button.reels__item-btn.reels__item-btn--minus.js-minus-reel(type="button" )
+
+                        .calc__right
+                            .car
+                                .car__head
+                                    img(src="images/calc/car.png")
+                                .car__body
+                                    .car__content
+                                        .car__content-info.car-info
+                                            // линии и размер занятого места
+                                            .car-info__value.car-info__value--load.hide
+                                            .car-info__line.car-info__line--load-top.hide
+                                            .car-info__line.car-info__line--load-right.hide
+                                            .car-info__line.car-info__line--load-bottom.hide
+                                            // линии длины контейнера
+                                            .car-info__value.car-info__value--height
+                                            .car-info__line.car-info__line--height-top
+                                            .car-info__line.car-info__line--height-left
+                                            .car-info__line.car-info__line--height-bottom
+                                            // линии ширины контейнера
+                                            .car-info__value.car-info__value--width
+                                            .car-info__line.car-info__line--width-left
+                                            .car-info__line.car-info__line--width-right
+                                            .car-info__line.car-info__line--width-bottom
+                                        .car__content-reels.content-grid
+
+                            .truck-info
+                                .truck-info__load
+                                    span.truck-info__load-percent 0%
+                                    span.truck-info__load-text Занятая площадь
+
+                                .truck-info__content
+                                    .truck-info__item
+                                        span.truck-info__item-title.reels__item-title Барабан 8
+                                        span.truck-info__item-count.reels__item-count Кол-во:
+                                            span 0
+                                    .truck-info__item
+                                        span.truck-info__item-title.reels__item-title Барабан 8
+                                        span.truck-info__item-count.reels__item-count Кол-во:
+                                            span 0
+                                    .truck-info__item
+                                        span.truck-info__item-title.reels__item-title Барабан 8
+                                        span.truck-info__item-count.reels__item-count Кол-во:
+                                            span 0
+

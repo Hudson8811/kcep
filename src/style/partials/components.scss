@@ -9,6 +9,7 @@
 	text-decoration: none !important;
 	font-style: normal !important;
 	white-space: nowrap;
+	cursor: pointer;
 
 	&--big {
 		text-transform: uppercase;
@@ -77,6 +78,18 @@
 				width: 22px;
 				height: 15px;
 				transition: 0.3s;
+			}
+		}
+	}
+
+	&--white{
+		background: #F2F2F2;
+		color: #1A1919 !important;
+
+		&:hover {
+			@media screen and (min-width: 1025px) {
+				background-color: #1A1919;
+				color: #ffffff !important;
 			}
 		}
 	}
@@ -333,5 +346,43 @@
 
 	&--margin {
 		margin-top: 32px;
+	}
+}
+
+
+
+
+.hide{
+	display: none;
+}
+
+.opacity{
+	opacity: 0 !important;
+}
+
+.content-grid {
+	position: relative;
+	max-height: 100% !important;
+	max-width: 100% !important;
+
+	.reels__item-icon{
+		display: block;
+		position: absolute;
+		z-index: 1;
+
+		&.muuri-item-dragging {
+			z-index: 3;
+		}
+		&.muuri-item-releasing {
+			z-index: 2;
+		}
+		&.muuri-item-hidden {
+			z-index: 0;
+		}
+	}
+
+
+	.muuri-item-placeholder {
+		opacity: 0.4;
 	}
 }
