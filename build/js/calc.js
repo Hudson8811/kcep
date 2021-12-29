@@ -1,106 +1,108 @@
 $(document).ready(function() {
-    let trucks = {
-        1: {
-            width: 2400,
-            height: 13300,
-        },
-        2: {
-            width: 2200,
-            height: 5000,
-        },
-        3: {
-            width: 2000,
-            height: 3000,
-        },
-        4: {
-            width: 0,
-            height: 0,
-        }
-    }
-
-    let reels = {
-        'opt8': {
-            width: 705,
-            height: 855,
-        },
-        'opt10': {
-            width: 680,
-            height: 1055,
-        },
-        'opt10a': {
-            width: 890,
-            height: 1055,
-        },
-        'opt10b': {
-            width: 690,
-            height: 1055,
-        },
-        'opt12a': {
-            width: 900,
-            height: 1275,
-        },
-        'opt14': {
-            width: 900,
-            height: 1455,
-        },
-        'opt14g': {
-            width: 1090,
-            height: 1455,
-        },
-        'opt17': {
-            width: 950,
-            height: 1765,
-        },
-        'opt18a': {
-            width: 1390,
-            height: 1870,
-        },
-        'opt18b': {
-            width: 1390,
-            height: 1870,
-        },
-        'opt20': {
-            width: 1300,
-            height: 2080,
-        },
-        'opt20a': {
-            width: 1360,
-            height: 2080,
-        },
-        'opt25': {
-            width: 1680,
-            height: 2600,
-        },
-        'opt22': {
-            width: 1360,
-            height: 2200,
-        },
-        'opt22b': {
-            width: 1360,
-            height: 2200,
-        },
-
-        'okko1': {
-            width: 435,
-            height: 490,
-        },
-        'okko2k': {
-            width: 435,
-            height: 600,
-        },
-        'okko3': {
-            width: 435,
-            height: 650,
-        },
-        'okko4': {
-            width: 520,
-            height: 650,
-        },
-    }
 
     calcInit();
 
     function calcInit(){
+
+        let trucks = {
+            1: {
+                width: 2400,
+                height: 13300,
+            },
+            2: {
+                width: 2200,
+                height: 5000,
+            },
+            3: {
+                width: 2000,
+                height: 3000,
+            },
+            4: {
+                width: 0,
+                height: 0,
+            }
+        }
+
+        let reels = {
+            'opt8': {
+                width: 705,
+                height: 855,
+            },
+            'opt10': {
+                width: 680,
+                height: 1055,
+            },
+            'opt10a': {
+                width: 890,
+                height: 1055,
+            },
+            'opt10b': {
+                width: 690,
+                height: 1055,
+            },
+            'opt12a': {
+                width: 900,
+                height: 1275,
+            },
+            'opt14': {
+                width: 900,
+                height: 1455,
+            },
+            'opt14g': {
+                width: 1090,
+                height: 1455,
+            },
+            'opt17': {
+                width: 950,
+                height: 1765,
+            },
+            'opt18a': {
+                width: 1390,
+                height: 1870,
+            },
+            'opt18b': {
+                width: 1390,
+                height: 1870,
+            },
+            'opt20': {
+                width: 1300,
+                height: 2080,
+            },
+            'opt20a': {
+                width: 1360,
+                height: 2080,
+            },
+            'opt25': {
+                width: 1680,
+                height: 2600,
+            },
+            'opt22': {
+                width: 1360,
+                height: 2200,
+            },
+            'opt22b': {
+                width: 1360,
+                height: 2200,
+            },
+
+            'okko1': {
+                width: 435,
+                height: 490,
+            },
+            'okko2k': {
+                width: 435,
+                height: 600,
+            },
+            'okko3': {
+                width: 435,
+                height: 650,
+            },
+            'okko4': {
+                width: 520,
+                height: 650,
+            },
+        }
+
         initSizeReels();
         setTuckSize(1);
 
@@ -184,8 +186,8 @@ $(document).ready(function() {
 
         gridTruck.on('dragEnd', function (item, event) {
             let { left, bottom, right, top } = $('.car__content')[0].getBoundingClientRect();
-            let windowT = window.scrollX;
-            let windowL = window.scrollY;
+            let windowT = window.scrollY;
+            let windowL = window.scrollX;
             let itemX = event.pageX;
             let itemY = event.pageY;
             let itemW = event.target.width;
@@ -249,6 +251,7 @@ $(document).ready(function() {
             $(gridTruck.getItems()).each(function (index,elem){
                 if ($(elem['_element']).attr('data-item') === item){
                     gridTruck.remove([elem], { removeElements: true });
+                    checkAllFeet();
                     return false;
                 }
             });
@@ -372,7 +375,7 @@ $(document).ready(function() {
             let itemW = item['_width'];
             let itemH = item['_height'];
             let isInside = /*itemX+itemW <= containerW &&*/ itemY+itemH <= containerH;
-            if (!isInside){
+            if (!isInside && (itemY+itemH)){
                 gridTruck.remove([item], { removeElements: true })
             }
         }

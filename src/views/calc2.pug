@@ -1,0 +1,85 @@
+extends layouts/default
+
+block vars
+    -const title = 'База знаний';
+
+block main
+    section.knowledge-hero.sticky-offset
+        .container
+            .inner.knowledge-hero__inner
+                .inner-left.knowledge-hero__inner-left
+                .inner-right.knowledge-hero__inner-right
+                    h1.title.knowledge-hero__title Намотать на барабан
+    section.namot-content
+        .sticky-bg
+        .container
+            .inner.knowledge-content__inner
+                .inner-left.knowledge-content__inner-left
+                .inner-right.knowledge-content__inner-right
+                    .namot
+                        .namot__title Калькулятор
+                        .namot__flex
+                            .namot__left
+                                .namot__text Введите “Длину кабеля” и при необходимости одно из значений поля “Длина кабеля” либо “Тип барабана” и нажмите “Намотать“.
+                                form.namot__form
+                                    .namot__input
+                                        .namot__input-title Диаметр кабеля
+                                        label
+                                            input(type="number" min="1" max="30" step=0.1 id="in1" placeholder="1мм-30мм" name="in1" required)
+                                            span
+                                        .invalid-feedback Обязательное поле. От 1 до 30.
+
+                                    .namot__input
+                                        .namot__input-title Длина кабеля
+                                        label
+                                            input(type="number" min="200" max="12000" class="form-control" id="in2" name="in2" placeholder="200м - 12 000м" required)
+                                            span
+                                        .invalid-feedback От 200 до 12000
+
+                                    .namot__input
+                                        .namot__input-title Тип барабана
+                                        label
+                                            select#in3.form-select(name='in3')
+                                                option(value='') Выберите тип тары
+                                                option Катушка ОККО №1
+                                                option Катушка ОККО №2 картонная
+                                                option Катушка ОККО №3 картонная
+                                                option Катушка ОККО №4
+                                                option Барабан 8
+                                                option Барабан 10
+                                                option Барабан 10а
+                                                option Барабан 10б
+                                                option Барабан 12а
+                                                option Барабан 14
+                                                option Барабан 14г
+                                                option Барабан 17
+                                                option Барабан 18а
+                                                option Барабан 18б
+                                                option Барабан 20
+                                                option Барабан 20а
+                                                option Барабан 25
+                                            span
+                                        .invalid-feedback Тип тары
+
+                                    button.namot__button.button(type="submit") Намотать кабель
+
+                            .namot__right
+                                .namot__resuts#result
+                                    .namot__result
+                                        .namot__result-row
+                                            h6 Катушка ОККО №2 картонная
+                                            h6 600м
+                                        .namot__result-row
+                                            span Тип барабана
+                                            span Длинa
+                                    .namot__result
+                                        .namot__result-row
+                                            h6 Катушка ОККО №2 картонная
+                                            h6 600м
+                                        .namot__result-row
+                                            span Тип барабана
+                                            span Длинa
+                                .namot__img
+                                    .namot__img-size.namot__img-size--width#coil_width 255
+                                    .namot__img-size.namot__img-size--height#coil_diameter 255
+                                    img(src="images/calc/baraban3.png")

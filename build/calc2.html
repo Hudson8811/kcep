@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta property="og:image" content="images/logo.svg">
+    <meta name="format-detection" content="telephone=no">
+    <link href="css/main.css" rel="stylesheet">
+    <title>База знаний</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container header__container">
+        <div class="header__bg"></div>
+        <div class="inner header__inner">
+          <div class="inner-left header__inner-left"><a class="logo" href="/kcep/build/home.html"><img src="img/logo.png" alt="KCEP"></a></div>
+          <div class="inner-right header__inner-right">
+            <nav class="header__nav active">
+              <ul class="header__nav-list"> 
+                <li class="header__nav-list-item"><a href="/kcep/build/production.html">Продукция </a>
+                  <ul class="header__nav-list-sub-menu"> 
+                    <li> <a href="/kcep/build/production.html#opticalCable">Оптический кабель	</a></li>
+                    <li> <a href="/kcep/build/production.html#copper">Медножильный кабель</a></li>
+                    <li> <a href="/kcep/build/production.html#opticalCords">Оптические шнуры</a></li>
+                  </ul>
+                </li>
+                <li class="header__nav-list-item"><a href="#">Сервисы</a></li>
+                <li class="header__nav-list-item"><a href="/kcep/build/partners.html">Партнеры</a></li>
+                <li class="header__nav-list-item"><a href="/kcep/build/events.html">События</a></li>
+                <li class="header__nav-list-item"><a href="/kcep/build/knowledge.html">База знаний</a></li>
+                <li class="header__nav-list-item"><a href="/kcep/build/about.html">О компании</a></li>
+                <li class="header__nav-list-item"><a href="/kcep/build/contacts.html">Контакты</a></li>
+              </ul>
+            </nav>
+            <div class="header__lang"><a class="header__dropdown" href="javascript:;">RUS<img src="img/arrow.svg" alt=""></a></div>
+            <div class="sh-burger"><span></span></div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <section class="knowledge-hero sticky-offset">
+        <div class="container">
+          <div class="inner knowledge-hero__inner">
+            <div class="inner-left knowledge-hero__inner-left"></div>
+            <div class="inner-right knowledge-hero__inner-right">
+              <h1 class="title knowledge-hero__title">Намотать на барабан</h1>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="namot-content">
+        <div class="sticky-bg"></div>
+        <div class="container">
+          <div class="inner knowledge-content__inner">
+            <div class="inner-left knowledge-content__inner-left"></div>
+            <div class="inner-right knowledge-content__inner-right">
+              <div class="namot">
+                <div class="namot__title">Калькулятор</div>
+                <div class="namot__flex">
+                  <div class="namot__left">
+                    <div class="namot__text">Введите “Длину кабеля” и при необходимости одно из значений поля “Длина кабеля” либо “Тип барабана” и нажмите “Намотать“.</div>
+                    <form class="namot__form">
+                      <div class="namot__input">
+                        <div class="namot__input-title">Диаметр кабеля</div>
+                        <label>
+                          <input type="number" min="1" max="30" step="0.1" id="in1" placeholder="1мм-30мм" name="in1" required><span></span>
+                        </label>
+                        <div class="invalid-feedback">Обязательное поле. От 1 до 30.</div>
+                      </div>
+                      <div class="namot__input">
+                        <div class="namot__input-title">Длина кабеля</div>
+                        <label>
+                          <input class="form-control" type="number" min="200" max="12000" id="in2" name="in2" placeholder="200м - 12 000м" required><span></span>
+                        </label>
+                        <div class="invalid-feedback">От 200 до 12000</div>
+                      </div>
+                      <div class="namot__input">
+                        <div class="namot__input-title">Тип барабана</div>
+                        <label>
+                          <select class="form-select" id="in3" name="in3">
+                            <option value="">Выберите тип тары</option>
+                            <option>Катушка ОККО №1</option>
+                            <option>Катушка ОККО №2 картонная</option>
+                            <option>Катушка ОККО №3 картонная</option>
+                            <option>Катушка ОККО №4</option>
+                            <option>Барабан 8</option>
+                            <option>Барабан 10</option>
+                            <option>Барабан 10а</option>
+                            <option>Барабан 10б</option>
+                            <option>Барабан 12а</option>
+                            <option>Барабан 14</option>
+                            <option>Барабан 14г</option>
+                            <option>Барабан 17</option>
+                            <option>Барабан 18а</option>
+                            <option>Барабан 18б</option>
+                            <option>Барабан 20</option>
+                            <option>Барабан 20а</option>
+                            <option>Барабан 25</option>
+                          </select><span></span>
+                        </label>
+                        <div class="invalid-feedback">Тип тары</div>
+                      </div>
+                      <button class="namot__button button" type="submit">Намотать кабель</button>
+                    </form>
+                  </div>
+                  <div class="namot__right">
+                    <div class="namot__resuts" id="result">
+                      <div class="namot__result">
+                        <div class="namot__result-row">
+                          <h6>Катушка ОККО №2 картонная</h6>
+                          <h6>600м</h6>
+                        </div>
+                        <div class="namot__result-row"><span>Тип барабана</span><span>Длинa</span></div>
+                      </div>
+                      <div class="namot__result">
+                        <div class="namot__result-row">
+                          <h6>Катушка ОККО №2 картонная</h6>
+                          <h6>600м</h6>
+                        </div>
+                        <div class="namot__result-row"><span>Тип барабана</span><span>Длинa</span></div>
+                      </div>
+                    </div>
+                    <div class="namot__img">
+                      <div class="namot__img-size namot__img-size--width" id="coil_width">255</div>
+                      <div class="namot__img-size namot__img-size--height" id="coil_diameter">255</div><img src="images/calc/baraban3.png">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="footer__wrapper"> 
+        <div class="footer__top">
+          <address class="footer__address">Казахстан, г. Сарань, ул. Шахтерская, д. 30«А»</address><a class="footer__mail" href="mailto:info@kcep@kz">info@kcep@kz</a><a class="footer__phone" href="tel:+77212912500">+7(7212)912 500</a>
+          <div class="footer__logo-wrapper"><a class="logo" href="/"><img src="img/logo.png" alt="KCEP"></a></div>
+        </div>
+        <div class="footer__bottom"><a class="footer__policy" href="/" id="policyPopupBtn">политикa конфиденциальности</a>
+          <div class="footer__copyrights">© 2021 KCEP; Developed by<a class="footer__copyrights-author" href="/">bofer.ru</a></div>
+          <div class="footer__social"> <a href="https://instagram.com/"> <img src="./img/instagram.svg" alt=""></a><a href="https://linkedin.com/"> <img src="img/linkedin.svg" alt=""></a><a href="https://facebook.com/"> <img src="img/facebook.svg" alt=""></a><a href="https://youtube.com/"> <img src="img/youtube.svg" alt=""></a></div>
+        </div>
+      </div>
+      <div class="footer-policy" id="policyPopup">
+        <div class="footer-policy__dialog"> 
+          <button class="footer-policy__close"><svg class="about-popup__close-icon">
+<use xlink:href="img/sprite.svg#close"></use>
+</svg>
+          </button>
+          <div class="footer-policy__content">
+            <h4 class="footer-policy__title">Политикa конфиденциальности</h4>
+            <ol>
+              <li>Обучение внутри компании
+                <p>Мы хотим, чтобы Вы всегда были в курсе последних изменений правил, законов, новых разработок продукции. Поэтому на заводе КСЕР организовано взаимное обучение между подразделениями. Кроме того, у нас есть готовые инструкции по работе со сложными программами, пользуясь которыми Вы легко научитесь тому, что на первый взгляд казалось сложным. В рамках завода мы можем помочь Вам освоить новую профессию и подняться на ступень выше.</p>
+              </li>
+              <li>Обучение вне компании
+                <p>КСЕР понимает, что обучаться только внутри компании невозможно, поэтому мы нередко отправляем своих специалистов на обучение в другие компании или учреждения, а также приглашаем сотрудников обучающих учреждений проводить курсы на территории компании, чтобы обучить максимальное количество сотрудников. Мы прилагаем все усилия для того, чтобы обучение для наших сотрудников было бесплатным.</p>
+              </li>
+              <li>Премирование и индивидуальный социальный пакет
+                <p>Компания ориентируется на европейский подход к работе. На предприятии действует система премирования на основе KPI. Кроме того, разработано несколько вариантов социальных пакетов для разных категорий должностей. Мы всячески приветствуем стремление сотрудников к совершенствованию, поэтому компания окажет Вам в том числе и финансовую поддержку, если Вы заходите пройти какое-либо обучение, самостоятельно определив обучающую организацию.</p>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+      <div class="coockies-popup" id="cookieBanner">
+        <div class="container coockies-popup__container">
+          <div class="coockies-popup__bg"></div>
+          <div class="coockies-popup__dialog">
+            <p class="coockies-popup__text">Этот сайт использует файлы cookies для более комфортной работы пользователя. Продолжая просмотр страниц сайта, вы соглашаетесь с использованием файлов cookies. В противном случае вы можете покинуть сайт.</p>
+            <button class="coockies-popup__close" id="acceptCookies">
+              <svg class="about-popup__close-icon">
+                <use xlink:href="img/sprite.svg#close"></use>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="js/main.js"></script>
+  </body>
+</html>
