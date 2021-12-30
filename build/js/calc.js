@@ -231,7 +231,11 @@ $(document).ready(function() {
         $(document).on('click','.js-plus-reel',function (){
             event.preventDefault();
             let item = $(this).closest('.reels__item').data('item');
-            addItem(item);
+            let count = parseInt($(this).closest('.reels__item').find('input[name="count"]').val());
+            if (count > 0){
+                if (count > 500) count = 500;
+                addItem(item,count)
+            }
         });
 
 
@@ -248,13 +252,16 @@ $(document).ready(function() {
         $(document).on('click','.js-minus-reel',function (){
             event.preventDefault();
             let item = $(this).closest('.reels__item').data('item');
+            let count = parseInt($(this).closest('.reels__item').find('input[name="count"]').val());
+            let deleted = 0;
             $(gridTruck.getItems()).each(function (index,elem){
                 if ($(elem['_element']).attr('data-item') === item){
                     gridTruck.remove([elem], { removeElements: true });
-                    checkAllFeet();
-                    return false;
+                    deleted++;
+                    if (deleted >= count) return false;
                 }
             });
+            checkAllFeet();
         });
 
         $(document).on('click','.js-show-reels',function (){
@@ -351,10 +358,9 @@ $(document).ready(function() {
 
             let STotal = 0;
 
-            $('.reels__item').removeClass('insert').find('.reels__item-count span').html(0);
 
             $.each(result2,function (index,value){
-                $('.reels__item[data-item="'+index+'"]').addClass('insert').find('.reels__item-count span').html(value);
+                $('.reels__item[data-item="'+index+'"]').addClass('insert');
                 let S = parseInt(reels[index]['width'])* parseInt(reels[index]['height'])*value;
                 STotal += S;
             });
@@ -456,14 +462,23 @@ $(document).ready(function() {
                 let addedItems = gridTruck.add(arrayElem);
                 if (max === null){
                     let destroyed = 0;
+
                     setTimeout(function (){
                         $.each(addedItems,function (){
                             if (this.isDestroyed()) destroyed++;
                         });
                         if (destroyed > 0){
                             gridTruck.remove(addedItems, { removeElements: true })
+
+                            $(elemDom).closest('.reels__item').find('.reels__item-error').html('Максимально '+(count-destroyed)+' баранабан(ов)').slideDown(100);
+                        } else {
+                            $('.reels__item-error').slideUp(100);
                         }
+
                     },20);
+
+                } else {
+                    $('.reels__item-error').slideUp(100);
                 }
                 setTimeout(function (){
                     $('.content-grid .reels__item-icon').removeClass('opacity');
@@ -472,6 +487,7 @@ $(document).ready(function() {
                 let elemDom = $('.reels__item[data-item="'+item+'"]').find('.reels__item-icon')[0];
                 let elem = elemDom.cloneNode(true);
                 gridTruck.add([elem]);
+                $('.reels__item-error').slideUp(100);
             }
 
             checkAllFeet();
