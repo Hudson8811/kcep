@@ -559,6 +559,8 @@
       top: 100%;
       display: none;
     }
+    &-info{
+    }
     &-title{
       font-weight: bold;
       font-size: 14px;
@@ -584,6 +586,8 @@
         padding: 0;
         font-size: 14px;
         line-height: 1.5;
+        width: 50px;
+        max-width: calc(100% - 55px);
       }
       input[type="number"] {
         -webkit-appearance: textfield;
