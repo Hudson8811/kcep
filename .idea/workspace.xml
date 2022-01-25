@@ -21,12 +21,25 @@
   <component name="ChangeListManager">
     <list default="true" id="9c47186b-5ef3-4871-a358-583c06a2b114" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/calc.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/calc.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/calc2.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/calc2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/career.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/career.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/certificates.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/certificates.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/contacts.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/contacts.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/build/css/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/css/maps/main.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/build/css/maps/main.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gulpfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/gulpfile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/style/partials/product/product-usage.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/partials/product/product-usage.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/event.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/event.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/events.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/events.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/knowledge.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/knowledge.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/partners.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/partners.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/product.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/product.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/production.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/production.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/products.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/products.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/style/partials/header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/partials/header.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/partials/_header.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/partials/_header.pug" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,8 +121,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gulp.js.style:build" />
         <item itemvalue="Gulp.js.default" />
+        <item itemvalue="Gulp.js.style:build" />
         <item itemvalue="Gulp.js.js:build" />
       </list>
     </recent_temporary>
@@ -145,7 +158,9 @@
       <workItem from="1640875885772" duration="2025000" />
       <workItem from="1641898369382" duration="815000" />
       <workItem from="1642408928948" duration="2358000" />
-      <workItem from="1642490646531" duration="1992000" />
+      <workItem from="1642490646531" duration="2269000" />
+      <workItem from="1642495776307" duration="149000" />
+      <workItem from="1643115102379" duration="1055000" />
     </task>
     <servers />
   </component>
@@ -165,30 +180,30 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="3397" height="223" key="GridCell.Tab.0.bottom" timestamp="1642492430635">
+    <state width="3397" height="223" key="GridCell.Tab.0.bottom" timestamp="1642493366093">
       <screen x="0" y="0" width="3440" height="1392" />
     </state>
-    <state width="3397" height="223" key="GridCell.Tab.0.bottom/0.0.3440.1392/3440.-836.1080.2512@0.0.3440.1392" timestamp="1642492430635" />
+    <state width="3397" height="223" key="GridCell.Tab.0.bottom/0.0.3440.1392/3440.-836.1080.2512@0.0.3440.1392" timestamp="1642493366093" />
     <state width="3397" height="223" key="GridCell.Tab.0.bottom/0.0.3440.1392@0.0.3440.1392" timestamp="1641899191292" />
-    <state width="3397" height="223" key="GridCell.Tab.0.center" timestamp="1642492430634">
+    <state width="3397" height="223" key="GridCell.Tab.0.center" timestamp="1642493366093">
       <screen x="0" y="0" width="3440" height="1392" />
     </state>
-    <state width="3397" height="223" key="GridCell.Tab.0.center/0.0.3440.1392/3440.-836.1080.2512@0.0.3440.1392" timestamp="1642492430634" />
+    <state width="3397" height="223" key="GridCell.Tab.0.center/0.0.3440.1392/3440.-836.1080.2512@0.0.3440.1392" timestamp="1642493366093" />
     <state width="3397" height="223" key="GridCell.Tab.0.center/0.0.3440.1392@0.0.3440.1392" timestamp="1641899191292" />
-    <state width="3397" height="223" key="GridCell.Tab.0.left" timestamp="1642492430634">
+    <state width="3397" height="223" key="GridCell.Tab.0.left" timestamp="1642493366093">
       <screen x="0" y="0" width="3440" height="1392" />
     </state>
-    <state width="3397" height="223" key="GridCell.Tab.0.left/0.0.3440.1392/3440.-836.1080.2512@0.0.3440.1392" timestamp="1642492430634" />
+    <state width="3397" height="223" key="GridCell.Tab.0.left/0.0.3440.1392/3440.-836.1080.2512@0.0.3440.1392" timestamp="1642493366093" />
     <state width="3397" height="223" key="GridCell.Tab.0.left/0.0.3440.1392@0.0.3440.1392" timestamp="1641899191292" />
-    <state width="3397" height="223" key="GridCell.Tab.0.right" timestamp="1642492430635">
+    <state width="3397" height="223" key="GridCell.Tab.0.right" timestamp="1642493366093">
       <screen x="0" y="0" width="3440" height="1392" />
     </state>
-    <state width="3397" height="223" key="GridCell.Tab.0.right/0.0.3440.1392/3440.-836.1080.2512@0.0.3440.1392" timestamp="1642492430635" />
+    <state width="3397" height="223" key="GridCell.Tab.0.right/0.0.3440.1392/3440.-836.1080.2512@0.0.3440.1392" timestamp="1642493366093" />
     <state width="3397" height="223" key="GridCell.Tab.0.right/0.0.3440.1392@0.0.3440.1392" timestamp="1641899191292" />
-    <state x="1576" y="321" width="990" height="746" key="find.popup" timestamp="1642492143795">
+    <state x="1576" y="321" width="990" height="746" key="find.popup" timestamp="1643116130380">
       <screen x="0" y="0" width="3440" height="1392" />
     </state>
-    <state x="1576" y="321" width="990" height="746" key="find.popup/0.0.3440.1392/3440.-836.1080.2512@0.0.3440.1392" timestamp="1642492143795" />
+    <state x="1576" y="321" width="990" height="746" key="find.popup/0.0.3440.1392/3440.-836.1080.2512@0.0.3440.1392" timestamp="1643116130380" />
     <state x="1576" y="321" width="990" height="746" key="find.popup/0.0.3440.1392@0.0.3440.1392" timestamp="1640875894202" />
     <state x="1376" y="328" key="run.anything.popup" timestamp="1640686009589">
       <screen x="0" y="0" width="3440" height="1392" />
