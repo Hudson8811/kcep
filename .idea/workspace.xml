@@ -23,7 +23,12 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/build/css/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/css/maps/main.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/build/css/maps/main.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/style/partials/header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/partials/header.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/start.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/start.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/partials/add.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/partials/add.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/style/partials/start.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/partials/start.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/partials/start.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/partials/start.pug" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,8 +110,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gulp.js.style:build" />
         <item itemvalue="Gulp.js.default" />
+        <item itemvalue="Gulp.js.style:build" />
         <item itemvalue="Gulp.js.js:build" />
       </list>
     </recent_temporary>
@@ -146,6 +151,7 @@
       <workItem from="1642495776307" duration="149000" />
       <workItem from="1643115102379" duration="1306000" />
       <workItem from="1643117063763" duration="286000" />
+      <workItem from="1643786725507" duration="1364000" />
     </task>
     <servers />
   </component>
