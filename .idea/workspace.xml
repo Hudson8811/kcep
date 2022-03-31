@@ -23,12 +23,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/build/css/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/css/maps/main.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/build/css/maps/main.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/start.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/start.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/partials/add.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/partials/add.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/style/partials/start.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/partials/start.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/partials/start.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/partials/start.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/style/partials/product/product-info.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/partials/product/product-info.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,7 +146,8 @@
       <workItem from="1642495776307" duration="149000" />
       <workItem from="1643115102379" duration="1306000" />
       <workItem from="1643117063763" duration="286000" />
-      <workItem from="1643786725507" duration="1364000" />
+      <workItem from="1643786725507" duration="4120000" />
+      <workItem from="1648741269082" duration="1462000" />
     </task>
     <servers />
   </component>
@@ -171,31 +167,31 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="3397" height="223" key="GridCell.Tab.0.bottom" timestamp="1643117351193">
+    <state width="3397" height="223" key="GridCell.Tab.0.bottom" timestamp="1648742743399">
       <screen x="0" y="0" width="3440" height="1392" />
     </state>
-    <state width="3397" height="223" key="GridCell.Tab.0.bottom/0.0.3440.1392/3440.-836.1080.2512@0.0.3440.1392" timestamp="1643117351193" />
-    <state width="3397" height="223" key="GridCell.Tab.0.bottom/0.0.3440.1392@0.0.3440.1392" timestamp="1641899191292" />
-    <state width="3397" height="223" key="GridCell.Tab.0.center" timestamp="1643117351193">
+    <state width="3397" height="223" key="GridCell.Tab.0.bottom/0.0.3440.1392/3440.-836.1080.2512@0.0.3440.1392" timestamp="1643792809093" />
+    <state width="3397" height="223" key="GridCell.Tab.0.bottom/0.0.3440.1392@0.0.3440.1392" timestamp="1648742743399" />
+    <state width="3397" height="223" key="GridCell.Tab.0.center" timestamp="1648742743399">
       <screen x="0" y="0" width="3440" height="1392" />
     </state>
-    <state width="3397" height="223" key="GridCell.Tab.0.center/0.0.3440.1392/3440.-836.1080.2512@0.0.3440.1392" timestamp="1643117351193" />
-    <state width="3397" height="223" key="GridCell.Tab.0.center/0.0.3440.1392@0.0.3440.1392" timestamp="1641899191292" />
-    <state width="3397" height="223" key="GridCell.Tab.0.left" timestamp="1643117351193">
+    <state width="3397" height="223" key="GridCell.Tab.0.center/0.0.3440.1392/3440.-836.1080.2512@0.0.3440.1392" timestamp="1643792809093" />
+    <state width="3397" height="223" key="GridCell.Tab.0.center/0.0.3440.1392@0.0.3440.1392" timestamp="1648742743399" />
+    <state width="3397" height="223" key="GridCell.Tab.0.left" timestamp="1648742743399">
       <screen x="0" y="0" width="3440" height="1392" />
     </state>
-    <state width="3397" height="223" key="GridCell.Tab.0.left/0.0.3440.1392/3440.-836.1080.2512@0.0.3440.1392" timestamp="1643117351193" />
-    <state width="3397" height="223" key="GridCell.Tab.0.left/0.0.3440.1392@0.0.3440.1392" timestamp="1641899191292" />
-    <state width="3397" height="223" key="GridCell.Tab.0.right" timestamp="1643117351193">
+    <state width="3397" height="223" key="GridCell.Tab.0.left/0.0.3440.1392/3440.-836.1080.2512@0.0.3440.1392" timestamp="1643792809093" />
+    <state width="3397" height="223" key="GridCell.Tab.0.left/0.0.3440.1392@0.0.3440.1392" timestamp="1648742743399" />
+    <state width="3397" height="223" key="GridCell.Tab.0.right" timestamp="1648742743399">
       <screen x="0" y="0" width="3440" height="1392" />
     </state>
-    <state width="3397" height="223" key="GridCell.Tab.0.right/0.0.3440.1392/3440.-836.1080.2512@0.0.3440.1392" timestamp="1643117351193" />
-    <state width="3397" height="223" key="GridCell.Tab.0.right/0.0.3440.1392@0.0.3440.1392" timestamp="1641899191292" />
-    <state x="1576" y="321" width="990" height="746" key="find.popup" timestamp="1643116130380">
+    <state width="3397" height="223" key="GridCell.Tab.0.right/0.0.3440.1392/3440.-836.1080.2512@0.0.3440.1392" timestamp="1643792809093" />
+    <state width="3397" height="223" key="GridCell.Tab.0.right/0.0.3440.1392@0.0.3440.1392" timestamp="1648742743399" />
+    <state x="1576" y="321" width="990" height="746" key="find.popup" timestamp="1648742175219">
       <screen x="0" y="0" width="3440" height="1392" />
     </state>
     <state x="1576" y="321" width="990" height="746" key="find.popup/0.0.3440.1392/3440.-836.1080.2512@0.0.3440.1392" timestamp="1643116130380" />
-    <state x="1576" y="321" width="990" height="746" key="find.popup/0.0.3440.1392@0.0.3440.1392" timestamp="1640875894202" />
+    <state x="1576" y="321" width="990" height="746" key="find.popup/0.0.3440.1392@0.0.3440.1392" timestamp="1648742175219" />
     <state x="1376" y="328" key="run.anything.popup" timestamp="1640686009589">
       <screen x="0" y="0" width="3440" height="1392" />
     </state>

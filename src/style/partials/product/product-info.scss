@@ -47,6 +47,7 @@
 			height: 77px;
 			display: flex;
 			align-items: center;
+			justify-content: space-between;
 
 			@include media(mobile) {
 				margin-top: 45px;
@@ -59,17 +60,16 @@
 
 			&-item {
 				font-size: 16px;
-				line-height: 77px;
+				line-height: 1;
+				height: 77px;
 				opacity: 0.13;
 				cursor: pointer;
-				width: 120px;
-				min-width: 120px;
 				transition: 0.2s linear;
-
-				@include media(tablet-993) {
-					width: auto;
-					min-width: auto;
-				}
+				display: flex;
+				align-items: center;
+				width: auto;
+				min-width: auto;
+				white-space: nowrap;
 
 				span {
 					display: inline-block;
@@ -78,7 +78,7 @@
 					&::after {
 						content: "";
 						position: absolute;
-						bottom: 15px;
+						bottom: -13px;
 						left: 0;
 						right: 0;
 						background-color: $gold;
@@ -89,20 +89,12 @@
 				}
 
 				&:not(:last-child) {
-					margin-right: 200px;
-
-					@include media(1100) {
-						margin-right: 140px;
-					}
-					@include media(tablet-993) {
-						margin-right: 24px;
-					}
+					margin-right: 24px;
 				}
 
 				&.active {
 					font-weight: bold;
 					font-size: 27px;
-					line-height: 77px;
 					opacity: 1;
 
 					span {
